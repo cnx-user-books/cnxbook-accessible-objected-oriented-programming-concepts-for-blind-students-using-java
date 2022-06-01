@@ -1,0 +1,7582 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Jbs2070-A General Purpose AudioGraph Program</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m50945</md:content-id>
+  <md:title>Jbs2070-A General Purpose AudioGraph Program</md:title>
+  <md:abstract>This module develops a general purpose AudioGraph program that reads an input text file containing numeric values for y as a function of x and produces an output melody that represents a graph of that data. The material is presented in a format that is accessible to blind students.</md:abstract>
+  <md:uuid>a1ce2579-d36f-45d7-bdf3-a6c72b24582d</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1005">
+<link id="a1005" target-id="What_is_an_AudioGraph">
+
+What is an AudioGraph?
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="A_general_purpose_AudioGraph_program">
+
+A general purpose AudioGraph program
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+			
+
+<item id="li1007">
+<link id="a1007" target-id="Where_do_the_text_files_come_from">
+
+Where do the text files come from?
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1008">
+<link id="a1008" target-id="A_template_for_evaluating_functions">
+
+A template for evaluating functions
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1009">
+<link id="a1009" target-id="The_audio_pulse_rate">
+
+The audio pulse rate
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1010">
+<link id="a1010" target-id="Play_or_file">
+
+Play or file?
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1011">
+<link id="a1011" target-id="Not_a_substitute_for_an_embossed_image">
+
+Not a substitute for an embossed image
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1012">
+<link id="a1012" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+		
+
+<item id="li1013">
+<link id="a1013" target-id="The_program_named_Sinc01">
+
+The program named Sinc01
+
+</link>
+
+
+<list id="ul1006" list-type="bulleted">
+
+			
+
+<item id="li1014">
+<link id="a1014" target-id="A_sinc_function">
+
+A sinc function
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1015">
+<link id="a1015" target-id="Beginning_of_the_program_named_Sinc01">
+
+Beginning of the program named Sinc01
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1016">
+<link id="a1016" target-id="Beginning_of_the_class_named_Runner">
+
+Beginning of the class named Runner
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1017">
+<link id="a1017" target-id="The_method_named_run">
+
+The method named run
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1018">
+<link id="a1018" target-id="Beginning_of_the_method_named_getYval">
+
+Beginning of the method named getYval
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1019">
+<link id="a1019" target-id="The_end_of_the_getYval_method">
+
+The end of the getYval method
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1020">
+<link id="a1020" target-id="Using_an_AudioGraph">
+
+Using an AudioGraph
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1021">
+<link id="a1021" target-id="Contents_of_the_output_file_named_Sinc01.txt">
+
+Contents of the output file named Sinc01.txt
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1022">
+<link id="a1022" target-id="The_file_named_Sinc01Solver">
+
+The file named Sinc01Solver.bat
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1023">
+<link id="a1023" target-id="The_file_named_Sinc01Player">
+
+The file named Sinc01Player.bat
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1024">
+<link id="a1024" target-id="The_class_named_MusicComposer10">
+
+The class named MusicComposer10
+
+</link>
+
+
+<list id="ul1007" list-type="bulleted">
+
+			
+
+<item id="li1025">
+<link id="a1025" target-id="Beginning_of_the_class_named_MusicComposer10">
+
+Beginning of the class named MusicComposer10
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1026">
+<link id="a1026" target-id="The_constructor_for_the_class_named_MusicComposer10">
+
+The constructor for the class named MusicComposer10
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1027">
+<link id="a1027" target-id="The_class_named_AudioGraph01">
+
+The class named AudioGraph01
+
+</link>
+
+
+<list id="ul1008" list-type="bulleted">
+
+			
+
+<item id="li1028">
+<link id="a1028" target-id="A_general_purpose_AudioGraph_generator_program">
+
+A general purpose AudioGraph generator program
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1029">
+<link id="a1029" target-id="The_input_text_file">
+
+The input text file
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1030">
+<link id="a1030" target-id="Conversion_to_audio">
+
+Conversion to audio
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1031">
+<link id="a1031" target-id="Beginning_of_the_class_named_AudioGraph01">
+
+Beginning of the class named AudioGraph01
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1032">
+<link id="a1032" target-id="Read_the_input_text_file">
+
+Read the input text file
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1033">
+
+			
+
+<link id="a1033" target-id="The_remainder_of_the_constructor_for_the_class_named_AudioGraph01">
+
+The remainder of the constructor for the class named AudioGraph01
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1034">
+<link id="a1034" target-id="Beginning_of_the_method_named_getMelody">
+
+Beginning of the method named getMelody
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1035">
+<link id="a1035" target-id="Determine_the_frequency_and_data_ranges">
+
+Determine the frequency and data ranges
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1036">
+
+			
+
+<link id="a1036" target-id="Determine_the_frequency_to_represent_a_y-value_of_zero">
+
+Determine the frequency to represent a y-value of zero
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1037">
+
+			
+
+<link id="a1037" target-id="Compute_audio_sample_values_and_deposit_them_in_the_output_array">
+
+Compute audio sample values and deposit them in the output array
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1038">
+<link id="a1038" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1039">
+<link id="a1039" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1040">
+<link id="a1040" target-id="Complete_program_listing">
+
+Complete program listings
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1041">
+<link id="a1041" target-id="Figures_are_here">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1000">
+This module is part of a collection titled 
+
+<emphasis id="strong1000" effect="bold">
+Accessible 
+	Objected-Oriented Programming Concepts for Blind Students using Java
+
+</emphasis>
+. 
+	It develops a general purpose 
+
+<emphasis id="em1000" effect="italics">
+AudioGraph
+
+</emphasis>
+ program that reads an input text file containing numeric values for y as a function of x and produces an output melody that represents a graph of that data. The material is presented in a format that is accessible to blind students.
+
+</para>
+
+
+
+
+<para id="p1001">
+Some sample AudioGraph melodies produced by the program are listed below. The 
+function that was evaluated to produce the audio file is shown with the (^) 
+character indicating exponentiation. 
+
+</para>
+
+
+
+
+<para id="p1002">
+<emphasis id="em1001" effect="italics">
+(You 
+should be able to play these audio files with any standard media player that can 
+handle the AU file type. In case you are on the OpenStax site and you are unable 
+to download the audio files, click the 
+
+</emphasis>
+<emphasis id="strong1001" effect="bold">
+<emphasis id="em1002" effect="italics">
+Legacy Site
+
+</emphasis>
+</emphasis>
+<emphasis id="em1003" effect="italics">
+ 
+link at the top of this page to switch over to the same module on the Legacy 
+site. You should be able to download the 
+
+<emphasis id="audio_files_from_ther" effect="bold">
+
+audio 
+files from ther
+
+</emphasis>
+
+e.)
+
+</emphasis>
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1042">
+<link id="a1042" url="Cubic01.au">
+
+Cubic01
+
+</link>
+
+: y = x^3 - 50
+
+</item>
+
+
+	
+
+<item id="li1043">
+<link id="a1043" url="Cubic02.au">
+
+Cubic02
+
+</link>
+
+: y = x^3 + 5*x^2 - 29*x -105 with three 
+	real roots
+
+</item>
+
+
+	
+
+<item id="li1044">
+<link id="a1044" url="DampedSinusoid01.au">
+
+DampedSinusoid01
+
+</link>
+
+: y = 
+	e^(-x/3.5)*cos(2*pi*f*x)
+
+</item>
+
+
+	
+
+<item id="li1045">
+<link id="a1045" url="ExponentialDamper01.au">
+
+ExponentialDamper01
+
+</link>
+
+: y = e^(-x/3.5)
+
+</item>
+
+
+	
+
+<item id="li1046">
+<link id="a1046" url="Parabola01.au">
+
+Parabola01
+
+</link>
+
+: y = x^2 - 50
+
+</item>
+
+
+	
+
+<item id="li1047">
+<link id="a1047" url="Quadratic01.au">
+
+Quadratic01
+
+</link>
+
+: y = x^2 - 2*x - 15 with two 
+	real roots
+
+</item>
+
+
+	
+
+<item id="li1048">
+<link id="a1048" url="Sinc01.au">
+
+Sinc01
+
+</link>
+
+: y = sin(2*pi*f*x)/x
+
+</item>
+
+
+	
+
+<item id="li1049">
+<link id="a1049" url="Sinusoid01.au">
+
+Sinusoid01
+
+</link>
+
+: y = sin(2*pi*f*x)
+
+</item>
+
+
+	
+
+<item id="li1050">
+<link id="a1050" url="StraightLine01.au">
+
+StraightLine01
+
+</link>
+
+: y = 2*x bipolar result
+
+</item>
+
+
+	
+
+<item id="li1051">
+<link id="a1051" url="StraightLine02.au">
+
+StraightLine02
+
+</link>
+
+: y = 2*x + 500 all 
+	positive results
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1003">
+I will comment further on some of these audio files later in this 
+module.
+
+</para>
+
+
+
+
+<para id="p1004">
+Click 
+
+<link id="a1052" url="Code.zip">
+
+here
+
+</link>
+
+ to download a zip file containing the 
+source code, the text files, and the Windows batch files needed to create, 
+compile, and play your own version of these AudioGraph melodies. The zip file also contains the 
+audio files of type AU listed above.
+
+</para>
+
+
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1005">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find the listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1010" list-type="bulleted">
+
+		
+
+<item id="li1052">
+<link id="a1053" target-id="Listing_01">
+
+Listing 1
+
+</link>
+
+. Beginning of the program named Sinc01. 
+
+</item>
+
+
+		
+
+<item id="li1053">
+<link id="a1054" target-id="Listing_02">
+
+Listing 2
+
+</link>
+
+. Beginning of the class named Runner. 
+
+</item>
+
+
+		
+
+<item id="li1054">
+<link id="a1055" target-id="Listing_03">
+
+Listing 3
+
+</link>
+
+. The method named run.
+
+</item>
+
+
+		
+
+<item id="li1055">
+<link id="a1056" target-id="Listing_04">
+
+Listing 4
+
+</link>
+
+. Beginning of the method named getYval. 
+
+</item>
+
+
+		
+
+<item id="li1056">
+<link id="a1057" target-id="Listing_05">
+
+Listing 5
+
+</link>
+
+. The end of the getYval method.
+
+</item>
+
+
+		
+
+<item id="li1057">
+<link id="a1058" target-id="Listing_06">
+
+Listing 6
+
+</link>
+
+. Contents of the output file named Sinc01.txt.
+
+</item>
+
+
+		
+
+<item id="li1058">
+<link id="a1059" target-id="Listing_07">
+
+Listing 7
+
+</link>
+
+. Beginning of the class named MusicComposer10.
+
+</item>
+
+
+		
+
+<item id="li1059">
+<link id="a1060" target-id="Listing_08">
+
+Listing 8
+
+</link>
+
+. The constructor for the class named MusicComposer10.
+
+</item>
+
+
+		
+
+<item id="li1060">
+<link id="a1061" target-id="Listing_09">
+
+Listing 9
+
+</link>
+
+. Beginning of the class named AudioGraph01.
+
+</item>
+
+
+		
+
+<item id="li1061">
+<link id="a1062" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. Read the input text file.
+
+</item>
+
+
+		
+
+<item id="li1062">
+<link id="a1063" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+. The remainder of the constructor for the class named AudioGraph01.
+
+</item>
+
+
+		
+
+<item id="li1063">
+<link id="a1064" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+. Beginning of the method named getMelody.
+
+</item>
+
+
+		
+
+<item id="li1064">
+<link id="a1065" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+. Determine the frequency and data ranges.
+
+</item>
+
+
+		
+
+<item id="li1065">
+<link id="a1066" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+. Determine the frequency to represent a y-value of zero.
+
+</item>
+
+
+		
+
+<item id="li1066">
+<link id="a1067" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+. Compute audio sample values and deposit them in the output array.
+
+</item>
+
+
+		
+
+<item id="li1067">
+<link id="a1068" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+. The program named Sinc01.
+
+</item>
+
+
+		
+
+<item id="li1068">
+<link id="a1069" target-id="Listing_17">
+
+Listing 17
+
+</link>
+
+. The file named Sinc01Solver.bat.
+
+</item>
+
+
+		
+
+<item id="li1069">
+<link id="a1070" target-id="Listing_18">
+
+Listing 18
+
+</link>
+
+. The file named Sinc01Player.bat
+
+</item>
+
+
+		
+
+<item id="li1070">
+<link id="a1071" target-id="Listing_19">
+
+Listing 19
+
+</link>
+
+. The class named MusicComposer10.
+
+</item>
+
+
+		
+
+<item id="li1071">
+<link id="a1072" target-id="Listing_20">
+
+Listing 20
+
+</link>
+
+. The class named AudioGraph01.
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1006">
+Please see the section titled 
+
+
+<link id="a1073" target-id="Not_a_substitute_for_an_embossed_image">
+
+Not a substitute for an embossed image
+
+</link>
+
+ 
+for a discussion of the images that are provided in this module.
+
+</para>
+
+
+	
+
+<list id="ul1011" list-type="bulleted">
+
+		
+
+<item id="li1072">
+<link id="a1074" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Cubic01. 
+
+</item>
+
+
+		
+
+<item id="li1073">
+<link id="a1075" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Cubic02. 
+
+</item>
+
+
+		
+
+<item id="li1074">
+<link id="a1076" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. DampedSinusoid01. 
+
+</item>
+
+
+		
+
+<item id="li1075">
+<link id="a1077" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. ExponentialDamper01. 
+
+</item>
+
+
+		
+
+<item id="li1076">
+<link id="a1078" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Parabola01. 
+
+</item>
+
+
+		
+
+<item id="li1077">
+<link id="a1079" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. Quadratic01. 
+
+</item>
+
+
+		
+
+<item id="li1078">
+<link id="a1080" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. Sinc01. 
+
+</item>
+
+
+		
+
+<item id="li1079">
+<link id="a1081" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. Sinusoid01. 
+
+</item>
+
+
+		
+
+<item id="li1080">
+<link id="a1082" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+. StraightLine01 
+
+</item>
+
+
+		
+
+<item id="li1081">
+<link id="a1083" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+. StraightLine02. 
+
+</item>
+
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="General_background_information" effect="bold">
+
+General 
+	background information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="What_is_an_AudioGraph" effect="bold">
+
+What is an AudioGraph
+
+</emphasis>
+
+?
+
+</title>
+
+
+
+
+<para id="p1007">
+A previous module titled 
+
+
+<link id="a1084" url="http://cnx.org/contents/abed3fac-b923-4eaf-9234-5364b34640ff">
+
+Jbs2040-An Audio Graph of a Sinusoid
+
+</link>
+
+ 
+introduced you to the concept of an 
+
+<emphasis id="em1004" effect="italics">
+AudioGraph
+
+</emphasis>
+. In a nutshell, an 
+AudioGraph is a melody consisting of audio pulses that represent points on the 
+graph of a function. Those points represent values of y as a function of x between two limits on x.
+
+</para>
+
+
+
+
+<para id="p1008">
+Two different AudioGraph programs were presented in earlier modules. Each was 
+specifically designed for a particular function. One program produced an 
+AudioGraph of a square wave. The other produced an AudioGraph of a sinusoid.
+
+</para>
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="A_general_purpose_AudioGraph_program" effect="bold">
+
+A general purpose AudioGraph 
+program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1009">
+This module expands on that concept and develops a general purpose program 
+named 
+
+<emphasis id="strong1002" effect="bold">
+MusicComposer10
+
+</emphasis>
+ that can produce an AudioGraph for virtually any single-valued function 
+of the independent variable x for which the values of y can be encapsulated in 
+a simple text file. Several examples are provided
+
+
+<link id="a1085" target-id="audio_files_from_ther">
+
+above
+
+</link>
+
+. 
+
+<emphasis id="em1005" effect="italics">
+(By single-valued function in 
+this context, I mean a function where, for every value of x within the range of 
+interest, one and only one finite value exists for y.)
+
+</emphasis>
+</para>
+
+
+
+
+<section id="h31002">
+<title>
+<emphasis id="Where_do_the_text_files_come_from" effect="bold">
+
+Where do the text files come 
+from
+
+</emphasis>
+
+?
+
+</title>
+
+
+
+
+<para id="p1010">
+The program doesn't know and doesn't care where the values in the text file originate. 
+For example, they could represent the temperature in your dorm room taken 
+manually every hour for 36 hours and entered into a text file using a simple 
+text editor program. On the other hand, they could be produced by a 
+computer program that is designed to evaluate a specific function and to write the 
+results into an output text file as was the case for 
+
+<link id="a1086" url="Sinc01.au">
+
+Sinc01
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="A_template_for_evaluating_functions" effect="bold">
+
+A template for evaluating 
+functions
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1011">
+In addition to the AudioGraph generator program named 
+
+<emphasis id="strong1003" effect="bold">
+MusicComposer10
+
+</emphasis>
+, this module also develops a 
+simple template for writing programs to evaluate functions and to write the 
+results into a text file. The 
+
+<link id="a1087" url="Code.zip">
+
+zip file
+
+</link>
+
+ mentioned earlier 
+contains the source code for programs to evaluate all of the functions in the
+
+
+<link id="a1088" target-id="audio_files_from_ther">
+
+above list
+
+</link>
+
+. This template is so simple that a student 
+with minimal programming knowledge could easily write her own 
+programs to evaluate other functions. I will explain the template
+
+
+<link id="a1089" target-id="The_program_named_Sinc01">
+
+later
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="The_audio_pulse_rate" effect="bold">
+
+The audio pulse rate
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1012">
+You may have noticed that the output pulses in most of the audio files in the
+
+
+<link id="a1090" target-id="audio_files_from_ther">
+
+above list
+
+</link>
+
+ are delivered to the speakers at a 
+fairly rapid rate. The output pulse rate 
+
+<emphasis id="em1006" effect="italics">
+(in pulses per second)
+
+</emphasis>
+ is 
+specified by the user as a command-line parameter when the program is run. 
+
+<emphasis id="em1007" effect="italics">
+
+(Most of the examples in the 
+
+<link id="a1091" target-id="audio_files_from_ther">
+
+above list
+
+</link>
+
+ were run at 12 
+pulses per second but 
+
+<link id="a1092" url="Sinusoid01.au">
+
+Sinusoid01
+
+</link>
+
+ was run at only 5 
+pulses per second.)
+
+</emphasis>
+ An overview of the output from a function can be achieved 
+using a fast output pulse rate. A more detailed audio analysis of the output 
+can then be achieved by running the program with a slower output rate. And, if 
+you need to do detailed numeric analysis, the numeric data is available for 
+examination in the corresponding text file.
+
+</para>
+
+
+
+
+</section>
+<section id="h31005">
+<title>
+<emphasis id="Play_or_file" effect="bold">
+
+Play or file
+
+</emphasis>
+
+?
+
+</title>
+
+
+
+
+<para id="p1013">
+Another user input parameter specifies whether the melody is to be played 
+immediately or is to be saved in an audio file for playback later. Saving it in 
+an audio file makes it very convenient to listen to over and over to allow the 
+information content to "sink into" the brain. In addition, a student can build 
+up a library of audio files for different functions for review later, such as 
+when studying for a test.
+
+</para>
+
+
+
+
+</section>
+<section id="h31006">
+<title>
+<emphasis id="Not_a_substitute_for_an_embossed_image" effect="bold">
+
+Not a substitute for an 
+embossed image
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1014">
+An AudioGraph is not a substitute for an embossed image of a graph. However, 
+it may be much quicker and easier to produce, it may tell you if you need to 
+take the time and effort to create an embossed image, and it may enhance the 
+learning process even if you do produce an embossed image.
+
+</para>
+
+
+
+
+<para id="p1015">
+For the benefit of those students who have the ability to produce embossed 
+images, the 
+
+<link id="a1093" target-id="Figures_are_here">
+
+Figures
+
+</link>
+
+ section provides an image for 
+each AudioGraph 
+
+<link id="a1094" target-id="audio_files_from_ther">
+
+listed above
+
+</link>
+
+. In addition, 
+the 
+
+<link id="a1095" url="Code.zip">
+
+downloadable zip 
+file
+
+</link>
+
+ contains the JPEG files for those images.
+
+</para>
+
+
+	
+	
+
+</section>
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<section id="h21003">
+<title>
+<emphasis id="The_program_named_Sinc01" effect="bold">
+
+The program named Sinc01
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1016">
+Since this module is all about evaluating functions, I will begin with an 
+	explanation of the template that I have developed to evaluate a function and to write 
+	the results of the evaluation into an output text file. A complete listing 
+	of the program named 
+
+<link id="a1096" url="Sinc01.au">
+
+Sinc01
+
+</link>
+
+ is provided in 
+
+<link id="a1097" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+. As 
+	is my custom, I will break the program down and explain it in fragments.
+
+</para>
+
+
+
+
+<para id="p1017">
+This program produces an output text file containing values for y as a function
+of x for the so called 
+
+<emphasis id="strong1004" effect="bold">
+sinc
+
+</emphasis>
+ function 
+
+<emphasis id="em1008" effect="italics">
+(more on this later)
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1018">
+The contents of the text file can be converted into audio and either played
+or written into an audio file of type AU for playback later using the program 
+named 
+
+<emphasis id="strong1005" effect="bold">
+AudioGraph01
+
+</emphasis>
+.
+
+
+
+
+</para>
+
+
+
+
+<section id="h31007">
+<title>
+<emphasis id="A_sinc_function" effect="bold">
+
+A sinc function
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1019">
+The function that is evaluated by this program is the classic sin(x)/x function, otherwise known a the
+
+
+<emphasis id="strong1006" effect="bold">
+sinc
+
+</emphasis>
+ 
+function. It appears frequently in digital signal processing (DSP) and is one of 
+my favorites.
+
+</para>
+
+
+
+
+<para id="p1020">
+To use this program as a template and modify it to handle other functions, you only need to modify the 
+instance variables in the class named 
+
+<emphasis id="strong1007" effect="bold">
+Runner
+
+</emphasis>
+ and modify the code in the method 
+named 
+
+<emphasis id="strong1008" effect="bold">
+getYval
+
+</emphasis>
+. You should not modify any of the other code.
+
+</para>
+
+
+
+
+</section>
+<section id="h31008">
+<title>
+<emphasis id="Beginning_of_the_program_named_Sinc01" effect="bold">
+
+Beginning of the program 
+named Sinc01
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1021">
+The beginning of the program named 
+
+<emphasis id="strong1009" effect="bold">
+Sinc01
+
+</emphasis>
+ is shown in 
+
+<link id="a1098" target-id="Listing_01">
+
+Listing 1
+
+</link>
+
+. This is the 
+driver class containing the 
+
+<emphasis id="strong1010" effect="bold">
+main
+
+</emphasis>
+ method. There is nothing new 
+or unusual about this code. If you use this 
+program as a template for a new program to evaluate a different function, you 
+should not modify the code in 
+
+<link id="a1099" target-id="Listing_01">
+
+Listing 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<table id="table1000" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Listing_01" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. Beginning of the 
+				program named Sinc01.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Sinc01{//Driver class
+  public static void main(String[] args){
+    //Do not modify the code in this method.
+    Runner obj = new Runner();
+    obj.run();
+  }//end main
+}//end class Sinc01
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31009">
+<title>
+<emphasis id="Beginning_of_the_class_named_Runner" effect="bold">
+
+Beginning of the class 
+	named Runner
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1022">
+The code in 
+
+<link id="a1100" target-id="Listing_01">
+
+Listing 1
+
+</link>
+
+ instantiates a new object of the class named
+	
+
+<emphasis id="strong1011" effect="bold">
+Runner
+
+</emphasis>
+. The class named 
+
+<emphasis id="strong1012" effect="bold">
+Runner
+
+</emphasis>
+ begins in 
+	
+
+<link id="a1101" target-id="Listing_02">
+
+Listing 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1023">
+The first three instance variables in 
+
+<link id="a1102" target-id="Listing_02">
+
+Listing 2
+
+</link>
+
+ declare and initialize three 
+variables that control the range of x for which the function will be evaluated, 
+and the incremental steps in x for which the function will be evaluated. You may 
+or may not want to change these values when writing a program to evaluate a 
+different function. For example you might want to evaluate the function only for 
+positive values of x, in which case you would probably set the value for 
+
+<emphasis id="strong1013" effect="bold">
+
+xMin
+
+</emphasis>
+ to 0.
+
+</para>
+
+
+
+
+<para id="p1024">
+The last statement in 
+
+<link id="a1103" target-id="Listing_02">
+
+Listing 2
+
+</link>
+
+ establishes the name of the text file that 
+will be written into the subfolder named 
+
+<emphasis id="strong1014" effect="bold">
+Data
+
+</emphasis>
+ to contain the results of the 
+evaluation. You probably will want to modify this to cause the name of the 
+output file to be descriptive of the function being evaluated.
+
+</para>
+
+
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Listing_02" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. Beginning of the class 
+				named Runner.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">
+class Runner{
+  //Modify the following instance variables as needed. 
+  double xMin = -20;//Minimum value for x
+  double xMax = 20;//Maximum value for x
+  double xInc = 0.25;//Used to determine x-values for evaluation of y-value
+
+  String fileName = "Data/Sinc01.txt";//Output file name in Data folder
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31010">
+<title>
+<emphasis id="The_method_named_run" effect="bold">
+
+The method named run
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1025">
+After instantiating a new object of the 
+
+<emphasis id="strong1015" effect="bold">
+Runner
+
+</emphasis>
+ class, 
+	the code in 
+
+<link id="a1104" target-id="Listing_01">
+
+Listing 1
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1016" effect="bold">
+run
+
+</emphasis>
+ method on that new 
+	object. The 
+
+<emphasis id="strong1017" effect="bold">
+run
+
+</emphasis>
+ method is shown in its entirety in 
+	
+
+<link id="a1105" target-id="Listing_03">
+
+Listing 3
+
+</link>
+
+. You should not modify the code in the
+
+
+<emphasis id="strong1018" effect="bold">
+run
+
+</emphasis>
+ method 
+
+</para>
+
+
+
+
+<para id="p1026">
+The code in 
+
+<link id="a1106" target-id="Listing_03">
+
+Listing 3
+
+</link>
+
+ is straightforward. It repeatedly calls a method named
+
+
+<emphasis id="strong1019" effect="bold">
+getYval
+
+</emphasis>
+, once for each incremental value of x between the 
+limits specified in 
+
+<link id="a1107" target-id="Listing_02">
+
+Listing 2
+
+</link>
+
+. It creates an output string by concatenating the 
+values returned by 
+
+<emphasis id="strong1020" effect="bold">
+getYval
+
+</emphasis>
+, separating those values by commas 
+with no spaces. When 
+
+<emphasis id="strong1021" effect="bold">
+getYval
+
+</emphasis>
+ has been called once for each incremental value of 
+x within the specified limits, the method named 
+
+<emphasis id="strong1022" effect="bold">
+writeOutputFile
+
+</emphasis>
+ 
+is called to write the string into a text file with the name specified in 
+
+
+<link id="a1108" target-id="Listing_02">
+
+Listing 2
+
+</link>
+
+. You can view the method named 
+
+<emphasis id="strong1023" effect="bold">
+writeOutputFile
+
+</emphasis>
+ in 
+
+
+<link id="a1109" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+. You should not modify the method named 
+
+<emphasis id="strong1024" effect="bold">
+writeOutputFile
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Listing_03" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. The method named run.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">
+  void run(){
+    //Do not modify the code in this method.
+    double xVal = xMin;
+    String outString = "";
+    while(xVal &lt;= xMax){
+      //Construct an output string contain comma-separated values of y as a
+      // function of x.
+      outString += getYval(xVal) + ",";
+      //Increment x
+      xVal += xInc;
+    }//end while loop
+    
+    writeOutputFile(fileName,outString);
+    
+  }//end run method
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31011">
+<title>
+<emphasis id="Beginning_of_the_method_named_getYval" effect="bold">
+
+Beginning of the method 
+	named getYval
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1027">
+<link id="a1110" target-id="Listing_04">
+
+Listing 4
+
+</link>
+
+ shows the beginning of the method named 
+
+<emphasis id="strong1025" effect="bold">
+getYval
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1028">
+This is the method that evaluates the function. This is where you will make 
+the most important changes to the code if you use this program as a template for 
+other functions. You will need to modify the code in 
+
+<link id="a1111" target-id="Listing_04">
+
+Listing 4
+
+</link>
+
+ to cause it to 
+properly evaluate your new function.
+
+</para>
+
+
+
+
+<para id="p1029">
+As I mentioned earlier, the function evaluated in this program is the classic sin(x)/x function, otherwise known a the 
+
+
+<emphasis id="strong1026" effect="bold">
+sinc
+
+</emphasis>
+ function. I chose it for this explanation because it is 
+the most complicated of the functions illustrated by the audio files in the
+
+
+<link id="a1112" target-id="audio_files_from_ther">
+
+above list
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1030">
+To understand the code in 
+
+<link id="a1113" target-id="Listing_04">
+
+Listing 4
+
+</link>
+
+, you need to know how to use the 
+
+<emphasis id="strong1027" effect="bold">
+
+sin
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1028" effect="bold">
+Math
+
+</emphasis>
+ class.
+
+</para>
+
+
+
+
+<para id="p1031">
+The most complicated thing about this code is illustrated by the code in 
+the 
+
+<emphasis id="strong1029" effect="bold">
+if-else
+
+</emphasis>
+ structure. As you can see, the code in the 
+
+<emphasis id="strong1030" effect="bold">
+if
+
+</emphasis>
+ 
+clause divides something by 
+
+<emphasis id="strong1031" effect="bold">
+xVal
+
+</emphasis>
+, which is the incoming value 
+of x. This value can be zero, which will result in a 
+
+<emphasis id="em1009" effect="italics">
+"divide by zero"
+
+</emphasis>
+ error. To 
+eliminate that possibility, the 
+
+<emphasis id="strong1032" effect="bold">
+else
+
+</emphasis>
+ clause substitutes a very 
+small but non-zero value for 
+
+<emphasis id="strong1033" effect="bold">
+xVal
+
+</emphasis>
+ when 
+
+<emphasis id="strong1034" effect="bold">
+xVal
+
+</emphasis>
+ is 
+actually zero. This doesn't change the audio output, but it does prevent 
+the division by zero problem.
+
+</para>
+
+
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Listing_04" effect="bold">
+
+Listing 4
+
+</emphasis>
+
+. Beginning of the method 
+				named getYval.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">
+  double getYval(double xVal){
+    //Evaluate the function here
+    double f = 0.25;
+    double result = 0;
+    if(xVal != 0.0){
+      result = Math.sin(2*Math.PI*f*xVal)/xVal;
+    }else{
+      //Don't divide by zero
+      result = Math.sin(2*Math.PI*f*0.00001)/0.00001;
+    }//end else
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1032">
+To reiterate, you will modify the code in that portion of the 
+
+<emphasis id="strong1035" effect="bold">
+getYval
+
+</emphasis>
+ 
+	method shown in 
+
+<link id="a1114" target-id="Listing_04">
+
+Listing 4
+
+</link>
+
+ if you use this program as a template for a new 
+	program for a different function.
+
+</para>
+
+
+
+
+</section>
+<section id="h31012">
+<title>
+<emphasis id="The_end_of_the_getYval_method" effect="bold">
+
+The end of the getYval method
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1033">
+The remainder of the 
+
+<emphasis id="strong1036" effect="bold">
+getYval
+
+</emphasis>
+ method is shown in 
+
+<link id="a1115" target-id="Listing_05">
+
+Listing 5
+
+</link>
+
+. You 
+should not 
+modify this code.
+
+</para>
+
+
+
+
+<para id="p1034">
+All of the computations are being performed as type 
+
+<emphasis id="strong1037" effect="bold">
+double
+
+</emphasis>
+. 
+A 
+
+<emphasis id="strong1038" effect="bold">
+double
+
+</emphasis>
+ value can produce many more digits to the right of the decimal point than are useful when converting the output values to audio. 
+The code in 
+
+<link id="a1116" target-id="Listing_05">
+
+Listing 5
+
+</link>
+
+ limits the number of digits to the right of the decimal 
+point to no more than three digits. I will leave it as an exercise for the 
+student to look up the behavior of the 
+
+<emphasis id="strong1039" effect="bold">
+rint
+
+</emphasis>
+ method of the
+
+
+<emphasis id="strong1040" effect="bold">
+Math
+
+</emphasis>
+ class and ponder on how the code in 
+
+<link id="a1117" target-id="Listing_05">
+
+Listing 5
+
+</link>
+
+ limits the 
+number of decimal digits in the 
+
+<emphasis id="strong1041" effect="bold">
+return
+
+</emphasis>
+ value to no more than three 
+digits.
+
+</para>
+
+
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Listing_05" effect="bold">
+
+Listing 5
+
+</emphasis>
+
+. The end of the getYval 
+				method.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">
+    //Do not modify this code.
+    //Limit the return value to three decimal digits
+    return (Math.rint(1000.0*result))/1000.0;
+  }//end getY
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31013">
+<title>
+<emphasis id="Using_an_AudioGraph" effect="bold">
+
+Using an AudioGraph
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1035">
+Although it is not possible to make quantitative measurements of the
+	
+
+<emphasis id="strong1042" effect="bold">
+sinc
+
+</emphasis>
+ function by listening to 
+
+<link id="a1118" url="Sinc01.au">
+
+Sinc01
+
+</link>
+
+, 
+	it is 
+
+<emphasis id="possible_to_deduce_important_facts" effect="bold">
+
+possible to deduce important facts
+
+</emphasis>
+
+ about the function, even at a high 
+	output pulse rate. 
+
+<emphasis id="em1010" effect="italics">
+(If you need to make quantitative measurements, the 
+	data is available for that purpose in the output text file.)
+
+</emphasis>
+ You can 
+reach the following conclusions by listening to 
+
+<link id="a1119" url="Sinc01.au">
+
+Sinc01
+
+</link>
+
+
+
+
+<emphasis id="em1011" effect="italics">
+(or a slowed-down version)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<list id="ol1000" list-type="enumerated">
+
+	
+
+<item id="li1082">
+The y value oscillates above and below the horizontal or zero axis much 
+	like an ordinary sinusoid.
+
+</item>
+
+
+	
+
+<item id="li1083">
+The magnitude of the oscillations builds up with time reaching a maximum 
+	near the center of the graph when the sound emitted by each speaker is about 
+	equal. After that, the magnitude of the oscillations decreases with time.
+
+</item>
+
+
+	
+
+<item id="li1084">
+You can hear the zero crossings because a special sound is emitted 
+	whenever the function evaluates to zero. 
+
+</item>
+
+
+	
+
+<item id="li1085">
+If you were to slow the output down to about three pulses per second, 
+	you could count the pulses and determine the exact values for x at which the 
+	zero crossings occur. 
+
+<emphasis id="em1012" effect="italics">
+(You could probably use this approach to find the 
+	roots of 
+
+<link id="a1120" url="Cubic02.au">
+
+Cubic02
+
+</link>
+
+ and 
+
+<link id="a1121" url="Quadratic01.au">
+
+Quadratic01
+
+</link>
+
+.)
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1086">
+You would learn that the zero crossings occur every eight pulses most of 
+	the time for this sinc function.
+
+</item>
+
+
+	
+
+<item id="li1087">
+You would learn that there is no zero crossing at an x value of zero. 
+	Instead, the maximum value for y occurs for an x value of zero. There are 
+	sixteen pulses between zero crossings at the center of the graph.
+
+</item>
+
+
+	
+
+<item id="li1088">
+Insofar as zero crossing is concerned, you would learn that the function 
+	is symmetric about an x value of zero.
+
+</item>
+
+
+	
+
+<item id="li1089">
+If you have a good ear for memorizing a melody, you would learn that the 
+	function is symmetric about zero. The values for y on the 
+	positive side of zero are a mirror image of the values for y on the negative side of 
+	zero.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h31014">
+<title>
+<emphasis id="Contents_of_the_output_file_named_Sinc01.txt" effect="bold">
+
+Contents of the 
+output file named Sinc01.txt
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1036">
+<link id="a1122" target-id="Listing_06">
+
+Listing 6
+
+</link>
+
+ shows the output data values for this 
+sinc function. 
+
+<emphasis id="em1013" effect="italics">
+(Note that the 
+actual output from the program is a single long string. I manually inserted line 
+breaks every eight values to force the material to fit in this narrow 
+presentation format. That also matches up with the zero crossings mentioned 
+above.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1037">
+If you examine this data, you will see that it supports the 
+conclusions that were reached 
+
+<link id="a1123" target-id="possible_to_deduce_important_facts">
+
+
+above
+
+</link>
+
+ 
+based solely on the audio. For example, the first value on every line except 
+the eleventh line is either 0.0 or -0.0. On that line, the first value is 1.571, which is the 
+largest value in the entire set of values. That value occurs at the center of 
+the set of values and matches the peak frequency in the audio.
+
+</para>
+
+
+
+
+<para id="p1038">
+The values on both sides of that value are 1.531. This suggests that the symmetry 
+conclusion reached 
+
+<link id="a1124" target-id="possible_to_deduce_important_facts">
+
+above
+
+</link>
+
+ is probably correct. 
+Further comparison of the corresponding values will confirm the symmetry and 
+mirror image conclusion reached 
+
+<link id="a1125" target-id="possible_to_deduce_important_facts">
+
+
+above
+
+</link>
+
+.
+
+</para>
+
+
+	
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Listing_06" effect="bold">
+
+Listing 6
+
+</emphasis>
+
+. Contents of the output 
+				file named Sinc01.txt.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+
+
+<code id="pre1005" display="block">
+-0.0,-0.019,-0.036,-0.048,-0.053,-0.049,-0.038,-0.021,
+0.0,0.022,0.04,0.054,0.059,0.055,0.043,0.024,
+-0.0,-0.024,-0.046,-0.061,-0.067,-0.063,-0.049,-0.027,
+0.0,0.028,0.052,0.07,0.077,0.072,0.057,0.031,
+-0.0,-0.033,-0.061,-0.082,-0.091,-0.086,-0.067,-0.037,
+0.0,0.039,0.074,0.1,0.111,0.106,0.083,0.046,
+-0.0,-0.049,-0.094,-0.127,-0.143,-0.137,-0.109,-0.061,
+0.0,0.067,0.129,0.176,0.2,0.195,0.157,0.09,
+-0.0,-0.102,-0.202,-0.284,-0.333,-0.336,-0.283,-0.17,
+0.0,0.219,0.471,0.739,1.0,1.232,1.414,1.531,
+1.571,1.531,1.414,1.232,1.0,0.739,0.471,0.219,
+0.0,-0.17,-0.283,-0.336,-0.333,-0.284,-0.202,-0.102,
+-0.0,0.09,0.157,0.195,0.2,0.176,0.129,0.067,
+0.0,-0.061,-0.109,-0.137,-0.143,-0.127,-0.094,-0.049,
+-0.0,0.046,0.083,0.106,0.111,0.1,0.074,0.039,
+0.0,-0.037,-0.067,-0.086,-0.091,-0.082,-0.061,-0.033,
+-0.0,0.031,0.057,0.072,0.077,0.07,0.052,0.028,
+0.0,-0.027,-0.049,-0.063,-0.067,-0.061,-0.046,-0.024,
+-0.0,0.024,0.043,0.055,0.059,0.054,0.04,0.022,
+0.0,-0.021,-0.038,-0.049,-0.053,-0.048,-0.036,-0.019,
+-0.0,
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1039">
+Thus, the audio output provides an overview of the general shape of the 
+	graph. The data output is available for detailed quantitative analysis.
+
+</para>
+
+
+
+
+</section>
+<section id="h31015">
+<title>
+<emphasis id="The_file_named_Sinc01Solver" effect="bold">
+
+The file named Sinc01Solver
+
+</emphasis>
+
+.bat
+
+</title>
+
+
+
+
+<para id="p1040">
+Continuing with the explanation of 
+
+<link id="a1126" url="Sinc01.au">
+
+Sinc01
+
+</link>
+
+, 
+
+
+<link id="a1127" target-id="Listing_17">
+
+Listing 
+17
+
+</link>
+
+ shows the contents of the file named 
+
+<emphasis id="strong1043" effect="bold">
+Sinc01Solver.bat
+
+</emphasis>
+. 
+
+<emphasis id="em1014" effect="italics">
+
+(This is a Windows batch file. A file with a similar purpose on other operating systems would 
+be different.)
+
+</emphasis>
+ If you have the Java Development Kit installed on your 
+
+<emphasis id="em1015" effect="italics">
+
+(Windows)
+
+</emphasis>
+ computer, execution of this batch file will compile and execute 
+the file named 
+
+<emphasis id="strong1044" effect="bold">
+Sinc01.java
+
+</emphasis>
+. This will create the text file 
+containing the data that is needed by the AudioGraph program named 
+
+<emphasis id="strong1045" effect="bold">
+
+MusicComposer10
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31016">
+<title>
+<emphasis id="The_file_named_Sinc01Player" effect="bold">
+
+The file named Sinc01Player
+
+</emphasis>
+
+.bat
+
+</title>
+
+
+
+
+<para id="p1041">
+<link id="a1128" target-id="Listing_18">
+
+Listing 18
+
+</link>
+
+ shows the contents of the file named 
+
+
+<emphasis id="strong1046" effect="bold">
+Sinc01Player.bat
+
+</emphasis>
+. 
+
+<emphasis id="em1016" effect="italics">
+
+(Again, this is a Windows batch file.)
+
+</emphasis>
+ If you have the Java Development Kit 
+installed on your 
+
+<emphasis id="em1017" effect="italics">
+(Windows)
+
+</emphasis>
+ computer, execution of this batch file will 
+compile the file named 
+
+<emphasis id="strong1047" effect="bold">
+MusicComposer10
+
+</emphasis>
+ and execute it twice. 
+The first execution will cause the audio to be played immediately. The second 
+execution will cause the audio to be saved in a file named 
+
+<emphasis id="strong1048" effect="bold">
+Sinc01.au
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1042">
+The 
+
+<link id="a1129" url="Code.zip">
+
+zip file
+
+</link>
+
+ that you can download contains all of the 
+files mentioned above for all of the functions illustrated by the audio in the
+
+
+<link id="a1130" target-id="audio_files_from_ther">
+
+above list
+
+</link>
+
+. Simply extract the contents of 
+the zip file into an empty folder, execute the 
+
+<emphasis id="strong1049" effect="bold">
+...Solver.bat
+
+</emphasis>
+ files to create the 
+data for the functions. Execute the 
+
+<emphasis id="strong1050" effect="bold">
+...Player.bat
+
+</emphasis>
+ files to hear the audio for 
+the functions and to write the audio into output audio files of type AU.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21004">
+<title>
+<emphasis id="The_class_named_MusicComposer10" effect="bold">
+
+The class named MusicComposer10
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1043">
+This program requires the following five classes in the same folder. Source 
+code files for all five classes are provided in the 
+
+<link id="a1131" url="Code.zip">
+
+zip file
+
+</link>
+
+ 
+that you can download.
+
+</para>
+
+
+
+
+<list id="ul1012" list-type="bulleted">
+
+	
+
+<item id="li1090">
+AudioSignalGenerator02
+
+
+</item>
+
+
+	
+
+<item id="li1091">
+AudioPlayOrFile01
+
+
+</item>
+
+
+	
+
+<item id="li1092">
+AudioFormatParameters01
+
+</item>
+
+
+	
+
+<item id="li1093">
+MusicComposer10
+
+</item>
+
+
+	
+
+<item id="li1094">
+AudioGraph01
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1044">
+The first three classes in the above list have been used in many previous 
+modules. Therefore, I won't discuss them further in this module. However, I will explain 
+the last two classes in the list.
+
+</para>
+
+
+
+
+<para id="p1045">
+A complete listing of the class named 
+
+<emphasis id="strong1051" effect="bold">
+MusicComposer10
+
+</emphasis>
+ is provided in 
+
+
+<link id="a1132" target-id="Listing_19">
+
+Listing 
+19
+
+</link>
+
+. As usual, I will break the class down and explain it in fragments.
+
+</para>
+
+
+
+
+<para id="p1046">
+This is a general purpose AudioGraph program that reads an input text file 
+containing numeric values for y as a function of equally spaced values for x 
+and produces an output melody that represents a graph of that data. The values
+for y are read as a comma-delimited list of values and are treated as type 
+
+
+<emphasis id="strong1052" effect="bold">
+double
+
+</emphasis>
+. The name of the text file is input as a command-line parameter. Additional details will be 
+provided later in the explanation of the class named 
+
+<emphasis id="strong1053" effect="bold">
+AudioGraph01
+
+</emphasis>
+.
+
+
+
+</para>
+
+
+
+
+<para id="p1047">
+The melody can be played immediately or can be saved in an audio file of type 
+AU for playback later. You should be able to play the audio file with any 
+standard media player that can handle the AU file type
+
+
+</para>
+
+
+
+
+<section id="h31017">
+<title>
+<emphasis id="Beginning_of_the_class_named_MusicComposer10" effect="bold">
+
+Beginning of the 
+class named MusicComposer10
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1048">
+The class named 
+
+<emphasis id="strong1054" effect="bold">
+MusicComposer10
+
+</emphasis>
+ begins in 
+
+<link id="a1133" target-id="Listing_07">
+
+Listing 7
+
+</link>
+
+. Note the description of 
+the command-line parameters in 
+
+<link id="a1134" target-id="Listing_07">
+
+Listing 7
+
+</link>
+
+. Otherwise, there is nothing new or 
+unusual about the code in 
+
+<link id="a1135" target-id="Listing_07">
+
+Listing 7
+
+</link>
+
+ so there should be no need for further 
+explanation beyond the embedded comments.
+
+</para>
+
+
+
+
+	
+
+<table id="table1006" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1006">
+
+			
+
+<row id="tr1012">
+
+				
+
+<entry id="th1006">
+<emphasis id="Listing_07" effect="bold">
+
+Listing 7
+
+</emphasis>
+
+. Beginning of the class 
+				named MusicComposer10.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1006">
+
+			
+
+<row id="tr1013">
+
+				
+
+<entry id="td1006">
+
+
+
+<code id="pre1006" display="block">
+public class MusicComposer10{
+  //Instantiate an object containing audio format parameters with predefined
+  // values. They may be modified by the signal generator at runtime. Values
+  // allowed by Java SDK 1.4.1 are shown in comments in the class definition.
+  AudioFormatParameters01 audioParams = new AudioFormatParameters01();
+  
+  //A buffer to hold the audio data that will be played or filed.
+  byte[] melody;
+  
+  //A place to store the incoming args array.
+  String[] args; 
+  //-------------------------------------------------------------------------//
+
+  //Command-line parameter (three parameters required)
+  //0 - If "play", the sound will be played immediately. Otherwise, the string
+  //    will be used as a filename for an audio file of type AU. In the latter
+  //    case, it must be a string that would be valid as a file name for the 
+  //    operating system in use. 
+  //1 - Output pulses per second 
+  //2 - Input file name
+  
+  public static void main(String[] args){
+    //Instantiate a new object of this class.
+    new MusicComposer10(args);
+  }//end main
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31018">
+<title>
+<emphasis id="The_constructor_for_the_class_named_MusicComposer10" effect="bold">
+
+The 
+	constructor for the class named MusicComposer10
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1049">
+The constructor for the class named 
+
+<emphasis id="strong1055" effect="bold">
+MusicComposer10
+
+</emphasis>
+ is provided in 
+
+
+<link id="a1136" target-id="Listing_08">
+
+Listing 
+8
+
+</link>
+
+. There is nothing new or unusual about this code so it shouldn't require 
+further explanation.
+
+</para>
+
+
+
+
+	
+
+<table id="table1007" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1007">
+
+			
+
+<row id="tr1014">
+
+				
+
+<entry id="th1007">
+<emphasis id="Listing_08" effect="bold">
+
+Listing 8
+
+</emphasis>
+
+. The constructor for the 
+				class named MusicComposer10.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1007">
+
+			
+
+<row id="tr1015">
+
+				
+
+<entry id="td1007">
+
+
+
+<code id="pre1007" display="block">
+  public MusicComposer10(String[] args){//constructor
+    //Save the args array.
+    this.args = args;
+    
+    //Create default args data if no args data is provided on the command line.
+    if(args.length == 0){
+      this.args = new String[3];
+      this.args[0] = "play";//Play the melody immediately
+      this.args[1] = "6";//Pulses per minute
+      this.args[2] = "TestData01.txt";
+    }//end if
+
+    //Get a populated array containing audio data.
+    AudioGraph01 audioGraph01 = new AudioGraph01(audioParams,this.args,melody);
+    melody = audioGraph01.getMelody();
+
+    //Play or file the audio data
+    new AudioPlayOrFile01(audioParams,melody,this.args[0]).playOrFileData();
+  }//end constructor
+  //-------------------------------------------------------------------------//
+}//end class MusicComposer10.java
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1050">
+<link id="a1137" target-id="Listing_08">
+
+Listing 8
+
+</link>
+
+ also signals the end of the class named MusicComposer10.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21005">
+<title>
+<emphasis id="The_class_named_AudioGraph01" effect="bold">
+
+The class named AudioGraph01
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h31019">
+<title>
+<emphasis id="A_general_purpose_AudioGraph_generator_program" effect="bold">
+
+A general purpose 
+AudioGraph generator program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1051">
+<emphasis id="strong1056" effect="bold">
+AudioGraph01
+
+</emphasis>
+ is a general purpose AudioGraph program that reads an input text file 
+containing numeric values for y as a function of equally spaced values for x 
+and produces an output melody that represents a graph of that data. The values
+for y are read as a comma-delimited list of values and are treated as type 
+
+
+<emphasis id="strong1057" effect="bold">
+double
+
+</emphasis>
+. The name of the text file is input as a command-line parameter.
+
+
+
+</para>
+
+
+
+
+</section>
+<section id="h31020">
+<title>
+<emphasis id="The_input_text_file" effect="bold">
+
+The input text file
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1052">
+The text file must be stored in a subfolder named 
+
+<emphasis id="strong1058" effect="bold">
+Data
+
+</emphasis>
+ that is a child of the 
+folder containing the compiled program. The text file may be created manually 
+using a simple text editor or it may be created as the output of a program that 
+evaluates a function. 
+
+
+</para>
+
+
+
+
+<para id="p1053">
+Space characters are not allowed in the data.
+
+ 
+
+</para>
+
+
+
+
+<para id="p1054">
+The program ignores:
+ 
+
+</para>
+
+
+
+
+<list id="ul1013" list-type="bulleted">
+
+	
+
+<item id="li1095">
+Blank lines that result in a string with a zero length
+ 
+
+</item>
+
+
+	
+
+<item id="li1096">
+Comment lines that begin with a /
+ 
+
+</item>
+
+
+	
+
+<item id="li1097">
+Lines that begin with a space
+
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h31021">
+<title>
+<emphasis id="Conversion_to_audio" effect="bold">
+
+Conversion to audio
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1055">
+The data values are converted to audio frequencies and presented as an 
+AudioGraph. The data is biased and scaled so as to make maximum use of the audio dynamic 
+range from 220 Hz to 1760 Hz inclusive.
+
+</para>
+
+
+
+
+<para id="p1056">
+If the data contains both positive and negative 
+values, the data is adjusted so that the most negative value is emitted at 
+220 Hz and the most positive value is emitted at 1760 Hz. The frequency that 
+represents zero will fall somewhere between those extremes. 
+
+
+
+</para>
+
+
+
+
+<para id="p1057">
+A unique sound 
+is heard whenever a value of zero occurs in the data. It consists of a weighted
+sum of three frequencies one octave apart centered on the frequency
+that represents zero. 
+
+
+
+</para>
+
+
+
+
+<para id="p1058">
+Three synthetic data items with a value of zero are prepended onto the 
+beginning of the incoming data. 
+They are used to establish the audio pitch for a value of zero on playback.
+
+
+
+</para>
+
+
+
+
+<para id="p1059">
+If the data is all positive, it is biased and scaled so that the minimum value 
+is emitted at 220 Hz and the maximum value is emitted at 1760 Hz. In this case,
+the frequency that represents zero has little meaning because it is off the 
+bottom of the page, so to speak. It is set at 220 Hz.
+
+
+
+</para>
+
+
+
+
+<para id="p1060">
+An output pulse is heard for each data value. The frequency of the pulse is 
+proportional to the data value. Higher data values result in pulses with a 
+higher pitch. Lower data values result in pulses with a lower pitch.
+
+
+
+</para>
+
+
+
+
+<para id="p1061">
+The output pulse rate in pulses per second is specified by the user as a 
+command-line parameter. Faster output rates provide a quick look at the data. 
+Slower output rates allow for more detailed audio analysis of the data. 
+
+
+
+</para>
+
+
+
+
+<para id="p1062">
+To eliminate the pops and clicks that result from abrupt changes in frequency 
+from one pulse to the next, each pulse is shaped using a linear scale factor 
+that is zero at both ends of the pulse and maximum at the center of the pulse.
+
+
+
+</para>
+
+
+
+
+<para id="p1063">
+Sound progresses from the left speaker to the right speaker in proportion to 
+the value of x as a percentage of the total number of x values.
+
+
+
+</para>
+
+
+
+
+<para id="p1064">
+The number, the type, and the order of command-line parameters are defined in the 
+comments in the class named 
+
+<emphasis id="strong1059" effect="bold">
+MusicComposer10
+
+</emphasis>
+.
+
+
+</para>
+
+
+
+
+</section>
+<section id="h31022">
+<title>
+<emphasis id="Beginning_of_the_class_named_AudioGraph01" effect="bold">
+
+Beginning of the class 
+named AudioGraph01
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1065">
+The class named 
+
+<emphasis id="strong1060" effect="bold">
+AudioGraph01
+
+</emphasis>
+ begins in 
+
+<link id="a1138" target-id="Listing_09">
+
+Listing 9
+
+</link>
+
+, which 
+includes the declaration and initialization of some instance variables. 
+
+
+<link id="a1139" target-id="Listing_09">
+
+Listing 9
+
+</link>
+
+ also 
+includes the beginning of the constructor for the class.
+
+</para>
+
+
+
+
+	
+
+<table id="table1008" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1008">
+
+			
+
+<row id="tr1016">
+
+				
+
+<entry id="th1008">
+<emphasis id="Listing_09" effect="bold">
+
+Listing 9
+
+</emphasis>
+
+. Beginning of the class 
+				named AudioGraph01.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1008">
+
+			
+
+<row id="tr1017">
+
+				
+
+<entry id="td1008">
+
+
+
+<code id="pre1008" display="block">
+import java.io.*;
+import java.nio.*;
+import java.util.*;
+
+public class AudioGraph01 extends AudioSignalGenerator02{
+  
+  double[] inputData;
+  double highFreq = 1760;
+  double lowFreq = 220;
+  
+  public AudioGraph01(AudioFormatParameters01 audioParams,
+               String[] args,
+               byte[] melody){
+       super(audioParams,args,melody);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31023">
+<title>
+<emphasis id="Read_the_input_text_file" effect="bold">
+
+Read the input text file
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1066">
+    
+
+<link id="a1140" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+ reads the input text file to define the function that is to be played or
+    filed as an audio file. The text file must be stored in the subfolder named 
+
+
+<emphasis id="strong1061" effect="bold">
+Data
+
+</emphasis>
+, which is a child of the folder containing the compiled 
+program. The incoming data is
+    initially stored in an 
+
+<emphasis id="strong1062" effect="bold">
+ArrayList
+
+</emphasis>
+ object for convenience and later transferred to an array object.
+
+
+</para>
+
+
+
+
+<para id="p1067">
+The embedded comments in 
+
+<link id="a1141" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+ should be sufficient to explain the code.
+
+</para>
+
+
+
+
+	
+
+<table id="table1009" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1009">
+
+			
+
+<row id="tr1018">
+
+				
+
+<entry id="th1009">
+<emphasis id="Listing_10" effect="bold">
+
+Listing 10
+
+</emphasis>
+
+. Read the input text 
+				file.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1009">
+
+			
+
+<row id="tr1019">
+
+				
+
+<entry id="td1009">
+
+
+
+<code id="pre1009" display="block">
+    String fileName = args[2];
+    try{
+      ArrayList dataList = new ArrayList();
+      BufferedReader in = new BufferedReader(
+                                           new FileReader("Data/" + fileName));
+      String str;
+      while ((str = in.readLine()) != null) {
+
+        //Split the input string into multiple substrings using the comma as
+        // the delimiter and save them in an array object.
+        String[] strArr = str.split(",");
+
+        //Ignore:
+        // Blank lines that result in a string with a zero length
+        // Comments that begin with a /
+        // Lines that begin with a space
+        if(strArr[0].length() == 0){
+          System.out.println("Blank line will be ignored");
+        }else if(strArr[0].substring(0,1).equals("/")){
+          System.out.println("Comment:  " + Arrays.toString(strArr));
+        }else if(strArr[0].substring(0,1).equals(" ")){
+          System.out.println("Ignore line that begins with space: " + 
+                                                      Arrays.toString(strArr));
+        }else{
+          //Apparently good data. Add the contents of the array to the end of
+          // the ArrayList object, one substring (element) at a time.
+          for(int cnt = 0;cnt &lt; strArr.length;cnt++){
+            dataList.add(Double.parseDouble(strArr[cnt]));
+          }//end for loop
+        }//end else
+      }//end while
+      in.close();//close the input file
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31024">
+<title>
+
+	
+
+<emphasis id="The_remainder_of_the_constructor_for_the_class_named_AudioGraph01" effect="bold">
+
+
+	The remainder of the constructor for the class named AudioGraph01
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1068">
+The remainder of the constructor for the class named 
+
+<emphasis id="strong1063" effect="bold">
+AudioGraph01
+
+</emphasis>
+ 
+is shown in 
+
+<link id="a1142" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+. Once again, the embedded comments should be sufficient 
+to explain the code.
+
+</para>
+
+
+
+	
+
+
+	
+
+<table id="table1010" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1010">
+
+			
+
+<row id="tr1020">
+
+				
+
+<entry id="th1010">
+<emphasis id="Listing_11" effect="bold">
+
+Listing 11
+
+</emphasis>
+
+. The remainder of the 
+				constructor for the class named AudioGraph01.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1010">
+
+			
+
+<row id="tr1021">
+
+				
+
+<entry id="td1010">
+
+
+
+<code id="pre1010" display="block">
+      //Move the contents of dataList from the ArrayList object to the
+      // inputData array. Make the array three elements longer than the size
+      // of the ArrayList object to accommodate prepending three elements with
+      // a value of zero.
+      inputData = new double[dataList.size()+3];
+      int count = 0;
+      
+      //Prepend three data items with a value of zero to the array. They will
+      // be used to establish the audio pitch for a value of zero.
+      inputData[count++] = 0;
+      inputData[count++] = 0;
+      inputData[count++] = 0;
+      
+      Iterator iter = dataList.iterator();
+      while(iter.hasNext()){
+        double value = (double)iter.next();
+        inputData[count++] = value;
+      }//end while loop
+
+    }catch(Exception ex){
+      ex.printStackTrace();
+    }//end catch
+  }//end constructor
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31025">
+<title>
+<emphasis id="Beginning_of_the_method_named_getMelody" effect="bold">
+
+Beginning of the 
+	method named getMelody
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1069">
+<link id="a1143" target-id="Listing_08">
+
+Listing 8
+
+</link>
+
+ instantiates a new object of the class named 
+
+
+<emphasis id="strong1064" effect="bold">
+AudioGraph01
+
+</emphasis>
+ and then 
+calls the 
+
+<emphasis id="strong1065" effect="bold">
+getMelody
+
+</emphasis>
+ method on a reference to that object.
+
+</para>
+
+
+
+
+<para id="p1070">
+  The 
+
+<emphasis id="strong1066" effect="bold">
+getMelody
+
+</emphasis>
+ method reads an array containing data values and 
+returns an array of
+  audio data that relates the data values to frequency or pitch.
+  One output pulse at the correct pitch is produced for each data value. Out 
+pulses representing a data value of zero are constructed from three frequencies 
+to make them sound different.
+
+</para>
+
+
+
+
+<para id="p1071">
+  The output rate in
+  pulses per second is provided by the user as a command-line parameter.
+
+</para>
+
+
+
+
+<para id="p1072">
+  The audio output can be thought of as an audio representation of a graph
+  of the input data with three zero values prepended onto the front to
+  establish the pitch for a y value of zero. Other than those three pulses, each output 
+pulse represents one point on the graph. That is, each output pulse represents 
+the value of y for a given value of x for the function being evaluated.
+
+</para>
+
+
+
+
+<para id="p1073">
+The beginning of the method named 
+
+<emphasis id="strong1067" effect="bold">
+getMelody
+
+</emphasis>
+ is shown in 
+
+<link id="a1144" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1074">
+You have seen code like this in many previous modules, so no explanation 
+beyond the embedded comments should be needed for this code.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1011" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1011">
+
+			
+
+<row id="tr1022">
+
+				
+
+<entry id="th1011">
+<emphasis id="Listing_12" effect="bold">
+
+Listing 12
+
+</emphasis>
+
+. Beginning of the method 
+				named getMelody.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1011">
+
+			
+
+<row id="tr1023">
+
+				
+
+<entry id="td1011">
+
+
+
+<code id="pre1011" display="block">
+  byte[] getMelody(){
+    //Set channels to 2 for stereo overriding the default value of 1.
+    audioParams.channels = 2;
+
+    //Each channel requires two 8-bit bytes per 16-bit sample.
+    int bytesPerSampPerChan = 2;
+    
+    //Override the default sampleRate of 16000.0F. Allowable sample rates
+    // are 8000,11025,16000,22050, and 44100 samples per second.
+    audioParams.sampleRate = 8000.0F;
+    
+    //Declare variables used to control the output volume on the left and
+    // right speaker channels. These values will be used to cause pulses
+    // representing the data values to progress uniformly from the left
+    // speaker to the right speaker in proportion to the value of x.
+    double gain = 0.0;
+    double leftGain = 0.0;
+    double rightGain = 0.0;
+
+    //Declare a variable that is used to control the frequency of each pulse.
+    double freq = 0.0;
+
+    //Set the length of each pulse in seconds and in samples. The user
+    // specifies the output rate in pulses per second as a command-line
+    // parameter. The pulse length in seconds is the reciprocal of that value.
+    double pulseLengthInSec = 1/Double.parseDouble(args[1]);//in seconds
+    int pulseLengthInSamples = (int)(pulseLengthInSec*audioParams.sampleRate);
+    
+    //Create an output array of sufficient size to contain the audio data.
+    melody = new byte[(int)(inputData.length * 
+                            pulseLengthInSamples * 
+                            bytesPerSampPerChan * 
+                            audioParams.channels)];
+    System.out.println("melody.length = " + melody.length);
+    
+    //Prepare a ByteBuffer for use
+    byteBuffer = ByteBuffer.wrap(melody);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31026">
+<title>
+<emphasis id="Determine_the_frequency_and_data_ranges" effect="bold">
+
+Determine the 
+	frequency and data ranges
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1075">
+Later on, in order to map the data values into frequencies and make maximum 
+use of the available audio dynamic range from 220 Hz to 1760 Hz, we will need to 
+know the frequency range and the data range.
+
+</para>
+
+
+
+
+<para id="p1076">
+The first statement in 
+
+<link id="a1145" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+ computes the frequency range. I could have 
+taken care of this back in 
+
+<link id="a1146" target-id="Listing_09">
+
+Listing 9
+
+</link>
+
+ where the high and low frequency limits 
+were established but I overlooked it at that point.
+
+</para>
+
+
+
+
+<para id="p1077">
+   The code 
+beginning with the second statement determines the minimum and maximum data values. 
+This can only be determined after the actual data values have been read from the 
+input file. These values will be used to bias and scale the data so as to make maximum use of the available
+    audio dynamic range.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1012" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1012">
+
+			
+
+<row id="tr1024">
+
+				
+
+<entry id="th1012">
+<emphasis id="Listing_13" effect="bold">
+
+Listing 13
+
+</emphasis>
+
+. Determine the frequency 
+				and data ranges.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1012">
+
+			
+
+<row id="tr1025">
+
+				
+
+<entry id="td1012">
+
+
+
+<code id="pre1012" display="block">
+    double freqRange = highFreq - lowFreq;
+    
+    double highData = Double.MIN_VALUE;
+    double lowData = Double.MAX_VALUE;
+    //Skip first three values which are always zero.
+    for(int cnt = 3;cnt &lt; inputData.length;cnt++){
+      if (inputData[cnt] &gt; highData){
+        highData = inputData[cnt];
+      }//end if
+      if(inputData[cnt] &lt; lowData){
+        lowData = inputData[cnt];
+      }//end if
+    }//end for loop
+
+    double dataRange = highData - lowData;
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31027">
+<title>
+<emphasis id="Determine_the_frequency_to_represent_a_y-value_of_zero" effect="bold">
+
+
+	Determine the frequency to represent a y-value of zero
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1078">
+<link id="a1147" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+ determines the frequency that will represent a y-value of 0. If 
+the data are all positive, the data values will be biased so that the lowest 
+value will sound at 220 Hz and the highest value will sound at 1760 Hz. 
+Beyond that, the code in 
+
+<link id="a1148" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+ shouldn't require an explanation.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1013" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1013">
+
+			
+
+<row id="tr1026">
+
+				
+
+<entry id="th1013">
+<emphasis id="Listing_14" effect="bold">
+
+Listing 14
+
+</emphasis>
+
+. Determine the frequency 
+				to represent a y-value of zero.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1013">
+
+			
+
+<row id="tr1027">
+
+				
+
+<entry id="td1013">
+
+
+
+<code id="pre1013" display="block">
+    double zeroFreq;
+    if(lowData &gt;= 0.0){
+      //Bias all data so that the lowest value will display at 220Hz. Skip the
+      // first three data values which are always zero.
+      for(int cnt = 3;cnt &lt; inputData.length;cnt++){
+        inputData[cnt] -= lowData;
+      }//end for loop
+      
+      //zeroFreq has little meaning in this case because it is probably off the
+      // bottom of the page. Set it to the bottom of the range.
+      zeroFreq = lowFreq;
+    }else{
+      //Set zeroFreq to a value that represents a value of zero for bipolar
+      // data.
+      zeroFreq = lowFreq +(Math.abs(lowData)/dataRange) * freqRange;
+    }//end else
+    System.out.println("zeroFreq = " + zeroFreq);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31028">
+<title>
+   
+	
+
+<emphasis id="Compute_audio_sample_values_and_deposit_them_in_the_output_array" effect="bold">
+
+Compute audio sample values and deposit them in the output 
+	array
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1079">
+<link id="a1149" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+ computes audio sample values and deposits them in the output 
+array.
+
+</para>
+
+
+
+
+<para id="p1080">
+You have seen code similar to this in previous modules. The only thing that 
+is new and different here is the algebra that is used to map the sample values 
+to frequencies and the algebra that is used to cause the sound to progress from 
+the left speaker to the right speaker in proportion to the value of x currently 
+being evaluated. 
+
+</para>
+
+
+
+
+<para id="p1081">
+Note that the sound that is produced for a y-value of zero is different from 
+the sound that is produced for all other values. In the case of a y-value of zero, the sound 
+that is produced is the weighted sum of three sounds covering two octaves 
+centered on the frequency that is considered to be the zero frequency. This 
+makes it possible to audibly identify those points where the function being 
+graphed crosses the horizontal or zero axis 
+
+<emphasis id="em1018" effect="italics">
+(provided that there is actually 
+a data value of zero)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1082">
+Beyond that, the embedded comments should be sufficient to explain the code 
+in 
+
+<link id="a1150" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1014" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1014">
+
+			
+
+<row id="tr1028">
+
+				
+
+<entry id="th1014">
+<emphasis id="Listing_15" effect="bold">
+
+Listing 15
+
+</emphasis>
+
+. Compute audio sample values and deposit them in the output array.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1014">
+
+			
+
+<row id="tr1029">
+
+				
+
+<entry id="td1014">
+
+
+
+<code id="pre1014" display="block">
+     int sampLength = melody.length/audioParams.channels/bytesPerSampPerChan;
+
+    for(int cnt = 0; cnt &lt; sampLength; cnt++){
+      //Compute the time in seconds for this sample.
+      double time = cnt/audioParams.sampleRate;
+      
+      double yValue = 0;
+      if(cnt%pulseLengthInSamples == 0){
+        //It is time for a new pulse. Get the next y value from the data array
+        // and use it to compute the frequency of the next pulse.
+        yValue = inputData[cnt/pulseLengthInSamples];
+        freq = zeroFreq + (yValue/dataRange)*freqRange;
+      }//end if
+
+      //Deposit audio data in the melody array for each channel. Shape the
+      // amplitude of each pulse with a triangular scale factor (rooftop shape)
+      // to  minimize the undesirable pops and clicks that occur when there
+      // are abrupt change in the frequency from one pulse to the next. The 
+      // following gain factor ranges from 0.0 at the ends to maximum in the
+      // center of the pulse.
+      gain = (cnt%pulseLengthInSamples)/(double)pulseLengthInSamples;
+      if(gain &gt; 0.5){
+        //Change to a negative slope.
+        gain = (pulseLengthInSamples - 
+                        cnt%pulseLengthInSamples)/(double)pulseLengthInSamples;
+      }//end if
+   
+      //Set the final gain to a value that is compatible with 16-bit audio
+      // data.
+      gain = 8000*gain;
+
+      //Cause the sound to progress from the left speaker to the right speaker
+      // in proportion to the value of x.
+      rightGain = gain * ((double)cnt/sampLength);
+      leftGain = gain - rightGain;
+
+      if(freq == zeroFreq){
+        //Compute scaled pulse values and deposit them into the melody. Mark
+        // the zeroFreq by adding frequency components at a reduced level one
+        // octave above and one octave below the zeroFreq. This will make it
+        // sound special in the output.
+        byteBuffer.putShort((short)(leftGain*Math.sin(2*Math.PI*freq*time) + 
+                              (leftGain*Math.sin(2*2*Math.PI*freq*time))/3 + 
+                              (leftGain*Math.sin(2*Math.PI*freq*time/2))/3));
+        byteBuffer.putShort((short)(rightGain*Math.sin(2*Math.PI*freq*time) + 
+                              (rightGain*Math.sin(2*2*Math.PI*freq*time))/3 + 
+                              (rightGain*Math.sin(2*Math.PI*freq*time/2))/3));
+      }else{
+        //Compute scaled pulse values and deposit them into the melody.
+        byteBuffer.putShort((short)(leftGain*Math.sin(2*Math.PI*freq*time)));
+        byteBuffer.putShort((short)(rightGain*Math.sin(2*Math.PI*freq*time)));
+      }//end else
+    }//end for loop
+    
+    return melody;
+  }//end method getMelody
+  //-------------------------------------------------------------------------//
+
+}//end class AudioGraph01
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1083">
+<link id="a1151" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+ also signals the end of the class named 
+
+<emphasis id="strong1068" effect="bold">
+AudioGraph01
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1084">
+I encourage you to copy the code from 
+
+<link id="a1152" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+ through 
+
+<link id="a1153" target-id="Listing_20">
+
+Listing 20
+
+</link>
+
+ 
+
+<emphasis id="em1019" effect="italics">
+
+(or use the code that is provided in the 
+
+<link id="a1154" url="Code.zip">
+
+downloadable zip 
+file
+
+</link>
+
+)
+
+</emphasis>
+. Compile the code and 
+execute it. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+
+
+<para id="p1085">
+As mentioned earlier, assuming that you have the Java Development Kit 
+installed on your computer, the 
+
+<link id="a1155" url="Code.zip">
+
+zip file
+
+</link>
+
+ that you can 
+download contains all of the 
+files necessary to replicate the audio output for all of the functions 
+illustrated by the audio files in the 
+
+<link id="a1156" target-id="audio_files_from_ther">
+
+above list
+
+</link>
+
+. Simply extract the contents of 
+the zip file into an empty folder, execute the
+
+<emphasis id="strong1069" effect="bold">
+ ...Solver.bat
+
+</emphasis>
+ files to create the 
+data for the functions, and execute the 
+
+<emphasis id="strong1070" effect="bold">
+...Player.bat
+
+</emphasis>
+ files to hear the audio for 
+the functions and to write the audio into output audio files of type AU.
+
+</para>
+
+
+
+
+<para id="p1086">
+When you compile this program, you will probably see the following warnings:
+
+</para>
+
+
+
+
+<quote id="blockquote1000" display="block">
+
+	Note: .\PlayerPiano01.java uses unchecked or unsafe operations.
+
+
+</quote>
+
+
+
+
+<quote id="blockquote1001" display="block">
+
+	Note: Recompile with -Xlint:unchecked for details.
+
+</quote>
+
+
+
+
+<para id="p1087">
+You can simply ignore those warnings if you choose to do so. Otherwise, you 
+can learn how to eliminate the warnings by doing the following:
+
+</para>
+
+
+
+
+<list id="ul1014" list-type="bulleted">
+
+	
+
+<item id="li1098">
+Go to the book 	
+
+<link id="a1157" url="http://cnx.org/contents/fb64661c-5b3f-4ea8-97c6-e48df112438a">
+
+
+	Object-Oriented Programming (OOP) with Java
+
+</link>
+
+ -&gt; Contents -&gt; ITSE2317 -&gt; 
+	Generics -&gt;
+	
+
+<link id="a1158" url="http://cnx.org/contents/4acd2bdb-ed66-4d33-92e4-463bc9308dc3">
+
+
+	Java4210: Getting Started with Generics
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1099">
+Study that module and the seven modules following it as listed in the 
+	Contents.
+
+</item>
+
+
+
+
+</list>
+
+
+	
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1088">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1071" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1015" list-type="bulleted">
+
+					
+
+<item id="li1100">
+Module name: Jbs2070-A General Purpose AudioGraph 
+					Program
+
+</item>
+
+
+					
+
+<item id="li1101">
+File: Jbs2070.htm
+
+
+</item>
+
+
+					
+
+<item id="li1102">
+Published: 09/01/14
+
+</item>
+
+
+					
+
+<item id="li1103">
+Revised: 09/29/15
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1072" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1089">
+<emphasis id="strong1073" effect="bold">
+Financial
+
+</emphasis>
+: 
+				Although the 
+
+<emphasis id="strong1074" effect="bold">
+OpenStax CNX
+
+</emphasis>
+ site makes it 
+				possible for you to download a PDF file for the collection that 
+				contains this module at no charge, and also makes it possible 
+				for you to purchase a pre-printed version of the PDF file, you 
+				should be aware that some of the HTML elements in this module 
+				may not translate well into PDF.
+
+</para>
+
+
+				
+
+<para id="p1090">
+You also need to know that Prof. Baldwin receives no 
+				financial compensation from 
+
+<emphasis id="strong1075" effect="bold">
+OpenStax CNX 
+
+</emphasis>
+even 
+				if you purchase the PDF version of the collection.
+
+</para>
+
+
+				
+
+<para id="p1091">
+In the past, unknown individuals have copied Prof. Baldwin's 
+				modules from cnx.org, converted them to Kindle books, and placed 
+				them for sale on Amazon.com showing Prof. Baldwin as the author. 
+				Prof. Baldwin neither receives compensation for those sales nor 
+				does he know who does receive compensation. If you purchase such 
+				a book, please be aware that it is a copy of a collection that 
+				is freely available on 
+
+<emphasis id="strong1076" effect="bold">
+OpenStax CNX
+
+</emphasis>
+ and that it 
+				was made and published without the prior knowledge of Prof. 
+				Baldwin.
+
+</para>
+
+
+				
+
+<para id="p1092">
+<emphasis id="strong1077" effect="bold">
+Affiliation
+
+</emphasis>
+: Prof. Baldwin is a professor of 
+				Computer Information Technology at Austin Community College in 
+				Austin, TX. 
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Complete_program_listing" effect="bold">
+
+Complete program listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1093">
+Complete program listings are provided below. Source code for these listings 
+as well as other source code discussed in this module is available in a
+
+
+<link id="a1159" url="Code.zip">
+
+downloadable zip file
+
+</link>
+
+
+<emphasis id="em1020" effect="italics">
+.
+
+</emphasis>
+</para>
+
+
+
+
+
+	
+
+<table id="table1015" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1015">
+
+			
+
+<row id="tr1030">
+
+				
+
+<entry id="th1015">
+<emphasis id="Listing_16" effect="bold">
+
+Listing 16
+
+</emphasis>
+
+. The program named 
+				Sinc01.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1015">
+
+			
+
+<row id="tr1031">
+
+				
+
+<entry id="td1015">
+
+
+
+<code id="pre1015" display="block">
+
+/*File Sinc01.java
+Copyright 2014, R.G.Baldwin
+Revised 08/31/14
+
+This program produces an output text file containing values for y as a function
+of x. The contents of the text file can be converted to audio and either played
+or written into an audio file of type AU for playback later by the program 
+named AudioGraph01.
+
+
+Function:
+y = Math.sin(2*Math.PI*f*x)/x
+This is the classic sin(x)/x function, otherwise known a the sinc 
+function. It appears frequently in digital signal processing (DSP).
+
+To modify this program to handle other functions, you only need to modify the 
+instance variables in the class named Runner and modify the code in the method 
+named getYval.
+
+Tested using Java SE 8 under Win 7
+******************************************************************************/
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Sinc01{//Driver class
+  public static void main(String[] args){
+    //Do not modify the code in this method.
+    Runner obj = new Runner();
+    obj.run();
+  }//end main
+}//end class Sinc01
+//============================================================================/
+
+class Runner{
+  //Modify the following instance variables as needed. 
+  double xMin = -20;//Minimum value for x
+  double xMax = 20;//Maximum value for x
+  double xInc = 0.25;//Used to determine x-values for evaluation of y-value
+
+  String fileName = "Data/Sinc01.txt";//Output file name in Data folder
+  
+  void run(){
+    //Do not modify the code in this method.
+    double xVal = xMin;
+    String outString = "";
+    while(xVal &lt;= xMax){
+      //Construct an output string contain comma-separated values of y as a
+      // function of x.
+      outString += getYval(xVal) + ",";
+      //Increment x
+      xVal += xInc;
+    }//end while loop
+    
+    writeOutputFile(fileName,outString);
+    
+  }//end run method
+  //-------------------------------------------------------------------------//
+  
+  //This method evaluates the function. Modify it to evaluate different 
+  // functions.
+  //Function:
+  //y = Math.sin(2*Math.PI*f*x)/x
+  //This is the classic sin(x)/x function, otherwise known a the sinc 
+  // function. It appears frequently in digital signal processing (DSP).
+  double getYval(double xVal){
+    //Evaluate the function here
+    double f = 0.25;
+    double result = 0;
+    if(xVal != 0.0){
+      result = Math.sin(2*Math.PI*f*xVal)/xVal;
+    }else{
+      //Don't divide by zero
+      result = Math.sin(2*Math.PI*f*0.00001)/0.00001;
+    }//end else
+    
+    //Limit the return value to three decimal digits
+    return (Math.rint(1000.0*result))/1000.0;
+  }//end getY
+  //-------------------------------------------------------------------------//
+  
+  //This method writes the output file. Do not modify this method.
+  void writeOutputFile(String fileName,String outString){
+    try{
+      File file = new File(fileName);
+       //if the file doesn't exists, create it. If it does exist, overwrite it.
+      if (!file.exists()) {
+        file.createNewFile();
+      }//end if
+      FileWriter fileWriter = new FileWriter(file.getAbsoluteFile());
+      BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+      bufferedWriter.write(outString);      
+      bufferedWriter.close();
+    }catch (IOException e) {
+      e.printStackTrace();
+    }//end catch
+  }//end writeOutputFile
+  //-------------------------------------------------------------------------//
+}//end class Runner
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1094">
+...
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1016" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1016">
+
+			
+
+<row id="tr1032">
+
+				
+
+<entry id="th1016">
+<emphasis id="Listing_17" effect="bold">
+
+Listing 17
+
+</emphasis>
+
+. The file named 
+				Sinc01Solver.bat.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1016">
+
+			
+
+<row id="tr1033">
+
+				
+
+<entry id="td1016">
+
+
+
+<code id="pre1016" display="block">
+echo off
+del *.class
+
+javac Sinc01.java
+java Sinc01
+
+del *.class
+
+pause
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1095">
+...
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1017" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1017">
+
+			
+
+<row id="tr1034">
+
+				
+
+<entry id="th1017">
+<emphasis id="Listing_18" effect="bold">
+
+Listing 18
+
+</emphasis>
+
+. The file named 
+				Sinc01Player.bat
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1017">
+
+			
+
+<row id="tr1035">
+
+				
+
+<entry id="td1017">
+
+
+
+<code id="pre1017" display="block">
+echo off
+del *.class
+
+del Sinc01.au
+
+echo on
+javac MusicComposer10.java
+
+java MusicComposer10 play 3 Sinc01.txt
+java MusicComposer10 Sinc01 3 Sinc01.txt
+
+echo off
+del *.class
+
+pause
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1096">
+...
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1018" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1018">
+
+			
+
+<row id="tr1036">
+
+				
+
+<entry id="th1018">
+<emphasis id="Listing_19" effect="bold">
+
+Listing 19
+
+</emphasis>
+
+. The class named 
+				MusicComposer10.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1018">
+
+			
+
+<row id="tr1037">
+
+				
+
+<entry id="td1018">
+
+
+
+<code id="pre1018" display="block">
+
+/*File MusicComposer10.java
+Copyright 2014, R.G.Baldwin
+Revised 08/23/14
+
+This is a general purpose AudioGraph program that reads an input text file 
+containing numeric values for y as a function of equally spaced values for x 
+and produces an output melody that represents a graph of that data. The values
+for y are read as a comma-delimited list of values and are treated as type 
+double. The name of the text file is input as a command-line parameter.
+
+Additional details will be found in the class named AudioGraph01.
+
+This program requires the following classes:
+
+AudioGraph01
+AudioSignalGenerator02
+AudioPlayOrFile01
+AudioFormatParameters01
+
+The sound can be played immediately or can be saved in an audio file of 
+type AU for playback later. You should be able to play the audio file with any
+standard media player that can handle the AU file type
+
+Tested using JDK 1.8 under Win 7.
+******************************************************************************/
+
+public class MusicComposer10{
+  //Instantiate an object containing audio format parameters with predefined
+  // values. They may be modified by the signal generator at runtime. Values
+  // allowed by Java SDK 1.4.1 are shown in comments in the class definition.
+  AudioFormatParameters01 audioParams = new AudioFormatParameters01();
+  
+  //A buffer to hold the audio data that will be played or filed.
+  byte[] melody;
+  
+  //A place to store the incoming args array.
+  String[] args; 
+  //-------------------------------------------------------------------------//
+
+  //Command-line parameter (three parameters required)
+  //0 - If "play", the sound will be played immediately. Otherwise, the string
+  //    will be used as a filename for an audio file of type AU. In the latter
+  //    case, it must be a string that would be valid as a file name for the 
+  //    operating system in use. 
+  //1 - Output pulses per second 
+  //2 - Input file name
+  public static void main(String[] args){
+    //Instantiate a new object of this class.
+    new MusicComposer10(args);
+  }//end main
+  //-------------------------------------------------------------------------//
+  
+  public MusicComposer10(String[] args){//constructor
+    //Save the args array.
+    this.args = args;
+    
+    //Create default args data if no args data is provided on the command line.
+    if(args.length == 0){
+      this.args = new String[3];
+      this.args[0] = "play";//Play the melody immediately
+      this.args[1] = "6";//Pulses per minute
+      this.args[2] = "TestData01.txt";
+    }//end if
+
+    //Get a populated array containing audio data.
+    AudioGraph01 audioGraph01 = new AudioGraph01(audioParams,this.args,melody);
+    melody = audioGraph01.getMelody();
+
+    //Play or file the audio data
+    new AudioPlayOrFile01(audioParams,melody,this.args[0]).playOrFileData();
+  }//end constructor
+  //-------------------------------------------------------------------------//
+}//end class MusicComposer10.java
+//===========================================================================//
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1097">
+...
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1019" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1019">
+
+			
+
+<row id="tr1038">
+
+				
+
+<entry id="th1019">
+<emphasis id="Listing_20" effect="bold">
+
+Listing 20
+
+</emphasis>
+
+. The class named 
+				AudioGraph01.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1019">
+
+			
+
+<row id="tr1039">
+
+				
+
+<entry id="td1019">
+
+
+
+<code id="pre1019" display="block">
+
+/*File AudioGraph01.java
+Copyright 2014, R.G.Baldwin
+Revised 08/31/14
+
+This is a general purpose AudioGraph program that reads an input text file 
+containing numeric values for y as a function of equally spaced values for x 
+and produces an output melody that represents a graph of that data. The values
+for y are read as a comma-delimited list of values and are treated as type 
+double. The name of the text file is input as a command-line parameter.
+
+The text file must be stored in a subfolder named Data that is a child of the 
+folder containing the compiled program. The text file may be created manually 
+using a simple text editor or may be created as the output of a program that 
+evaluates a function. Space characters are not allowed in the data.
+
+The program ignores:
+ Blank lines that result in a string with a zero length
+ Comment lines that begin with a /
+ Lines that begin with a space
+
+The data is biased and scaled so as to make maximum use of the audio dynamic 
+range from 220 Hz to 1760 Hz. If the data contains both positive and negative 
+values, the data is adjusted so that the most negative value is emitted at 
+220 Hz and the most positive value is emitted at 1760 Hz. The frequency that 
+represents zero will fall somewhere between those extremes. A unique sound 
+is heard whenever a value of zero occurs in the data. It consists of a weighted
+sum of three frequencies one octave apart centered on the frequency
+that represents zero. 
+
+Three data items with a value of zero are prepended onto the incoming data. 
+They are used to establish the audio pitch for a value of zero.
+
+If the data is all positive, it is biased and scaled so that the minimum value 
+is emitted at 220 Hz and the maximum value is emitted at 1760 Hz. In this case,
+the frequency that represents zero has little meaning because it is off the 
+bottom of the page, so to speak. It is set at 220 Hz.
+
+An output pulse is heard for each data value. The frequency of the pulse is 
+proportional to the data value. Higher data values result in pulses with a 
+higher pitch. Lower data values result in pulses with a lower pitch.
+
+The output pulse rate in pulses per second is specified by the user as a 
+command-line parameter. Faster output rates provide a quick look at the data. 
+Slower output rates allow for more detailed audio analysis of the data. 
+
+To eliminate the pops and clicks that result from abrupt changes in frequency 
+from one pulse to the next, each pulse is shaped using a linear scale factor 
+that is zero at both ends of the pulse and maximum at the center of the pulse.
+
+Sound progresses from the left speaker to the right speaker in proportion to 
+the value of x as a percentage of the total number of x values.
+
+The number, type, and order of command-line parameters are defined in the 
+comments in the class named MusicComposer10.
+
+Tested using Java SE with Windows 7.
+******************************************************************************/
+
+import java.io.*;
+import java.nio.*;
+import java.util.*;
+
+public class AudioGraph01 extends AudioSignalGenerator02{
+  
+  double[] inputData;
+  double highFreq = 1760;
+  double lowFreq = 220;
+  
+  public AudioGraph01(AudioFormatParameters01 audioParams,
+               String[] args,
+               byte[] melody){
+    super(audioParams,args,melody);
+    
+    
+    //Read the input file to define the function that is to be played or
+    // filed. It must be stored in the subfolder named Data. The data is
+    // initially stored in an ArrayList object for convenience and later
+    // transferred to an array object.
+    String fileName = args[2];
+    try{
+      ArrayList dataList = new ArrayList();
+      BufferedReader in = new BufferedReader(
+                                           new FileReader("Data/" + fileName));
+      String str;
+      while ((str = in.readLine()) != null) {
+
+        //Split the input string into multiple substrings using the comma as
+        // the delimiter and save them in an array object.
+        String[] strArr = str.split(",");
+
+        //Ignore:
+        // Blank lines that result in a string with a zero length
+        // Comments that begin with a /
+        // Lines that begin with a space
+        if(strArr[0].length() == 0){
+          System.out.println("Blank line will be ignored");
+        }else if(strArr[0].substring(0,1).equals("/")){
+          System.out.println("Comment:  " + Arrays.toString(strArr));
+        }else if(strArr[0].substring(0,1).equals(" ")){
+          System.out.println("Ignore line that begins with space: " + 
+                                                      Arrays.toString(strArr));
+        }else{
+          //Apparently good data. Add the contents of the array to the end of
+          // the ArrayList object, one substring (element) at a time.
+          for(int cnt = 0;cnt &lt; strArr.length;cnt++){
+            dataList.add(Double.parseDouble(strArr[cnt]));
+          }//end for loop
+        }//end else
+      }//end while
+      in.close();//close the input file
+      
+      //Move the contents of dataList from the ArrayList object to the
+      // inputData array. Make the array three elements longer than the size
+      // of the ArrayList object to accommodate prepending three elements with
+      // a value of zero.
+      inputData = new double[dataList.size()+3];
+      int count = 0;
+      
+      //Prepend three data items with a value of zero to the array. They will
+      // be used to establish the audio pitch for a value of zero.
+      inputData[count++] = 0;
+      inputData[count++] = 0;
+      inputData[count++] = 0;
+      
+      Iterator iter = dataList.iterator();
+      while(iter.hasNext()){
+        double value = (double)iter.next();
+        inputData[count++] = value;
+      }//end while loop
+
+    }catch(Exception ex){
+      ex.printStackTrace();
+    }//end catch
+  }//end constructor
+  //-------------------------------------------------------------------------//
+  
+  //This method reads an array containing data values and produces an array of
+  // output audio data that relates the data values to frequency or pitch.
+  // One output pulse is produced for each data value. The output rate in
+  // pulses per second is provided by the user as a command-line parameter.
+  //The audio output can be thought of as an audio representation of a graph
+  // of the input data with three zero values prepended onto the front to
+  // establish the pitch for a y value of zero.
+  
+  byte[] getMelody(){
+    //Set channels to 2 for stereo overriding the default value of 1.
+    audioParams.channels = 2;
+
+    //Each channel requires two 8-bit bytes per 16-bit sample.
+    int bytesPerSampPerChan = 2;
+    
+    //Override the default sampleRate of 16000.0F. Allowable sample rates
+    // are 8000,11025,16000,22050, and 44100 samples per second.
+    audioParams.sampleRate = 8000.0F;
+    
+    //Declare variables used to control the output volume on the left and
+    // right speaker channels. These values will be used to cause pulses
+    // representing the data values to progress uniformly from the left
+    // speaker to the right speaker in proportion to the value of x.
+    double gain = 0.0;
+    double leftGain = 0.0;
+    double rightGain = 0.0;
+
+    //Declare a variable that is used to control the frequency of each pulse.
+    double freq = 0.0;
+
+    //Set the length of each pulse in seconds and in samples. The user
+    // specifies the output rate in pulses per second as a command-line
+    // parameter. The pulse length in seconds is the reciprocal of that value.
+    double pulseLengthInSec = 1/Double.parseDouble(args[1]);//in seconds
+    int pulseLengthInSamples = (int)(pulseLengthInSec*audioParams.sampleRate);
+    
+    //Create an output array of sufficient size to contain the audio data.
+    melody = new byte[(int)(inputData.length * 
+                            pulseLengthInSamples * 
+                            bytesPerSampPerChan * 
+                            audioParams.channels)];
+    System.out.println("melody.length = " + melody.length);
+    
+    //Prepare a ByteBuffer for use
+    byteBuffer = ByteBuffer.wrap(melody);
+    
+    double freqRange = highFreq - lowFreq;
+    
+    //Determine the minimum and maximum data values. These values will be used
+    // to bias and scale the data so as to make maximum use of the available
+    // audio dynamic range from 220 Hz to 1760 Hz.
+    double highData = Double.MIN_VALUE;
+    double lowData = Double.MAX_VALUE;
+    //Skip first three values which are always zero.
+    for(int cnt = 3;cnt &lt; inputData.length;cnt++){
+      if (inputData[cnt] &gt; highData){
+        highData = inputData[cnt];
+      }//end if
+      if(inputData[cnt] &lt; lowData){
+        lowData = inputData[cnt];
+      }//end if
+    }//end for loop
+
+    double dataRange = highData - lowData;
+  
+    //Determine the frequency that will represent a y-value of 0. Also, if the
+    // data is all positive, bias the data values so that the lowest value
+    // will sound at 220Hz and the highest value will sound at 1760 Hz.
+    double zeroFreq;
+    if(lowData &gt;= 0.0){
+      //Bias all data so that the lowest value will display at 220Hz. Skip the
+      // first three data values which are always zero.
+      for(int cnt = 3;cnt &lt; inputData.length;cnt++){
+        inputData[cnt] -= lowData;
+      }//end for loop
+      
+      //zeroFreq has little meaning in this case because it is probably off the
+      // bottom of the page. Set it to the bottom of the range.
+      zeroFreq = lowFreq;
+    }else{
+      //Set zeroFreq to a value that represents a value of zero for bipolar
+      // data.
+      zeroFreq = lowFreq +(Math.abs(lowData)/dataRange) * freqRange;
+    }//end else
+    System.out.println("zeroFreq = " + zeroFreq);
+
+    //Compute the audio sample values and deposit them in the output melody
+    // array.
+    int sampLength = melody.length/audioParams.channels/bytesPerSampPerChan;
+
+    for(int cnt = 0; cnt &lt; sampLength; cnt++){
+      //Compute the time in seconds for this sample.
+      double time = cnt/audioParams.sampleRate;
+      
+      double yValue = 0;
+      if(cnt%pulseLengthInSamples == 0){
+        //It is time for a new pulse. Get the next y value from the data array
+        // and use it to compute the frequency of the next pulse.
+        yValue = inputData[cnt/pulseLengthInSamples];
+        freq = zeroFreq + (yValue/dataRange)*freqRange;
+      }//end if
+
+      //Deposit audio data in the melody array for each channel. Shape the
+      // amplitude of each pulse with a triangular scale factor (rooftop shape)
+      // to  minimize the undesirable pops and clicks that occur when there
+      // are abrupt change in the frequency from one pulse to the next. The 
+      // following gain factor ranges from 0.0 at the ends to maximum in the
+      // center of the pulse.
+      gain = (cnt%pulseLengthInSamples)/(double)pulseLengthInSamples;
+
+      if(gain &gt; 0.5){
+        //Change to a negative slope.
+        gain = (pulseLengthInSamples - 
+                        cnt%pulseLengthInSamples)/(double)pulseLengthInSamples;
+      }//end if
+   
+      //Set the final gain to a value that is compatible with 16-bit audio
+      // data.
+      gain = 8000*gain;
+
+      //Cause the sound to progress from the left speaker to the right speaker
+      // in proportion to the value of x.
+      rightGain = gain * ((double)cnt/sampLength);
+      leftGain = gain - rightGain;
+
+      if(freq == zeroFreq){
+        //Compute scaled pulse values and deposit them into the melody. Mark
+        // the zeroFreq by adding frequency components at a reduced level one
+        // octave above and one octave below the zeroFreq. This will make it
+        // sound special in the output.
+        byteBuffer.putShort((short)(leftGain*Math.sin(2*Math.PI*freq*time) + 
+                              (leftGain*Math.sin(2*2*Math.PI*freq*time))/3 + 
+                              (leftGain*Math.sin(2*Math.PI*freq*time/2))/3));
+        byteBuffer.putShort((short)(rightGain*Math.sin(2*Math.PI*freq*time) + 
+                              (rightGain*Math.sin(2*2*Math.PI*freq*time))/3 + 
+                              (rightGain*Math.sin(2*Math.PI*freq*time/2))/3));
+      }else{
+        //Compute scaled pulse values and deposit them into the melody.
+        byteBuffer.putShort((short)(leftGain*Math.sin(2*Math.PI*freq*time)));
+        byteBuffer.putShort((short)(rightGain*Math.sin(2*Math.PI*freq*time)));
+      }//end else
+    }//end for loop
+    
+    return melody;
+  }//end method getMelody
+  //-------------------------------------------------------------------------//
+
+}//end class AudioGraph01
+//===========================================================================//
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+<section id="h11007">
+<title>
+<emphasis id="Figures_are_here" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1098">
+The following images are provided for the benefit of those students who 
+have the ability to create embossed images. There is one image for each 
+AudioGraph 
+
+<link id="a1160" target-id="audio_files_from_ther">
+
+listed above
+
+</link>
+
+. These images differ from 
+the AudioGraph version only in that a horizontal axis is drawn on the image 
+while a special sound marks zero crossings in the AudioGraph. The 
+
+<link id="a1161" url="Code.zip">
+
+downloadable zip 
+file
+
+</link>
+
+ contains the JPEG files for these images.
+
+</para>
+
+
+
+
+
+
+
+<table id="table1020" summary="This is a table." pgwide="1">
+<tgroup cols="1">
+
+
+<thead id="thead1020">
+<row id="tr1040">
+<entry id="th1020">
+
+	
+
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1
+
+</emphasis>
+
+. Cubic01.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1020">
+<row id="tr1041">
+<entry id="td1020">
+
+		
+
+<media id="media1000" alt="Missing image" display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/cubic01.jpg" width="519" height="544"/>
+</media>
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1099">
+...
+
+</para>
+
+
+
+
+
+
+
+
+<table id="table1021" summary="This is a table." pgwide="1">
+<tgroup cols="1">
+
+
+<thead id="thead1021">
+<row id="tr1042">
+<entry id="th1021">
+
+	
+
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2
+
+</emphasis>
+
+. Cubic02.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1021">
+<row id="tr1043">
+<entry id="td1021">
+
+		
+
+<media id="media1001" alt="Missing image" display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/cubic02.jpg" width="519" height="546"/>
+</media>
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1100">
+...
+
+</para>
+
+
+
+
+
+
+
+
+<table id="table1022" summary="This is a table." pgwide="1">
+<tgroup cols="1">
+
+
+<thead id="thead1022">
+<row id="tr1044">
+<entry id="th1022">
+
+	
+
+<emphasis id="Figure_3" effect="bold">
+
+Figure 3
+
+</emphasis>
+
+. DampedSinusoid01.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1022">
+<row id="tr1045">
+<entry id="td1022">
+
+		
+
+<media id="media1002" alt="Missing image" display="block">
+<image id="img1002" mime-type="image/jpeg" src="../../media/dampedsinusoid01.jpg" width="519" height="546"/>
+</media>
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1101">
+...
+
+</para>
+
+
+
+
+
+
+
+
+<table id="table1023" summary="This is a table." pgwide="1">
+<tgroup cols="1">
+
+
+<thead id="thead1023">
+<row id="tr1046">
+<entry id="th1023">
+
+	
+
+<emphasis id="Figure_4" effect="bold">
+
+Figure 4
+
+</emphasis>
+
+. ExponentialDamper01.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1023">
+<row id="tr1047">
+<entry id="td1023">
+
+		
+
+<media id="media1003" alt="Missing image" display="block">
+<image id="img1003" mime-type="image/jpeg" src="../../media/exponentialdamper01.jpg" width="519" height="546"/>
+</media>
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1102">
+...
+
+</para>
+
+
+
+
+
+
+
+
+<table id="table1024" summary="This is a table." pgwide="1">
+<tgroup cols="1">
+
+
+<thead id="thead1024">
+<row id="tr1048">
+<entry id="th1024">
+
+	
+
+<emphasis id="Figure_5" effect="bold">
+
+Figure 5
+
+</emphasis>
+
+. Parabola01.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1024">
+<row id="tr1049">
+<entry id="td1024">
+
+		
+
+<media id="media1004" alt="Missing image" display="block">
+<image id="img1004" mime-type="image/jpeg" src="../../media/parabola01.jpg" width="519" height="546"/>
+</media>
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1103">
+...
+
+</para>
+
+
+
+
+
+
+
+
+<table id="table1025" summary="This is a table." pgwide="1">
+<tgroup cols="1">
+
+
+<thead id="thead1025">
+<row id="tr1050">
+<entry id="th1025">
+
+	
+
+<emphasis id="Figure_6" effect="bold">
+
+Figure 6
+
+</emphasis>
+
+. Quadratic01.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1025">
+<row id="tr1051">
+<entry id="td1025">
+
+		
+
+<media id="media1005" alt="Missing image" display="block">
+<image id="img1005" mime-type="image/jpeg" src="../../media/quadratic01.jpg" width="519" height="546"/>
+</media>
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1104">
+...
+
+</para>
+
+
+
+
+
+
+
+
+<table id="table1026" summary="This is a table." pgwide="1">
+<tgroup cols="1">
+
+
+<thead id="thead1026">
+<row id="tr1052">
+<entry id="th1026">
+
+	
+
+<emphasis id="Figure_7" effect="bold">
+
+Figure 7
+
+</emphasis>
+
+. Sinc01.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1026">
+<row id="tr1053">
+<entry id="td1026">
+
+		
+
+<media id="media1006" alt="Missing image" display="block">
+<image id="img1006" mime-type="image/jpeg" src="../../media/sinc01.jpg" width="519" height="546"/>
+</media>
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1105">
+...
+
+</para>
+
+
+
+
+
+
+
+
+<table id="table1027" summary="This is a table." pgwide="1">
+<tgroup cols="1">
+
+
+<thead id="thead1027">
+<row id="tr1054">
+<entry id="th1027">
+
+	
+
+<emphasis id="Figure_8" effect="bold">
+
+Figure 8
+
+</emphasis>
+
+. Sinusoid01.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1027">
+<row id="tr1055">
+<entry id="td1027">
+
+		
+
+<media id="media1007" alt="Missing image" display="block">
+<image id="img1007" mime-type="image/jpeg" src="../../media/sinusoid01.jpg" width="519" height="546"/>
+</media>
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1106">
+...
+
+</para>
+
+
+
+
+
+
+
+
+<table id="table1028" summary="This is a table." pgwide="1">
+<tgroup cols="1">
+
+
+<thead id="thead1028">
+<row id="tr1056">
+<entry id="th1028">
+
+	
+
+<emphasis id="Figure_9" effect="bold">
+
+Figure 9
+
+</emphasis>
+
+. StraightLine01
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1028">
+<row id="tr1057">
+<entry id="td1028">
+
+		
+
+<media id="media1008" alt="Missing image" display="block">
+<image id="img1008" mime-type="image/jpeg" src="../../media/straightline01.jpg" width="519" height="546"/>
+</media>
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1107">
+...
+
+</para>
+
+
+
+
+
+
+
+
+<table id="table1029" summary="This is a table." pgwide="1">
+<tgroup cols="1">
+
+
+<thead id="thead1029">
+<row id="tr1058">
+<entry id="th1029">
+
+	
+
+<emphasis id="Figure_10" effect="bold">
+
+Figure 10
+
+</emphasis>
+
+. StraightLine02.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1029">
+<row id="tr1059">
+<entry id="td1029">
+
+		
+
+<media id="media1009" alt="Missing image" display="block">
+<image id="img1009" mime-type="image/jpeg" src="../../media/straightline02.jpg" width="519" height="546"/>
+</media>
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1108">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

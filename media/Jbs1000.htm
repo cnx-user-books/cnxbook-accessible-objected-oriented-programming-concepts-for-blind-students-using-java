@@ -1,0 +1,414 @@
+﻿<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>OOP for blind students</title>
+<style type="text/css">
+a:link {color:#0000ff;}
+a:visited {color:#cc00cc;}
+a:active {color:#ff0000;}
+a:hover {color: #00ff00;text-decoration: none;}
+
+pre {color: black;}
+p{color:black;}
+h1{color:black}
+h2{color: black}
+h3{color: black}
+b{color: black}
+strong{color: black}
+blockquote{color: black}
+ul{color: black}
+ol{color: black}
+table{border: 1px solid black}
+th{border: 1px solid black}
+body{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12pt;
+	background-color: #FEFFF0;}
+</style>
+</head>
+
+<body>
+
+
+
+<h1 class="style1">Table of Contents</h1>
+<ul>
+	<li><a href="#Preface">Preface</a><ul>
+		<li><a href="#General">General</a></li>
+		<li><a href="#Prerequisites">Prerequisites</a></li>
+		<li><a href="#Viewing_tip">Viewing tip</a><ul>
+			<li><a href="#Listings">Listings</a></li>
+		</ul>
+		</li>
+		
+	</ul>
+	</li>
+	<li><a href="#Discussion">Discussion</a><ul>
+		<li><a href="#Accessibility_is_the_keyword">Accessibility is the keyword</a></li>
+		<li><a href="#Sound_and_music">Sound and music</a>
+		</li>
+	</ul>
+	</li>
+	<li><a href="#Creating_compiling_and_running_Java_programs">Writing, compiling, and running Java programs</a><ul>
+		<li><a href="#Writing_the_code">Writing Java code</a></li>
+		<li><a href="#Preparing_to_compile_and_run_Java_code">Preparing to compile and run Java code</a><ul>
+			<li><a href="#The_java_development_kit">Downloading the java development kit 
+			<em>(JDK)</em></a></li>
+			<li><a href="#Installation_of_the_JDK">Installing the JDK</a></li>
+			<li><a href="#The_JDK_documentation">The JDK documentation</a></li>
+		</ul>
+		</li>
+		<li><a href="#Compiling_and_running_Java_code">Compiling and running 
+		Java code</a><ul>
+			<li><a href="#Write_your_Java_program">Write your Java program</a></li>
+			<li><a href="#Create_a_batch_file">Create a batch file</a></li>
+			<li><a href="#A_test_program">A test program</a></li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+
+	<li><a href="#Miscellaneous">Miscellaneous</a></li>
+</ul>
+
+<h1> <a name="Preface"></a>Preface</h1>
+
+<h2> <a name="General">General</a></h2>
+
+
+
+
+
+<p>This module is part of a collection of modules designed to make 
+object-oriented programming 
+concepts accessible to blind students.</p>
+<p>Blind students should not be excluded from computer programming courses 
+because of inaccessible textbooks. Because of its text-based nature, computer 
+programming is fundamentally an accessible technology. However, many textbooks 
+adopt and use high-level integrated development environments with graphical user 
+interfaces that greatly reduce that accessibility.</p>
+<p>The modules in this collection present object-oriented programming concepts in a 
+format that blind students can read using tools such as an audio screen reader 
+and an electronic line-by-line Braille display.</p>
+<p>In an effort to get and keep the student's interest, the more advanced 
+modules in this collection also make heavy 
+use of programming projects that provide sensory feedback through the use of sound.</p>
+<p>The collection is intended to supplement but not to 
+replace the textbook in an introductory course in high school or college 
+object-oriented programming.</p>
+<p>This module explains how to get started programming in Java in a format that is 
+designed to be accessible to blind students.</p>
+<h2><a name="Prerequisites">Prerequisites</a></h2>
+<p>In addition to an Internet connection and a browser, you will need the 
+following tools <em>(as a minimum) </em>to work through the exercises in these modules:</p>
+<ul>
+	<li>An audio screen reader that is compatible with your operating system, 
+	such as the NonVisual Desktop Access program (NVDA), which is freely 
+	available at <a href="http://www.nvda-project.org/">
+	http://www.nvda-project.org/</a>.</li>
+	<li>A refreshable Braille display capable of providing line by line tactile output of information displayed on the computer monitor 
+	is recommended. Such a display is described at
+	<a href="http://www.userite.com/ecampus/lesson1/tools.php">http://www.userite.com/ecampus/lesson1/tools.php</a>, is 
+	recommended.</li>
+	<li>The Oracle Java Development Kit (JDK) <em>(See
+	<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">
+	http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>)</em></li>
+	<li>Documentation for the Oracle Java Development Kit (JDK) <em>(See
+	<a href="http://download.oracle.com/javase/8/docs/api/">
+	http://download.oracle.com/javase/8/docs/api/</a>)</em></li>
+	<li>A simple IDE or text editor for use in writing Java code.</li>
+	</ul>
+	
+	<p>The minimum prerequisites for understanding the material in these modules 
+	include:</p>
+<ul>
+	<li>A cursory understanding of algebra.</li>
+	<li>An understanding of the material covered in the <em>Programming 
+	Fundamentals</em> modules that you will find in two formats at the following URLs. These 
+	modules provide fundamental programming concepts using the Java programming 
+	language in a format that should be accessible. <ul>
+		<li>
+		<a href="http://cnx.org/content/m45179/latest/?collection=col11441/latest">
+		http://cnx.org/content/m45179/latest/?collection=col11441/latest</a>
+		</li>
+		<li>
+		<a href="http://cnx.org/contents/fb64661c-5b3f-4ea8-97c6-e48df112438a">
+		http://cnx.org/contents/fb64661c-5b3f-4ea8-97c6-e48df112438a</a>
+		</li>
+	</ul>
+	</li>
+</ul>
+<h2> <a name="Viewing_tip">Viewing tip</a></h2>
+<p> I recommend that you open another copy of this document in a separate 
+browser window and use the following links to easily find and view the listings while you are reading about them.</p>
+<h3> <a name="Listings">Listings</a></h3>
+<ul>
+	<li><a href="#Listing_1">Listing 1</a>. Windows batch file.</li>
+	<li><a href="#Listing_2">Listing 2</a>. A test program.</li>
+</ul>
+<h1> <a name="Discussion">Discussion</a></h1>
+<p>Considering that during the past fifteen years, I have published 
+several hundred online programming tutorials <em>(see
+<a href="http://www.dickbaldwin.com/toc.htm">http://www.dickbaldwin.com/toc.htm</a>
+), </em>one might wonder why I am taking the time and expending the effort to 
+publish still another online programming tutorial.</p>
+<h2><a name="Accessibility_is_the_keyword">Accessibility is the keyword</a></h2>
+<p> When writing and publishing the earlier tutorials, I made no attempt to make 
+them accessible to blind students. Some of them are probably accessible, simply 
+because I used a relatively simple HTML format and didn&#39;t include any 
+inaccessible content such as images. However, many of the earlier tutorials make 
+heavy use of images and will therefore be inaccessible to blind students.</p>
+<p> In writing this collection of modules <em>(tutorials)</em>, I will make a 
+concentrated effort to make them accessible to blind students.</p>
+<p> Some of the 
+earlier tutorials that include images do so because the purpose of the tutorial 
+was to teach students how to manipulate graphic images.</p>
+<p> Other tutorials, however, 
+included images in sample programs simply as a way to provide sensory feedback 
+to the students and give them a feeling of accomplishment. I believe that 
+providing sensory feedback in sample programs makes the process of 
+learning how to program more interesting for the students.</p>
+<h2> <a name="Sound_and_music">Sound and music</a></h2>
+<p> In this collection of modules, I will use sound instead of images to provide 
+sensory feedback. The sound will be of a form that is often referred to as <em>
+sampled sound</em>. In sampled sound, the actual waveform of the sound is 
+sampled as a series of numeric values. At playback time, those numeric values 
+are applied in sequence to a device that reproduces the original waveform and 
+feeds that waveform to amplifiers, speakers, etc. This is the type of sound that 
+is commonly found on a music CD.</p>
+<p> While I am not a musician, I will also show you how to write a Java program 
+that you can use to compose and play melodies based on the nomenclature used in 
+sheet music (A, A#, B, C, C#, etc.). In fact, if you have a cursory knowledge of how to read 
+sheet music <em>(or the accessible equivalent of sheet music)</em>, you will be able to copy the information from a piece of sheet 
+music into a text file and play it on your computer using the program that you 
+will write.</p>
+<p> Here is a link to a file named <a href="MaryLamb.au">MaryLamb.au</a> containing a simple melody produced 
+using that program. <em>(If 
+you have musical talent, you can produce much more complex music than this 
+simple melody.)</em> You should be able to download and play this melody using 
+any standard media player that supports sound files of type AU. However, you may 
+need to revert to the <em>
+<a href="http://legacy.cnx.org/content/m40794/1.4/Jbs1000.htm">legacy</a></em> format of this module to 
+download the file.</p>
+<h1 class="style1"><a name="Creating_compiling_and_running_Java_programs">
+Writing, compiling, and running Java programs</a></h1>
+<h2><a name="Writing_the_code">Writing Java code</a></h2>
+<p>Fortunately, writing Java code is straightforward. You can write Java code 
+using any plain text editor. You simply need to cause the output file to have 
+an extension of .java.</p>
+<p>There are a number of high-level <em>Integrated Development Environments (IDEs)</em> 
+available, such as Eclipse and NetBeans, but they tend to be overkill for the relatively simple Java programs 
+described in these modules.</p>
+<p>There are also some low-level IDEs available, such as JCreator and DrJava, 
+which are very useful for sighted students. However, I don&#39;t know anything about 
+their level of accessibility. I normally use a free version of JCreator, mainly 
+because it contains a color-coded editor, but that feature wouldn&#39;t be useful 
+for a blind student.</p>
+<p>So, just find an editor that you are happy with and use it to write your Java 
+code.</p>
+<h2><a name="Preparing_to_compile_and_run_Java_code">Preparing to compile and 
+run Java code</a></h2>
+<p>Perhaps the most complicated thing is to get your computer set up for 
+compiling and running Java code in the first place.</p>
+<h3><a name="The_java_development_kit">Downloading the java development kit <em>(JDK)</em></a></h3>
+<p>You will need to download and install the free Java JDK from
+the Oracle website. As of August 2014, you will find that website at
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">
+http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></p>
+<h3><a name="Installation_of_the_JDK">Installing the JDK</a></h3>
+<p>As of August 2014, you will find installation instructions for JDK 8 at
+<a href="http://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html">
+http://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html</a>.</p>
+<p><strong>A word of caution</strong></p>
+<p>If you happen to be running Windows Vista, you may need to use something like 
+the following when updating the PATH Environment Variable</p>
+<pre>;C:\Program Files (x86)\Java\jdk1.8.0\bin</pre>
+<p>in place of</p>
+<pre>;C:\Program Files\Java\jdk1.8.0\bin</pre>
+<p>as shown in the installation instructions.</p>
+<p>I don&#39;t have any experience with any Linux version. 
+Therefore, I don&#39;t have any hints to offer there.</p>
+<h3><a name="The_JDK_documentation">The JDK documentation</a></h3>
+<p>It is very difficult to program in Java without access to the documentation 
+for the JDK.</p>
+<p>Several different types of Java documentation are available online at 
+<a href="http://docs.oracle.com/javase/8/docs/">
+http://docs.oracle.com/javase/8/docs/</a>.</p>
+<p>Specific documentation for classes, methods, etc., for JDK 8 is available online at
+<a href="http://docs.oracle.com/javase/8/docs/api/">
+http://docs.oracle.com/javase/8/docs/api/</a>. </p>
+<p>It is also possible to download the documentation and install it locally if 
+you have room on your disk. As of August 2014, you can download the 
+documentation for JDK 8 from
+<a href="http://www.oracle.com/technetwork/java/javase/documentation/jdk8-doc-downloads-2133158.html">http://www.oracle.com/technetwork/java/javase/documentation/jdk8-doc-downloads-2133158.html</a>.</p>
+<h2><a name="Compiling_and_running_Java_code">Compiling and running Java code</a></h2>
+<p>There are a variety of ways to compile and run Java code. The way that I will 
+describe here is the most basic and, in my opinion, the most reliable. These instructions 
+apply to a Windows operating system. If you are using a different operating 
+system, you will need to translate the instructions to your operating system.</p>
+<h3><a name="Write_your_Java_program">Write your Java program</a></h3>
+<p>Begin by using your text editor to write your Java program <em>(see
+<a href="#Listing_2">Listing 2</a> for example)</em> into one or more 
+text files, each with an extension of 
+.java. <em>(Files of this type are often referred to as source code files.)</em> Save the 
+source code files in an empty folder somewhere on your disk. Make sure that the 
+name of the <strong>class</strong> containing the <strong>main</strong> 
+method <em>(which you will learn about in a future module)</em> matches the name of the 
+file in which that class is contained <em>(except for the extension of .java on the file name, 
+which does not appear in the class name)</em>.</p>
+<h3><a name="Create_a_batch_file">Create a batch file</a></h3>
+<p class="style2">Use your text editor to create a batch file <em>(or whatever the equivalent is for your operating system)</em> 
+containing the text shown in <a href="#Listing_1">Listing 1</a> <em>(with the 
+modifications discussed below)</em> and store it 
+in the same folder as your Java source code files..</p>
+<p>Then execute the batch file, which in turn will execute the program if there 
+are no compilation errors.</p>
+
+<table border="10" width="677">
+<thead><tr><th>
+<a name="Listing_1">Listing 1</a>. Windows batch file.
+</th></tr></thead>
+<tbody><tr><td>
+<pre>
+echo off
+cls
+
+del *.class
+
+javac -cp .; hello.java
+java -cp .; hello
+
+pause</pre>
+</td></tr></tbody></table>
+
+<p><strong>Comments regarding the batch file</strong></p>
+
+<p>The commands in the batch file of <a href="#Listing_1">Listing 1</a> will </p>
+<ul>
+	<li>Open a command-line screen for the folder containing the batch 
+	file.</li>
+	<li>Delete all of the compiled class files from the folder. <em>(If the folder 
+	doesn&#39;t contain any class files, this will be indicated on the command-line 
+	screen.)</em></li>
+	<li>Attempt to compile the program in the file named <strong>hello.java.</strong></li>
+	<li>Attempt to run the compiled program using a compiled Java file named
+	<strong>hello.class</strong>.</li>
+	<li>Pause and wait for you to dismiss the command-line screen by pressing a 
+	key on the keyboard.</li>
+</ul>
+<p>If errors occur, they will be reported on the command-line screen and the 
+program won&#39;t be executed.</p>
+<p>If your program is named something other than <strong>hello</strong>, 
+<em>(which it typically would be)</em> substitute the new name for the word <strong>hello</strong> 
+where it appears twice in the batch 
+file.</p>
+<p><strong>Don&#39;t delete the pause command</strong></p>
+<p>The <strong>pause</strong> command causes the command-line window to stay on the 
+screen until you dismiss it by pressing a key on the keyboard. You will need to examine the contents of the window if there are errors 
+when you attempt to compile and run your program, so don&#39;t delete the pause 
+command.</p>
+<p><strong>Translate to other operating systems</strong></p>
+<p>The format of the batch file in <a href="#Listing_1">Listing 1</a> is a Windows format. If 
+you are using a different operating system, you will need to translate the 
+information in <a href="#Listing_1">Listing 1</a> into the correct format for your operating system.</p>
+<h3><a name="A_test_program">A test program</a></h3>
+<p>The test program in <a href="#Listing_2">Listing 2</a> can be used to confirm that Java is properly 
+installed on your computer and that you can successfully compile and execute 
+Java programs.</p>
+<table border="10" width="677">
+<thead><tr><th>
+<a name="Listing_2">Listing 2</a>. A test program.
+</th></tr></thead>
+<tbody><tr><td>
+<pre>class hello {
+  public static void main(String[] args){
+    System.out.println("Hello World");
+  }
+}</pre>
+</td></tr></tbody></table>
+
+<p><strong>Instructions</strong></p>
+<p>Copy the code shown in <a href="#Listing_2">Listing 2</a> into a text file 
+named <strong>hello.java</strong> and store in an empty folder somewhere on your disk.</p>
+<p>Create a batch file named <strong>hello.bat</strong> containing the text 
+shown in <a href="#Listing_1">Listing 1</a> and store that file in the same folder as the file named
+<strong>hello.java</strong>.</p>
+<p>Execute the batch file.</p>
+<p>If everything is working, a command-line screen 
+should open and display the following text:</p>
+<pre>Hello World
+Press any key to continue . . .</pre>
+<p><strong>Congratulations</strong></p>
+<p>If that happens, you have just written, compiled and 
+executed your first Java program.</p>
+<p><strong>Oops</strong></p>
+<p>If that doesn&#39;t happen, you need to go back to the installation instructions 
+and see if you can determine why the JDK isn&#39;t properly installed.</p>
+<p>If you get an error message similar to the following, that probably means 
+that you didn&#39;t set the <strong>path</strong> environment variable correctly. </p>
+<pre>&#39;javac&#39; is not recognized as an internal or external command,
+operable program or batch file.</pre>
+<p>Beyond that, I can&#39;t provide much advice in the way of troubleshooting hints. </p>
+
+
+<h1 class="style1"><a name="Miscellaneous">Miscellaneous</a></h1>
+<p>This section contains a variety of miscellaneous information.</p>
+
+<!--Set border to 15 to create a note. Paragraph elements inside the note are allowed but not required.-->
+<table border="15" width="477" >
+<tbody><tr><td>
+<strong>Housekeeping material</strong>
+<ul>
+<li>Module name: Getting Started</li>
+<li>File: Jbs1000.htm
+</li>
+<li>Revised: 08/10/14</li>
+	<li>Keywords:<ul>
+		<li>object-oriented programming</li>
+		<li>accessible</li>
+		<li>accessibility</li>
+					<li>blind</li>
+		<li>Java</li>
+					<li>screen reader</li>
+		<li>refreshable Braille display</li>
+	</ul>
+</li>
+</ul>
+</td></tr></tbody></table>
+
+<!--Set border to 15 to create a note. Paragraph elements inside the note are allowed but not required.-->
+<table border="15" width="477" >
+<tbody><tr><td><strong>Disclaimers:</strong><p><strong>Financial</strong>: Although the 
+				<strong>openstax CNX</strong>
+site makes it possible for you to download a PDF file for the collection that 
+				contains this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.</p>
+				<p>You also need to know that Prof. Baldwin receives no financial compensation from 
+				<strong>openstax CNX </strong>even if you purchase 
+	the PDF version of the collection.</p>
+				<p>In the past, unknown individuals have copied Prof. Baldwin's modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing Prof. Baldwin as the author. 
+				Prof. Baldwin 
+				neither receives compensation for those sales nor does he know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a collection that is freely 
+				available on <strong>openstax CNX</strong> and that it was made and published without 
+				the prior knowledge of Prof. Baldwin.</p>
+				<p><strong>Affiliation</strong>: Prof. Baldwin is a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	</p>
+	</td></tr></tbody>
+</table>
+
+<p>-end- </p>
+<!--fixed-->
+</body>
+</html>

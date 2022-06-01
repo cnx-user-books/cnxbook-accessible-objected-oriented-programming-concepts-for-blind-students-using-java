@@ -1,0 +1,2786 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Jbs1050-A Roadmap</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m50639</md:content-id>
+  <md:title>Jbs1050-A Roadmap</md:title>
+  <md:abstract>This module provides a roadmap for blind students to navigate through a large number of Object-Oriented Programming (OOP) modules for the purpose of learning OOP using Java.</md:abstract>
+  <md:uuid>f75723cb-4cc0-4eeb-adfc-4aae97d5c6a4</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+<section id="h11000">
+<title>
+Table of contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1001">
+<link id="a1001" target-id="Discussion">
+
+Discussion
+
+</link>
+
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1002">
+<link id="a1002" target-id="A_small_taste">
+
+A small taste of OOP
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1003">
+<link id="a1003" target-id="Programming_fundamentals">
+
+Programming fundamentals
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1004">
+<link id="a1004" target-id="Self-assessment_tests">
+
+Self-assessment tests
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1005">
+<link id="a1005" target-id="More_advanced_material">
+
+More advanced material
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="Essence_of_OOP">
+
+Essence of OOP
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="The_Java_Collections_Framework">
+
+The Java Collections Framework
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="Java_sound">
+
+Java sound
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1009">
+<link id="a1009" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+
+	
+
+<para id="p1000">
+This module is part of a collection 
+	titled 
+
+<emphasis id="strong1000" effect="bold">
+Accessible Objected-Oriented Programming Concepts for Blind Students 
+	using Java
+
+</emphasis>
+. 
+	The module provides a roadmap for blind students to navigate through a large number 
+	of (mostly) accessible Object-Oriented Programming (OOP) modules for the 
+	purpose of learning OOP using Java. 
+
+<emphasis id="em1000" effect="italics">
+(If you discover accessibility 
+	problems in those modules, please let me know and I will try to fix them.)
+
+</emphasis>
+</para>
+
+
+
+
+</section>
+<section id="h11002">
+<title>
+<emphasis id="Discussion" effect="bold">
+
+Discussion
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h21000">
+<title>
+<emphasis id="A_small_taste" effect="bold">
+
+A small taste of OOP
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1001">
+By studying the following three modules, you have already gotten a small taste of 
+what OOP is all about:
+
+</para>
+
+
+
+
+<list id="ul1002" list-type="bulleted">
+
+	
+
+<item id="li1010">
+
+	
+
+<link id="a1010" url="http://cnx.org/contents/613bfec2-7a68-4393-bf62-850883c3dd5d">
+
+Jbs1000-Getting Started
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1011">
+
+	
+
+<link id="a1011" url="http://cnx.org/contents/59c105e6-8b9f-40c3-b1e6-004597f02bb2">
+
+Jbs1010-Objects and Encapsulation
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1012">
+
+	
+
+<link id="a1012" url="http://cnx.org/contents/7df53aa8-b40a-4c7b-be49-bd3f6bfd66e0">
+
+Jbs1020-Classes
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1002">
+Now it's time to jump in with both feet and really learn what OOP is all 
+about. The purpose of this module is to provide a roadmap to help you navigate 
+through a large number of (mostly) accessible Object-Oriented Programming (OOP) 
+modules for the purpose of learning OOP using Java.
+
+</para>
+
+
+
+
+</section>
+<section id="h21001">
+<title>
+<emphasis id="Programming_fundamentals" effect="bold">
+
+Programming fundamentals
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1003">
+You should begin by studying the following modules on 
+
+<emphasis id="strong1001" effect="bold">
+Programming 
+Fundamentals
+
+</emphasis>
+. These modules assume that you are 
+starting from ground zero with no programming knowledge. If you already have 
+some programming knowledge, you may be able skip some of these modules, or at least 
+work through them very quickly. One good way to confirm the level of your programming 
+knowledge is to work through the 
+
+<link id="a1013" target-id="Self-assessment_tests">
+
+self-assessment tests
+
+</link>
+
+ that I will 
+discuss 
+later.
+
+</para>
+
+
+
+
+<list id="ul1003" list-type="bulleted">
+
+	
+
+<item id="li1013">
+
+	
+
+<link id="a1014" url="http://cnx.org/contents/a431f34d-e41b-4118-8452-c16b0635cdfd">
+
+Jb0103
+
+</link>
+
+: Preface to Programming Fundamentals
+
+</item>
+
+
+	
+
+<item id="li1014">
+
+	
+
+<link id="a1015" url="http://cnx.org/contents/115384e8-9168-478c-99b4-cb8123468d3f">
+
+Jb0105
+
+</link>
+
+: Java OOP: Similarities and Differences between Java and C++
+
+</item>
+
+
+	
+
+<item id="li1015">
+
+	
+
+<link id="a1016" url="http://cnx.org/contents/920d091d-ea72-478f-986f-eab814c2d992">
+
+Jb0110
+
+</link>
+
+: Java OOP: Programming Fundamentals, Getting Started
+
+</item>
+
+
+	
+
+<item id="li1016">
+
+	
+
+<link id="a1017" url="http://cnx.org/contents/6d86f0f3-bd1e-4a3d-b339-1c98154dfa64">
+
+Jb0110r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1017">
+
+	
+
+<link id="a1018" url="http://cnx.org/contents/b2760098-41f2-4b62-bb27-38005881c827">
+
+Jb0115
+
+</link>
+
+: Java OOP: First Program
+
+</item>
+
+
+	
+
+<item id="li1018">
+
+	
+
+<link id="a1019" url="http://cnx.org/contents/b29c83a5-42de-4ff1-9cdf-edc51c270ccf">
+
+Jb0120
+
+</link>
+
+: Java OOP: A Gentle Introduction to Java Programming
+
+</item>
+
+
+	
+
+<item id="li1019">
+
+	
+
+<link id="a1020" url="http://cnx.org/contents/8c1f0cde-7196-4a34-8f35-6b2a05c0ca38">
+
+Jb0120r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1020">
+
+	
+
+<link id="a1021" url="http://cnx.org/contents/a4b21aef-a466-4221-811d-9bfe3de4dacc">
+
+Jb0130
+
+</link>
+
+: Java OOP: A Gentle Introduction to Methods in Java
+
+</item>
+
+
+	
+
+<item id="li1021">
+
+	
+
+<link id="a1022" url="http://cnx.org/contents/d2ed6a61-9a8f-485d-bda2-66aecb17a076">
+
+Jb0130r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1022">
+
+	
+
+<link id="a1023" url="http://cnx.org/contents/89940e63-cd9c-405f-83fc-e9d7a7f3250d">
+
+Jb0140
+
+</link>
+
+: Java OOP: Java comments
+
+</item>
+
+
+	
+
+<item id="li1023">
+
+	
+
+<link id="a1024" url="http://cnx.org/contents/99723287-247d-4492-b7f6-470c1a6af153">
+
+Jb0140r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1024">
+
+	
+
+<link id="a1025" url="http://cnx.org/contents/ffc58c53-2363-4f4e-bfca-e8c545f03ff9">
+
+Jb0150
+
+</link>
+
+: Java OOP: A Gentle Introduction to Java Data Types
+
+</item>
+
+
+	
+
+<item id="li1025">
+
+	
+
+<link id="a1026" url="http://cnx.org/contents/a12f9ce9-a5cf-452a-8e34-79014ff1ee7f">
+
+Jb0150r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1026">
+
+	
+
+<link id="a1027" url="http://cnx.org/contents/c130688d-b8fc-4501-8992-929dbd35df2b">
+
+Jb0160
+
+</link>
+
+: Java OOP: Hello World
+
+</item>
+
+
+	
+
+<item id="li1027">
+
+	
+
+<link id="a1028" url="http://cnx.org/contents/6cb949d5-3198-4e24-a7f0-8a2b3f21b02c">
+
+Jb0160r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1028">
+
+	
+
+<link id="a1029" url="http://cnx.org/contents/71f54603-9437-4800-8c9d-1b9e22c8f878">
+
+Jb0170
+
+</link>
+
+: Java OOP: A little more information about classes
+
+</item>
+
+
+	
+
+<item id="li1029">
+
+	
+
+<link id="a1030" url="http://cnx.org/contents/85e1a647-6447-4bb3-9abd-68acf023dc71">
+
+Jb0170r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1030">
+
+	
+
+<link id="a1031" url="http://cnx.org/contents/18b2d10e-9adc-4398-a6dc-b281153c0d36">
+
+Jb0180
+
+</link>
+
+: Java OOP: The main method
+
+</item>
+
+
+	
+
+<item id="li1031">
+
+	
+
+<link id="a1032" url="http://cnx.org/contents/70bfa641-1015-4a2a-984f-c9e2095f8b3c">
+
+Jb0180r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1032">
+
+	
+
+<link id="a1033" url="http://cnx.org/contents/580aaea5-68da-4788-a208-43b37aaea872">
+
+Jb0190
+
+</link>
+
+: Java OOP: Using the System and PrintStream Classes
+
+</item>
+
+
+	
+
+<item id="li1033">
+
+	
+
+<link id="a1034" url="http://cnx.org/contents/900a22c9-6701-4a12-ac49-d764d352de29">
+
+Jb0190r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1034">
+
+	
+
+<link id="a1035" url="http://cnx.org/contents/ee678881-4219-46de-b3ba-b1203d8af1eb">
+
+Jb0200
+
+</link>
+
+: Java OOP: Variables
+
+</item>
+
+
+	
+
+<item id="li1035">
+
+	
+
+<link id="a1036" url="http://cnx.org/contents/7fa00304-32aa-4ac1-98ec-0194c3d3fea6">
+
+Jb0200r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1036">
+
+	
+
+<link id="a1037" url="http://cnx.org/contents/ef4ade38-71db-4cfa-a565-958f83d6a747">
+
+Jb0210
+
+</link>
+
+: Java OOP: Operators
+
+</item>
+
+
+	
+
+<item id="li1037">
+
+	
+
+<link id="a1038" url="http://cnx.org/contents/93d38cb7-e44a-4498-bdb2-105d54a69bdb">
+
+Jb0210r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1038">
+
+	
+
+<link id="a1039" url="http://cnx.org/contents/d7ff1721-14d7-4758-ae2f-8d71c34ecc4c">
+
+Jb0220
+
+</link>
+
+: Java OOP: Statements and Expressions
+
+</item>
+
+
+	
+
+<item id="li1039">
+
+	
+
+<link id="a1040" url="http://cnx.org/contents/93d38cb7-e44a-4498-bdb2-105d54a69bdb">
+
+Jb0220r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1040">
+
+	
+
+<link id="a1041" url="http://cnx.org/contents/bb58efc4-acbe-4d15-876e-5f109df35856">
+
+Jb0230
+
+</link>
+
+: Java OOP: Flow of Control
+
+</item>
+
+
+	
+
+<item id="li1041">
+
+	
+
+<link id="a1042" url="http://cnx.org/contents/d061510e-16ba-4a4a-9b5e-0fc2797bcbf8">
+
+Jb0230r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1042">
+
+	
+
+<link id="a1043" url="http://cnx.org/contents/2d8c88a0-2bcf-4b65-bdb7-fe0631bf7e1b">
+
+Jb0240
+
+</link>
+
+: Java OOP: Arrays and Strings
+
+</item>
+
+
+	
+
+<item id="li1043">
+
+	
+
+<link id="a1044" url="http://cnx.org/contents/361eb287-0891-4e78-9ecb-542943accb1e">
+
+Jb0240r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1044">
+
+	
+
+<link id="a1045" url="http://cnx.org/contents/493cb10f-b7d5-483d-a4a9-16cb557d93b0">
+
+Jb0250
+
+</link>
+
+: Java OOP: Brief Introduction to Exceptions
+
+</item>
+
+
+	
+
+<item id="li1045">
+
+	
+
+<link id="a1046" url="http://cnx.org/contents/05fca126-509e-4c57-b53d-d3ae40491bd8">
+
+Jb0260
+
+</link>
+
+: Java OOP: Command-Line Arguments
+
+</item>
+
+
+	
+
+<item id="li1046">
+
+	
+
+<link id="a1047" url="http://cnx.org/contents/4d501a5a-7cf2-4672-ae5d-7530d98c353e">
+
+Jb0260r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1047">
+
+	
+
+<link id="a1048" url="http://cnx.org/contents/f7885b76-b734-44de-a297-c4e15cea70fe">
+
+Jb0270
+
+</link>
+
+: Java OOP: Packages
+
+</item>
+
+
+	
+
+<item id="li1048">
+
+	
+
+<link id="a1049" url="http://cnx.org/contents/160d3e6d-4937-4532-bb6d-ca2d9fdae098">
+
+Jb0280
+
+</link>
+
+: Java OOP: String and StringBuffer
+
+</item>
+
+
+	
+
+<item id="li1049">
+
+	
+
+<link id="a1050" url="http://cnx.org/contents/b869b728-c4ea-4580-a45d-dccf964c3932">
+
+Jb0280r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1050">
+
+	
+
+<link id="a1051" url="http://cnx.org/contents/f8e97ea2-abb1-4885-af70-46d0d5b5285d">
+
+Jb0290
+
+</link>
+
+: The end of Programming Fundamentals
+
+</item>
+
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Self-assessment_tests" effect="bold">
+
+Self-assessment tests
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1004">
+Earlier I mentioned the availability of a set of self-assessment tests. If 
+you already have some programming knowledge, you should take the following tests 
+before beginning the 
+
+<link id="a1052" target-id="Programming_fundamentals">
+
+Programming 
+fundamentals
+
+</link>
+
+ material to assess the level of your knowledge. That will help 
+you decide which, if any, of the 
+
+<link id="a1053" target-id="Programming_fundamentals">
+
+Programming 
+fundamentals
+
+</link>
+
+ modules you need to study.
+
+</para>
+
+
+
+
+<para id="p1005">
+If you don't already have programming knowledge, you should begin with
+
+
+<link id="a1054" target-id="Programming_fundamentals">
+
+Programming fundamentals
+
+</link>
+
+ and use the 
+self-assessment tests to determine how well you are learning that material. In 
+that case, I recommend that you begin taking the self-assessment tests 
+after you complete
+	
+
+<link id="a1055" url="http://cnx.org/contents/18b2d10e-9adc-4398-a6dc-b281153c0d36">
+
+Jb0180
+
+</link>
+
+
+<emphasis id="em1001" effect="italics">
+ 
+
+</emphasis>
+
+and continue studying the "fundamentals" material and taking the self-assessment 
+tests in parallel. 
+
+</para>
+
+
+	
+
+<list id="ul1004" list-type="bulleted">
+
+	
+
+<item id="li1051">
+
+	
+
+<link id="a1056" url="http://cnx.org/contents/e0e3e693-bf58-4deb-a991-bec64b89b355">
+
+Ap0005
+
+</link>
+
+: Preface to OOP Self-Assessment
+
+</item>
+
+
+	
+
+<item id="li1052">
+
+	
+
+<link id="a1057" url="http://cnx.org/contents/93379670-173d-480e-80f4-99b2a91a4c94">
+
+Ap0010
+
+</link>
+
+: Self-assessment, Primitive Types
+
+</item>
+
+
+	
+
+<item id="li1053">
+
+	
+
+<link id="a1058" url="http://cnx.org/contents/45ca9687-42ab-4b62-96ab-e575ef60fb34">
+
+Ap0020
+
+</link>
+
+: Self-assessment, Assignment and Arithmetic Operators
+
+</item>
+
+
+	
+
+<item id="li1054">
+
+	
+
+<link id="a1059" url="http://cnx.org/contents/b99f6008-a0c6-4487-adeb-ce084a0b9877">
+
+Ap0030
+
+</link>
+
+: Self-assessment, Relational Operators, Increment Operator, and Control Structures
+
+</item>
+
+
+	
+
+<item id="li1055">
+
+	
+
+<link id="a1060" url="http://cnx.org/contents/258b3193-2024-4665-af4d-1b10e700db17">
+
+Ap0040
+
+</link>
+
+: Self-assessment, Logical Operations, Numeric Casting, String Concatenation, and the toString Method
+
+</item>
+
+
+	
+
+<item id="li1056">
+
+	
+
+<link id="a1061" url="http://cnx.org/contents/163f31c4-24a1-43d8-aa45-0dbcf9d1ae14">
+
+Ap0050
+
+</link>
+
+: Self-assessment, Escape Character Sequences and Arrays
+
+</item>
+
+
+	
+
+<item id="li1057">
+
+	
+
+<link id="a1062" url="http://cnx.org/contents/05e66603-f79a-4ac4-88fc-cebbb2da8046">
+
+Ap0060
+
+</link>
+
+: Self-assessment, More on Arrays
+
+</item>
+
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="More_advanced_material" effect="bold">
+
+More advanced material
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1006">
+By the time you reach this point, you should have the fundamentals well in 
+hand. It is time to start studying more advanced material. You should start studying the material listed under 
+
+<link id="a1063" target-id="Essence_of_OOP">
+
+
+Essence of OOP
+
+</link>
+
+ and continue using the following self-assessment tests to 
+assess your progress along the way.
+
+</para>
+
+
+
+
+<list id="ul1005" list-type="bulleted">
+<item id="li1058">
+
+	
+
+<link id="a1064" url="http://cnx.org/contents/c45311a6-b1a6-4ba2-acb1-78d27b2cba4b">
+
+Ap0070
+
+</link>
+
+: Self-assessment, Method Overloading
+
+</item>
+
+
+	
+
+<item id="li1059">
+
+	
+
+<link id="a1065" url="http://cnx.org/contents/c43a60a8-ded8-4d5b-ba77-0e924740d10e">
+
+Ap0080
+
+</link>
+
+: Self-assessment, Classes, Constructors, and Accessor Methods
+
+</item>
+
+
+	
+
+<item id="li1060">
+
+	
+
+<link id="a1066" url="http://cnx.org/contents/a85b46e1-faad-4ec3-ae32-2da7a1fa8f7b">
+
+Ap0090
+
+</link>
+
+: Self-assessment, the super keyword, final keyword, and static methods
+
+</item>
+
+
+	
+
+<item id="li1061">
+
+	
+
+<link id="a1067" url="http://cnx.org/contents/26ea43c9-3556-45cd-b3c4-0dbbdb0d92dd">
+
+Ap0100
+
+</link>
+
+: Self-assessment, The this keyword, static final variables, and initialization of instance variables
+
+</item>
+
+
+	
+
+<item id="li1062">
+
+	
+
+<link id="a1068" url="http://cnx.org/contents/4b7b62ee-992b-4c8b-93e0-6739388267f2">
+
+Ap0110
+
+</link>
+
+: Self-assessment, Extending classes, overriding methods, and polymorphic behavior
+
+</item>
+
+
+	
+
+<item id="li1063">
+
+	
+
+<link id="a1069" url="http://cnx.org/contents/faba77c6-55ce-434f-a44b-dbf0a3e65d4e">
+
+Ap0120
+
+</link>
+
+: Self-assessment, Interfaces and polymorphic behavior
+
+</item>
+
+
+	
+
+<item id="li1064">
+
+	
+
+<link id="a1070" url="http://cnx.org/contents/aeb17773-62be-4c07-a308-31fabb6cce27">
+
+Ap0130
+
+</link>
+
+: Self-assessment, Comparing objects, packages, import directives, and some common exceptions
+
+</item>
+
+
+	
+
+<item id="li1065">
+
+	
+
+<link id="a1071" url="http://cnx.org/contents/65ba443f-4573-47d0-87b6-89fe8a147bc0">
+
+Ap0140
+
+</link>
+
+: Self-assessment, Type conversion, casting, common exceptions, public class files, javadoc comments and directives, and null references
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="Essence_of_OOP" effect="bold">
+
+Essence of OOP
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1007">
+By studying the material under 
+
+<link id="a1072" target-id="A_small_taste">
+
+A small taste
+
+</link>
+
+ 
+earlier, you got a small taste of what OOP is all about. By studying the 
+material under 
+
+<link id="a1073" target-id="Programming_fundamentals">
+
+Programming fundamentals
+
+</link>
+
+ 
+and 
+
+<link id="a1074" target-id="Self-assessment_tests">
+
+Self-assessment tests
+
+</link>
+
+, you learned a 
+lot about programming fundamentals using the Java programming language.
+
+</para>
+
+
+
+
+<para id="p1008">
+Now that you have a better understanding of the fundamentals, we will cover some very advanced 
+OOP material in the following modules:
+
+</para>
+
+
+
+
+<list id="ul1006" list-type="bulleted">
+
+	
+
+<item id="li1066">
+
+	
+
+<link id="a1075" url="http://cnx.org/contents/ace967b1-546b-4a0b-9b2f-c66d3947b4a8">
+
+Java1600
+
+</link>
+
+: Objects and Encapsulation
+
+</item>
+
+
+	
+
+<item id="li1067">
+
+	
+
+<link id="a1076" url="http://cnx.org/contents/8d130645-0b31-4898-80ba-cfa9ff5980c0">
+
+Java1602
+
+</link>
+
+: Classes
+
+</item>
+
+
+	
+
+<item id="li1068">
+
+	
+
+<link id="a1077" url="http://cnx.org/contents/64c03771-f072-4c05-84fb-4739a8bead71">
+
+Java1604
+
+</link>
+
+: Inheritance, Part 1
+
+</item>
+
+
+	
+
+<item id="li1069">
+
+	
+
+<link id="a1078" url="http://cnx.org/contents/d7f2941b-9e06-4788-a227-346c51e51869">
+
+Java1606
+
+</link>
+
+: Inheritance, Part 2
+
+</item>
+
+
+	
+
+<item id="li1070">
+
+	
+
+<link id="a1079" url="http://cnx.org/contents/703a3bfd-479c-4aca-8624-783d962e79b5">
+
+Java1608
+
+</link>
+
+: Polymorphism Based on Overloaded Methods
+
+</item>
+
+
+	
+
+<item id="li1071">
+
+	
+
+<link id="a1080" url="http://cnx.org/contents/549f7db3-3f6f-450b-ae2e-627d6e492ae0">
+
+Java1610
+
+</link>
+
+: Polymorphism, Type Conversion, Casting, etc.
+
+</item>
+
+
+	
+
+<item id="li1072">
+
+	
+
+<link id="a1081" url="http://cnx.org/contents/b93d365e-65ec-40c7-a8f0-7843703bccff">
+
+Java1612
+
+</link>
+
+: Runtime Polymorphism through Inheritance
+
+</item>
+
+
+	
+
+<item id="li1073">
+
+	
+
+<link id="a1082" url="http://cnx.org/contents/721f6200-6109-4788-982e-f3dbe9666c2e">
+
+Java1614
+
+</link>
+
+: Polymorphism and the Object Class
+
+</item>
+
+
+	
+
+<item id="li1074">
+
+	
+
+<link id="a1083" url="http://cnx.org/contents/2c050ae1-4c10-4941-9123-b15ad8730c35">
+
+Java1616
+
+</link>
+
+: Polymorphism and Interfaces, Part 1
+
+</item>
+
+
+	
+
+<item id="li1075">
+
+	
+
+<link id="a1084" url="http://cnx.org/contents/5210f26d-d8dd-4fc5-838d-c4e7c3d512c2">
+
+Java1618
+
+</link>
+
+: Polymorphism and Interfaces, Part 2
+
+</item>
+
+
+	
+
+<item id="li1076">
+
+	
+
+<link id="a1085" url="http://cnx.org/contents/be37341f-eff9-4dcb-9cfa-5f77a14c2fc4">
+
+Java1620
+
+</link>
+
+: Static Members
+
+</item>
+
+
+	
+
+<item id="li1077">
+
+	
+
+<link id="a1086" url="http://cnx.org/contents/5d005fa3-76ff-42ae-8be2-128f59fd45c2">
+
+Java1622
+
+</link>
+
+: Array Objects, Part 1
+
+</item>
+
+
+	
+
+<item id="li1078">
+
+	
+
+<link id="a1087" url="http://cnx.org/contents/9aa57d5d-285c-4991-90bc-88fd1cd7a531">
+
+Java1624
+
+</link>
+
+: Array Objects, Part 2
+
+</item>
+
+
+	
+
+<item id="li1079">
+
+	
+
+<link id="a1088" url="http://cnx.org/contents/e6f376a5-80d0-485d-a6e5-8640b1a0bd08">
+
+Java1626
+
+</link>
+
+: Array Objects, Part 3
+
+</item>
+
+
+	
+
+<item id="li1080">
+
+	
+
+<link id="a1089" url="http://cnx.org/contents/3b385770-09eb-4afa-8b02-725b0f59c17e">
+
+Java1628
+
+</link>
+
+: The this and super Keywords
+
+</item>
+
+
+	
+
+<item id="li1081">
+
+	
+
+<link id="a1090" url="http://cnx.org/contents/19a72de1-4852-4c82-b0d6-a12585692d56">
+
+Java1630
+
+</link>
+
+: Exception Handling
+
+</item>
+
+
+	
+
+<item id="li1082">
+
+	
+
+<link id="a1091" url="http://cnx.org/contents/842d95ee-aee3-4265-8bf5-a3ba2d53b228">
+
+Java1636
+
+</link>
+
+: Member Classes 
+	- optional for this course
+
+</item>
+
+
+	
+
+<item id="li1083">
+
+	
+
+<link id="a1092" url="http://cnx.org/contents/67a72c2c-c324-4002-a42a-2b74b4a74fb2">
+
+Java1638
+
+</link>
+
+: Local Classes 
+	- optional for this course
+
+</item>
+
+
+	
+
+<item id="li1084">
+
+	
+
+<link id="a1093" url="http://cnx.org/contents/f0f81fa4-4b34-4c81-90eb-8fd9089724ef">
+
+
+	Java1640
+
+</link>
+
+: Anonymous Classes - optional 
+	for this course
+
+</item>
+
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="The_Java_Collections_Framework" effect="bold">
+
+The Java Collections Framework
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1009">
+Before we move on to the modules on Java sound, you will need to understand 
+the material in the following modules:
+
+</para>
+
+
+
+
+<list id="ul1007" list-type="bulleted">
+<item id="li1085">
+
+	
+
+<link id="a1094" url="http://cnx.org/contents/05a3d262-597c-46a0-8d6a-ab4ceee293dd">
+
+Java4010
+
+</link>
+
+: Getting Started with Java Collections
+
+</item>
+
+
+	
+
+<item id="li1086">
+
+	
+
+<link id="a1095" url="http://cnx.org/contents/572a539c-9fb8-4a6a-9a5e-cedbd6d54f60">
+
+Java4010r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1087">
+
+	
+
+<link id="a1096" url="http://cnx.org/contents/0089dfdc-ea06-4eb6-aa3d-7aee19b57724">
+
+Java4020
+
+</link>
+
+: What is a Collection
+
+</item>
+
+
+	
+
+<item id="li1088">
+
+	
+
+<link id="a1097" url="http://cnx.org/contents/c69e7bbb-bbbd-4275-8ac7-f3c3cf3a5891">
+
+Java4020r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1089">
+
+	
+
+<link id="a1098" url="http://cnx.org/contents/c7af9bb6-d3b3-4345-912f-d704499f80ac">
+
+Java4030
+
+</link>
+
+: Purpose of Framework Interfaces
+
+</item>
+
+
+	
+
+<item id="li1090">
+
+	
+
+<link id="a1099" url="http://cnx.org/contents/c9012070-e976-4693-af10-7ac42a26cf9b">
+
+Java4030r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1091">
+
+	
+
+<link id="a1100" url="http://cnx.org/contents/7200eb80-ecc2-4f17-a3fd-44f16d9e3e6d">
+
+Java4040
+
+</link>
+
+: Purpose of Framework Implementations and Algorithms
+
+</item>
+
+
+	
+
+<item id="li1092">
+
+	
+
+<link id="a1101" url="http://cnx.org/contents/0e894aff-e431-4856-ab13-276f9a0c6f7f">
+
+Java4040r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1093">
+
+	
+
+<link id="a1102" url="http://cnx.org/contents/5c1b7a8d-d8d9-408d-a571-ace892cdba5f">
+
+Java4050
+
+</link>
+
+: Core Collection Interfaces
+
+</item>
+
+
+	
+
+<item id="li1094">
+
+	
+
+<link id="a1103" url="http://cnx.org/contents/ba8a299c-3b26-41fc-8c4d-4067fe6bd73c">
+
+Java4050r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1095">
+
+	
+
+<link id="a1104" url="http://cnx.org/contents/4c054d05-2aab-4c98-b177-f917f88ad4bf">
+
+Java4060
+
+</link>
+
+: Duplicate Elements, Ordered Collections, Sorted Collections, and Interface Specialization
+
+</item>
+
+
+	
+
+<item id="li1096">
+
+	
+
+<link id="a1105" url="http://cnx.org/contents/96c20b80-6fe4-4efa-b2b9-ea510dcdf0d5">
+
+Java4060r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1097">
+
+	
+
+<link id="a1106" url="http://cnx.org/contents/2f7aa066-65a6-43ce-9b7e-ef85ef99c8df">
+
+Java4070
+
+</link>
+
+: The Comparable Interface, Part 1
+
+</item>
+
+
+	
+
+<item id="li1098">
+
+	
+
+<link id="a1107" url="http://cnx.org/contents/901fa98b-e370-41eb-b734-e96c5ed91503">
+
+Java4070r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1099">
+
+	
+
+<link id="a1108" url="http://cnx.org/contents/c2e67731-f948-41fe-83ef-2efa169aad30">
+
+Java4080
+
+</link>
+
+: The Comparable Interface, Part 2
+
+</item>
+
+
+	
+
+<item id="li1100">
+
+	
+
+<link id="a1109" url="http://cnx.org/contents/072a185b-e2b1-40c2-b0e1-10157764dea7">
+
+Java4080r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1101">
+
+	
+
+<link id="a1110" url="http://cnx.org/contents/e7f45dfd-1da5-4dca-a470-44468d6d9340">
+
+Java4090
+
+</link>
+
+: The Comparator Interface, Part 1
+
+</item>
+
+
+	
+
+<item id="li1102">
+
+	
+
+<link id="a1111" url="http://cnx.org/contents/9b65a6e2-c4fa-4ba8-9acd-4e5144ca5c27">
+
+Java4090r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1103">
+
+	
+
+<link id="a1112" url="http://cnx.org/contents/597763da-fc55-49b6-83d5-4771ee8f1909">
+
+Java4100
+
+</link>
+
+: The Comparator Interface, Part 2
+
+</item>
+
+
+	
+
+<item id="li1104">
+
+	
+
+<link id="a1113" url="http://cnx.org/contents/69515d38-a462-4767-9941-bc6e9a670347">
+
+Java4100r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1105">
+
+	
+
+<link id="a1114" url="http://cnx.org/contents/f6577895-f16b-4336-9f6d-074e5c89df4b">
+
+Java4110
+
+</link>
+
+: The Comparator Interface, Part 3
+
+</item>
+
+
+	
+
+<item id="li1106">
+
+	
+
+<link id="a1115" url="http://cnx.org/contents/0e8be834-be52-4485-9d8a-686c8da7f35a">
+
+Java4110r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1107">
+
+	
+
+<link id="a1116" url="http://cnx.org/contents/a7251afa-74f3-4090-9cb5-18ab8501b938">
+
+Java4120
+
+</link>
+
+: The Comparator Interface, Part 4
+
+</item>
+
+
+	
+
+<item id="li1108">
+
+	
+
+<link id="a1117" url="http://cnx.org/contents/d739d58a-e117-4005-af7f-44770df89f51">
+
+Java4120r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1109">
+
+	
+
+<link id="a1118" url="http://cnx.org/contents/c0e99b82-5ed7-47fa-8ba6-fc16365549f6">
+
+Java4130
+
+</link>
+
+: The Comparator Interface, Part 5
+
+</item>
+
+
+	
+
+<item id="li1110">
+
+	
+
+<link id="a1119" url="http://cnx.org/contents/fdd6822d-7585-4833-aa2b-0224abfa1d1f">
+
+Java4130r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1111">
+
+	
+
+<link id="a1120" url="http://cnx.org/contents/f8ddcb13-14e1-4fbc-8097-d7a156c480b0">
+
+Java4140
+
+</link>
+
+: The Comparator Interface, Part 6
+
+</item>
+
+
+	
+
+<item id="li1112">
+
+	
+
+<link id="a1121" url="http://cnx.org/contents/38e24337-fc2d-46db-ac3c-fe9026584558">
+
+Java4140r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1113">
+
+	
+
+<link id="a1122" url="http://cnx.org/contents/926813d2-ea55-43ef-acaa-0fd9f297ba08">
+
+Java4150
+
+</link>
+
+: The toArray Method, Part 1
+
+</item>
+
+
+	
+
+<item id="li1114">
+
+	
+
+<link id="a1123" url="http://cnx.org/contents/b8b1ee21-43cd-4876-9e49-26867ff86d88">
+
+Java4150r
+
+</link>
+
+: Review
+
+</item>
+
+
+	
+
+<item id="li1115">
+
+	
+
+<link id="a1124" url="http://cnx.org/contents/3c7e4f60-ac78-4103-bc6d-f092325a3f64">
+
+Java4160
+
+</link>
+
+: The toArray Method, Part 2
+
+</item>
+
+
+	
+
+<item id="li1116">
+
+	
+
+<link id="a1125" url="http://cnx.org/contents/77390e72-ba3c-488a-b40c-6d0d021e203d">
+
+Java4160r
+
+</link>
+
+: Review
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="Java_sound" effect="bold">
+
+Java sound
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1010">
+By this point in the course, you should have learned enough that you can put 
+Java OOP to work in a substantive way. Normally at this point, my sighted 
+students would begin using OOP to manipulate the pixels and colors in digital 
+images. Obviously, that is not something that blind students could do. In this 
+course, which is designed specifically for blind students, you will begin 
+writing substantive programs that deal with something that you are probably very 
+good at -- sound. The lessons in this part of the course begin at
+
+
+<link id="a1126" url="http://cnx.org/contents/95690bfe-7038-4798-a6da-e82761fc3505">
+
+Jbs2000-What is Sound?
+
+</link>
+
+ and continue from there.
+
+</para>
+
+
+
+
+<para id="p1011">
+At the beginning, you will learn to write a Java OOP program to produce 
+simple sounds such as 
+
+<link id="a1127" url="Tones.au">
+
+Tones
+
+</link>
+
+ 
+
+<emphasis id="em1002" effect="italics">
+(click to download and 
+play)
+
+</emphasis>
+. If you are viewing the 
+HTML version of this module on the Legacy site, you should be able to download 
+this file and play it using any standard media player that supports audio files 
+of type AU. 
+
+<emphasis id="em1003" effect="italics">
+(If you are on the OpenStax site, or if you are viewing the PDF 
+version of this module on either site, you may not be able to download the 
+file.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1012">
+As you move through the sound modules, you will learn to write OOP programs to 
+produce more complex sounds such as 
+
+<link id="a1128" url="StereoPingpong.au">
+
+StereoPingpong
+
+</link>
+
+ 
+
+
+<emphasis id="em1004" effect="italics">
+(click to download and play)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1013">
+Ultimately you will learn to write OOP programs that can be used to compose 
+and play various melodies such as the following:
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1117">
+<link id="a1129" url="FourScales.au">
+
+FourScales
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1118">
+<link id="a1130" url="MaryHadALittleLamb.au">
+
+MaryHadALittleLamb
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1119">
+<link id="a1131" url="Greensleeves.au">
+
+Greensleeves
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1014">
+Stay tuned. There is much more to come.
+
+</para>
+
+
+	
+
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1015">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1002" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1009" list-type="bulleted">
+
+					
+
+<item id="li1120">
+Module name: Jbs1050: A Roadmap
+
+</item>
+
+
+					
+
+<item id="li1121">
+File: Jbs1050.cnxml.htm
+
+
+</item>
+
+
+					
+
+<item id="li1122">
+Published: 08/17/14
+
+</item>
+
+
+					
+
+<item id="li1123">
+Revised: 09/29/15
+
+</item>
+
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1003" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1016">
+<emphasis id="strong1004" effect="bold">
+Financial
+
+</emphasis>
+: Although the 
+				
+
+<emphasis id="strong1005" effect="bold">
+OpenStax CNX
+
+</emphasis>
+
+site makes it possible for you to download a PDF file for the collection that 
+				contains this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1017">
+You also need to know that Prof. Baldwin receives no financial compensation from 
+				
+
+<emphasis id="strong1006" effect="bold">
+OpenStax CNX 
+
+</emphasis>
+even if you purchase 
+	the PDF version of the collection.
+
+</para>
+
+
+				
+
+<para id="p1018">
+In the past, unknown individuals have copied Prof. Baldwin's modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing Prof. Baldwin as the author. 
+				Prof. Baldwin 
+				neither receives compensation for those sales nor does he know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a collection that is freely 
+				available on 
+
+<emphasis id="strong1007" effect="bold">
+OpenStax CNX
+
+</emphasis>
+ and that it was made and published without 
+				the prior knowledge of Prof. Baldwin.
+
+</para>
+
+
+				
+
+<para id="p1019">
+<emphasis id="strong1008" effect="bold">
+Affiliation
+
+</emphasis>
+: Prof. Baldwin is a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+<para id="p1020">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

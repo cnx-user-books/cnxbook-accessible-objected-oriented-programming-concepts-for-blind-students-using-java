@@ -1,0 +1,8798 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Jbs2060-A Player Piano Simulator</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m50944</md:content-id>
+  <md:title>Jbs2060-A Player Piano Simulator</md:title>
+  <md:abstract>This module explains how to write a program that simulates a player piano in a format that is accessible to blind students.</md:abstract>
+  <md:uuid>d9083fe9-a0d4-43aa-a067-e9365fa51a75</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1003">
+<link id="a1003" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1004">
+<link id="a1004" target-id="A_player_piano_simulator">
+
+A player piano simulator
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1005">
+<link id="a1005" target-id="I_am_not_a_musician">
+
+I am not a musician
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="Classes_required">
+
+Required classes
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1007">
+<link id="a1007" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="The_class_named_MusicComposer09">
+
+The class named MusicComposer09
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+			
+
+<item id="li1009">
+<link id="a1009" target-id="Beginning_of_the_class_named_MusicComposer09">
+
+Beginning of the class named MusicComposer09
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1010">
+<link id="a1010" target-id="The_main_method">
+
+The main method
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1011">
+
+			
+
+<link id="a1011" target-id="Beginning_of_the_constructor_for_the_MusicComposer09_class">
+
+Beginning of the constructor for the MusicComposer09 class
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1012">
+<link id="a1012" target-id="Get_a_melody_array">
+
+Get a melody array
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1013">
+<link id="a1013" target-id="The_class_named_PlayerPiano01">
+
+The class named PlayerPiano01
+
+</link>
+
+
+<list id="ul1006" list-type="bulleted">
+
+			
+
+<item id="li1014">
+<link id="a1014" target-id="Treble_clef_and_bass_clef">
+
+Treble clef and bass clef
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1015">
+<link id="a1015" target-id="Command-line_parameters">
+
+Command-line parameters
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1016">
+<link id="a1016" target-id="Required_text_file_format">
+
+Required text file format
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1017">
+<link id="a1017" target-id="Shaping_the_notes">
+
+Shaping the notes
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1018">
+<link id="a1018" target-id="Beginning_of_the_PlayerPiano01_class">
+
+Beginning of the PlayerPiano01 class
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1019">
+<link id="a1019" target-id="The_constructor_for_PlayerPiano01">
+
+The constructor for 
+			the PlayerPiano01 class
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1020">
+<link id="a1020" target-id="Beginning_of_the_getMelody_method">
+
+Beginning of the getMelody method
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1021">
+<link id="a1021" target-id="The_treble_clef_and_bass_clef_data">
+
+The treble clef 
+			and bass clef data
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1022">
+<link id="a1022" target-id="Beats_per_second">
+
+Beats per second
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1023">
+<link id="a1023" target-id="Get_and_save_treble_clef_note_data">
+
+Get and save treble clef note data
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1024">
+<link id="a1024" target-id="Parsing_the_data">
+
+Parsing the treble clef note data
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1025">
+<link id="a1025" target-id="Get_and_save_bass_clef_note_data">
+
+Get and save bass clef note data
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1026">
+<link id="a1026" target-id="Compute_the_length_of_each_clef_in_beats">
+
+Compute the length of each clef in beats
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1027">
+<link id="a1027" target-id="Check_for_treble_and_bass_clefs_of_different_lengths">
+
+Check for treble and bass clefs of different lengths
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1028">
+<link id="a1028" target-id="Convert_treble_notes_to_amplitude_values">
+
+Convert treble notes to amplitude values
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1029">
+<link id="a1029" target-id="Convert_bass_notes_to_amplitude_values">
+
+Convert bass notes to amplitude values
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1030">
+
+			
+
+<link id="a1030" target-id="Populate_and_return_the_melody_array_with_stereo_data">
+
+Populate and return the melody array with stereo data
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1031">
+
+			
+
+<link id="a1031" target-id="Populate_and_return_the_melody_array_with_monaural_data">
+
+Populate and return the melody array with monaural data
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1032">
+<link id="a1032" target-id="The_getPiano_method">
+
+The getPiano method
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1033">
+<link id="a1033" target-id="Musical_instruments_must_be_tuned">
+
+Musical instruments 
+			must be tuned
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1034">
+<link id="a1034" target-id="The_in-between_frequencies">
+
+The in-between frequencies
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1035">
+<link id="a1035" target-id="Beginning_of_the_getPiano_method">
+
+Beginning of the getPiano method
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1036">
+
+			
+
+<link id="a1036" target-id="Store_the_current_note_and_compute_the_frequency_of_the_next_note">
+
+Store the current note and compute the frequency of the next note
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1037">
+<link id="a1037" target-id="Construct_the_name_of_the_next_note">
+
+Construct the name of the next note
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1038">
+<link id="a1038" target-id="Beginning_of_the_method_named_makeMusic">
+
+Beginning of the method named makeMusic
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1039">
+
+			
+
+<link id="a1039" target-id="Process_each_array_containing_duration_and_note_names_in_the_ArrayList_object">
+
+Process each array containing duration and note names in the ArrayList object
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1040">
+<link id="a1040" target-id="Process_each_sample">
+
+Process each sample
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1041">
+<link id="a1041" target-id="Process_each_piano_key_that_is_depressed">
+
+Process each 
+			piano key that is pressed
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1042">
+<link id="a1042" target-id="Use_a_scale_factor_to_shape_the_note">
+
+Use a scale factor to shape the note
+
+</link>
+
+
+</item>
+
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1043">
+<link id="a1043" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1044">
+<link id="a1044" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1045">
+<link id="a1045" target-id="Complete_program_listing">
+
+Complete program listings
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1000">
+This module is part of a collection titled 
+
+<emphasis id="strong1000" effect="bold">
+Accessible 
+	Objected-Oriented Programming Concepts for Blind Students using Java
+
+</emphasis>
+. 
+	It explains how to write a program that simulates a player piano in a format 
+	that is accessible to blind students. 
+
+</para>
+
+
+
+
+<para id="p1001">
+Here are some sample melodies produced 
+	by the program. 
+
+<emphasis id="em1000" effect="italics">
+(You should be able to play these audio files with any 
+	standard media player that can handle the AU file type. In case you are on 
+	the OpenStax site and you are unable to download the audio files, click the
+	
+
+</emphasis>
+<emphasis id="strong1001" effect="bold">
+<emphasis id="em1001" effect="italics">
+Legacy Site
+
+</emphasis>
+</emphasis>
+<emphasis id="em1002" effect="italics">
+ link at the top of this page 
+	to switch over to the same module on the Legacy site. You should be able to 
+	download the 
+
+<emphasis id="audio_files_from_ther" effect="bold">
+
+audio files from there
+
+</emphasis>
+
+.)
+
+</emphasis>
+</para>
+
+
+	
+
+<list id="ul1007" list-type="bulleted">
+
+		
+
+<item id="li1046">
+<link id="a1046" url="AllNotes.au">
+
+AllNotes
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1047">
+<link id="a1047" url="Chords.au">
+
+Chords
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1048">
+<link id="a1048" url="FourScales.au">
+
+FourScales
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1049">
+<link id="a1049" url="Greensleeves.au">
+
+Greensleeves
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1050">
+<link id="a1050" url="MaryLambSimple.au">
+
+MaryLambSimple
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1051">
+<link id="a1051" url="MaryLambStereo.au">
+
+MaryLambStereo
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1052">
+<link id="a1052" url="Scales.au">
+
+Scales
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1002">
+Click 
+
+<link id="a1053" url="Music.zip">
+
+here
+
+</link>
+
+ to download a zip file containing the text files 
+and the Windows batch files needed to play 
+these melodies. The zip file also contains the audio files of type AU listed 
+above.
+
+</para>
+
+
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1003">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find the listings while you are reading about them.
+
+</para>
+
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1008" list-type="bulleted">
+
+		
+
+<item id="li1053">
+<link id="a1054" target-id="Listing_01">
+
+Listing 1
+
+</link>
+
+. Beginning of the class named MusicComposer09. 
+
+</item>
+
+
+		
+
+<item id="li1054">
+<link id="a1055" target-id="Listing_02">
+
+Listing 2
+
+</link>
+
+. The main method. 
+
+</item>
+
+
+		
+
+<item id="li1055">
+<link id="a1056" target-id="Listing_03">
+
+Listing 3
+
+</link>
+
+. Beginning of the constructor for the MusicComposer09 class. 
+
+</item>
+
+
+		
+
+<item id="li1056">
+<link id="a1057" target-id="Listing_04">
+
+Listing 4
+
+</link>
+
+. Get a melody array. 
+
+</item>
+
+
+		
+
+<item id="li1057">
+<link id="a1058" target-id="Listing_05">
+
+Listing 5
+
+</link>
+
+. Beginning of the PlayerPiano01 class.
+
+</item>
+
+
+		
+
+<item id="li1058">
+<link id="a1059" target-id="Listing_06">
+
+Listing 6
+
+</link>
+
+. The constructor for the PlayerPiano01 
+		class.
+
+</item>
+
+
+		
+
+<item id="li1059">
+<link id="a1060" target-id="Listing_07">
+
+Listing 7
+
+</link>
+
+. Beginning of the getMelody method.
+
+</item>
+
+
+		
+
+<item id="li1060">
+<link id="a1061" target-id="Listing_08">
+
+Listing 8
+
+</link>
+
+. Get and save treble clef note data.
+
+</item>
+
+
+		
+
+<item id="li1061">
+<link id="a1062" target-id="Listing_09">
+
+Listing 9
+
+</link>
+
+. Get and save bass clef note data.
+
+</item>
+
+
+		
+
+<item id="li1062">
+<link id="a1063" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. Compute the length of each clef in beats.
+
+</item>
+
+
+		
+
+<item id="li1063">
+<link id="a1064" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+. Check for treble and bass clefs of different lengths.
+
+</item>
+
+
+		
+
+<item id="li1064">
+<link id="a1065" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+. Convert treble notes to amplitude values.
+
+</item>
+
+
+		
+
+<item id="li1065">
+<link id="a1066" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+. Convert bass notes to amplitude values.
+
+</item>
+
+
+		
+
+<item id="li1066">
+<link id="a1067" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+. Populate and return the melody array with stereo data.
+
+</item>
+
+
+		
+
+<item id="li1067">
+<link id="a1068" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+. Populate and return the melody array with monaural data.
+
+</item>
+
+
+		
+
+<item id="li1068">
+<link id="a1069" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+. Beginning of the getPiano method.
+
+</item>
+
+
+		
+
+<item id="li1069">
+<link id="a1070" target-id="Listing_17">
+
+Listing 17
+
+</link>
+
+. Store the current note and compute the frequency of the next note.
+
+</item>
+
+
+		
+
+<item id="li1070">
+<link id="a1071" target-id="Listing_18">
+
+Listing 18
+
+</link>
+
+. Construct the name of the next note.
+
+</item>
+
+
+		
+
+<item id="li1071">
+<link id="a1072" target-id="Listing_19">
+
+Listing 19
+
+</link>
+
+. Beginning of the method named makeMusic.
+
+</item>
+
+
+		
+
+<item id="li1072">
+<link id="a1073" target-id="Listing_20">
+
+Listing 20
+
+</link>
+
+. Process each array containing duration and note names in the ArrayList object.
+
+</item>
+
+
+		
+
+<item id="li1073">
+<link id="a1074" target-id="Listing_21">
+
+Listing 21
+
+</link>
+
+. Process each sample.
+
+</item>
+
+
+		
+
+<item id="li1074">
+<link id="a1075" target-id="Listing_22">
+
+Listing 22
+
+</link>
+
+. Process each piano key that is 
+		pressed.
+
+</item>
+
+
+		
+
+<item id="li1075">
+<link id="a1076" target-id="Listing_23">
+
+Listing 23
+
+</link>
+
+. Use a scale factor to shape the note.
+
+</item>
+
+
+		
+
+<item id="li1076">
+<link id="a1077" target-id="Listing_24">
+
+Listing 24
+
+</link>
+
+. The class named AudioFormatParameters01.
+
+</item>
+
+
+		
+
+<item id="li1077">
+<link id="a1078" target-id="Listing_25">
+
+Listing 25
+
+</link>
+
+. The class named AudioPlayOrFile01.
+
+</item>
+
+
+		
+
+<item id="li1078">
+<link id="a1079" target-id="Listing_26">
+
+Listing 26
+
+</link>
+
+. The class named AudioSignalGenerator02.
+
+</item>
+
+
+		
+
+<item id="li1079">
+<link id="a1080" target-id="Listing_27">
+
+Listing 27
+
+</link>
+
+. The class named MusicComposer09.
+
+</item>
+
+
+		
+
+<item id="li1080">
+<link id="a1081" target-id="Listing_28">
+
+Listing 28
+
+</link>
+
+. The class named PlayerPiano01.
+
+</item>
+
+
+		
+
+<item id="li1081">
+<link id="a1082" target-id="Listing_29">
+
+Listing 29
+
+</link>
+
+. The file named GreensleevesTreble.txt
+
+</item>
+
+
+		
+
+<item id="li1082">
+<link id="a1083" target-id="Listing_30">
+
+Listing 30
+
+</link>
+
+. The file named GreensleevesBass.txt
+
+</item>
+
+
+		
+
+<item id="li1083">
+<link id="a1084" target-id="Listing_31">
+
+Listing 31
+
+</link>
+
+. The file named Greensleeves.bat.
+
+</item>
+
+
+	
+
+</list>
+
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="General_background_information" effect="bold">
+
+General 
+	background information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1004">
+An previous module titled 
+
+<emphasis id="em1003" effect="italics">
+
+
+
+<link id="a1085" url="http://cnx.org/contents/6b144587-4bb9-4e60-9206-ef13615412b0">
+
+Jbs2050-Runtime Polymorphism with Java Sound
+
+</link>
+
+
+</emphasis>
+ 
+summarized the kinds of things that you have learned in the earlier modules in 
+the series. As indicated in that module, the program that I will discuss in this 
+module will be significantly different from the code in the earlier modules. For 
+example, the code in those modules produced hard-coded sound such as
+
+
+<link id="a1086" url="StereoPingpong.au">
+
+StereoPingpong
+
+</link>
+
+ and 
+
+<link id="a1087" url="FMSweep.au">
+
+FMSweep
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1005">
+The code in this module will allow you to control the sound based on the 
+contents of a text file that you create. This allows a great deal of 
+flexibility as indicated by the melodies in the 
+
+<link id="a1088" target-id="audio_files_from_ther">
+
+
+above list
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="A_player_piano_simulator" effect="bold">
+
+A player piano simulator
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1006">
+In the late 19th and early 20th century, various companies manufactured pianos 
+that played music automatically. The music was recorded on rolls of perforated 
+paper. A pneumatic or electro-mechanical mechanism inside the piano read the 
+holes in the paper and used that information to press the keys on the piano 
+keyboard in 
+such a way as to cause the piano to play the pre-recorded music. To a sighted 
+observer, it looked as if an invisible person was playing the piano because the 
+piano keys moved up and down with no hands on the keyboard. 
+
+</para>
+
+
+
+
+<para id="p1007">
+These automated pianos were often referred to as 
+
+<emphasis id="em1004" effect="italics">
+player pianos
+
+</emphasis>
+. The 
+program that I will explain in this module is a 
+
+<emphasis id="em1005" effect="italics">
+player piano simulator
+
+</emphasis>
+. You can 
+"pre-record" a melody in text files 
+
+<emphasis id="em1006" effect="italics">
+(as opposed to rolls of perforated paper)
+
+</emphasis>
+ 
+and play those files using the simulator program. As you will learn later, a 
+melody is defined in one 
+
+<emphasis id="em1007" effect="italics">
+(or optionally two)
+
+</emphasis>
+ text files using standard 
+musical notation where the notes have names like A, A#, B, C, C#, etc. 
+
+</para>
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="I_am_not_a_musician" effect="bold">
+
+I am not a musician
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1008">
+I'm an engineer, not a musician. While I understand quite a bit about the 
+physics of sound, I understand very little about how that sound is put together 
+to create the pleasing sound that we call music. This module will 
+describe a simulated musical instrument. Therefore, it will be necessary for me 
+to explain the code using musical terminology. I'm sure that the explanation 
+will contain many gaffs insofar as musical terminology is concerned. However, the 
+purpose is to teach programming and not to teach music. Please bear with me and 
+overlook my musical terminology gaffs.
+
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="Classes_required" effect="bold">
+
+Required classes
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1009">
+This program requires access to the following five classes
+
+
+<emphasis id="in_the_same_folder" effect="bold">
+
+in the same folder
+
+</emphasis>
+
+:
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+
+	
+
+<item id="li1084">
+AudioFormatParameters01 
+
+</item>
+
+
+	
+
+<item id="li1085">
+AudioPlayOrFile01 
+
+</item>
+
+
+	
+
+<item id="li1086">
+AudioSignalGenerator02
+
+</item>
+
+
+	
+
+<item id="li1087">
+MusicComposer09
+
+</item>
+
+
+	
+
+<item id="li1088">
+PlayerPiano01
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1010">
+You will find source code for all of these classes in 
+
+<link id="a1089" target-id="Listing_24">
+
+Listing 24
+
+</link>
+
+ through 
+
+
+<link id="a1090" target-id="Listing_28">
+
+Listing 28
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1011">
+You are already familiar with the first three classes in the above list because they were used in 
+earlier modules. Therefore, I won't discuss them in this module
+
+</para>
+
+
+
+
+<para id="p1012">
+The driver class for this program is the class named 
+
+<emphasis id="strong1002" effect="bold">
+MusicComposer09
+
+</emphasis>
+. 
+The player piano simulator is defined in the class named 
+
+<emphasis id="strong1003" effect="bold">
+PlayerPiano01
+
+</emphasis>
+. 
+I will explain those two classes in the next section.
+
+</para>
+
+
+	
+	
+
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<section id="h21004">
+<title>
+<emphasis id="The_class_named_MusicComposer09" effect="bold">
+
+The class named MusicComposer09
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1013">
+This is the driver class for playing piano melodies. It requires the 
+files in the 
+
+<link id="a1091" target-id="in_the_same_folder">
+
+above list
+
+</link>
+
+ to be in the same 
+folder.
+
+</para>
+
+
+
+
+<para id="p1014">
+The melody to be played is defined in one and optionally two text files. The 
+required text file defines the notes and the duration of those notes on the 
+treble clef. The optional text file defines the notes and the durations of 
+those notes on the bass clef. Those text files must exist in a folder
+named 
+
+<emphasis id="strong1004" effect="bold">
+Music
+
+</emphasis>
+ which is a child or immediate subfolder of the folder that contains the compiled program 
+code.
+
+</para>
+
+
+
+
+<para id="p1015">
+The text file for the treble clef of a stereo rendition of Greensleeves is 
+shown in 
+
+<link id="a1092" target-id="Listing_29">
+
+Listing 29
+
+</link>
+
+. The text file for the bass clef of that same melody is 
+shown in 
+
+<link id="a1093" target-id="Listing_30">
+
+Listing 30
+
+</link>
+
+. I will explain the contents of those 
+
+
+<emphasis id="files_later_Click" effect="bold">
+
+files later. Click
+
+</emphasis>
+
+
+
+
+<link id="a1094" url="Music.zip">
+
+here
+
+</link>
+
+ to download a zip file containing those two text 
+files and other files as well, including Windows batch files.
+
+</para>
+
+
+
+
+<para id="p1016">
+The melody can be played immediately or can be saved in an audio file of 
+type AU for playback later. 
+
+<link id="a1095" target-id="Listing_31">
+
+Listing 31
+
+</link>
+
+ contains a Windows batch file that does both. I will explain the contents of this 
+batch file later. This batch file is also 
+contained in the zip file mentioned 
+
+<link id="a1096" target-id="files_later_Click">
+
+above
+
+</link>
+
+. You should be able to play the audio file with 
+any standard media player that can handle the AU file type. 
+
+</para>
+
+
+
+
+<section id="h31001">
+<title>
+<emphasis id="Beginning_of_the_class_named_MusicComposer09" effect="bold">
+
+Beginning of the 
+class named MusicComposer09
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1017">
+The beginning of the class named 
+
+<emphasis id="strong1005" effect="bold">
+MusicComposer09
+
+</emphasis>
+ is shown in 
+
+
+<link id="a1097" target-id="Listing_01">
+
+Listing 1
+
+</link>
+
+. You have seen code like this in several previous modules, so no 
+explanation beyond the embedded comments should be needed.
+
+</para>
+
+
+	
+
+<table id="table1000" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Listing_01" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. Beginning of the class 
+				named MusicComposer09.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">
+public class MusicComposer09{
+  //Instantiate an object containing audio format parameters with predefined
+  // values. They may be modified by the signal generator at runtime. Values
+  // allowed by Java SDK 1.4.1 are shown in comments in the class definition.
+  AudioFormatParameters01 audioParams = new AudioFormatParameters01();
+  
+  //A buffer to hold the data for the melody that will be played or filed.
+  byte[] melody;
+  
+  //A place to store the incoming args array.
+  String[] args; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31002">
+<title>
+<emphasis id="The_main_method" effect="bold">
+
+The main method
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1018">
+The 
+
+<emphasis id="strong1006" effect="bold">
+main
+
+</emphasis>
+ method is shown in 
+
+<link id="a1098" target-id="Listing_02">
+
+Listing 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Listing_02" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. The main method.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">
+  public static void main(String[] args){
+    /*Command-line parameters
+    0: "play" to play immediately, fileName to create an AU file. Note that 
+       the output filename cannot be named play.au.
+    1: Beats per second.
+    2: Name of file containing treble clef data (required).
+    3: Name of file containing bass clef data (optional).
+    */
+    
+    //Instantiate a new object of this class.
+    new MusicComposer09(args);
+  }//end main
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1019">
+The only thing that is new in 
+
+<link id="a1099" target-id="Listing_02">
+
+Listing 2
+
+</link>
+
+ is the description of the 
+	command-line parameters. The only thing new there is the second parameter 
+	referred to as "Beats per second." As you will see when we get into the 
+	code, the value of this parameter determines how fast the melody will be 
+	played. Low values cause the melody to be played slowly. Higher values cause 
+	the melody to be played more rapidly.
+
+</para>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="Beginning_of_the_constructor_for_the_MusicComposer09_class" effect="bold">
+
+
+Beginning of the constructor for the MusicComposer09 class
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1020">
+The beginning of the constructor for the 
+
+<emphasis id="strong1007" effect="bold">
+MusicComposer09
+
+</emphasis>
+ 
+class is shown in 
+
+<link id="a1100" target-id="Listing_03">
+
+Listing 3
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Listing_03" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. Beginning of the 
+				constructor for the MusicComposer09 class.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">
+  public MusicComposer09(String[] args){//constructor
+    //Save the args array.
+    this.args = args;
+    
+    if(args.length == 0){
+      this.args = new String[4];
+      this.args[0] = "play";//Play the melody immediately
+      this.args[1] = "16";//beats per second
+      this.args[2] = "GreensleevesTreble.txt";
+      this.args[3] = "GreensleevesBass.txt";
+    }//end if
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1021">
+Because of the code in 
+
+<link id="a1101" target-id="Listing_03">
+
+Listing 3
+
+</link>
+
+, the program can be run in default mode 
+	without the requirement to enter command-line parameters. This code creates default 
+	
+
+<emphasis id="strong1008" effect="bold">
+args
+
+</emphasis>
+ data if no parameters are entered on the command line. 
+	The code requires that the files named 
+
+<emphasis id="strong1009" effect="bold">
+GreensleevesTreble.txt
+
+</emphasis>
+ and
+	
+
+<emphasis id="strong1010" effect="bold">
+GreensleevesBass.txt
+
+</emphasis>
+ exist in the subfolder named 
+
+<emphasis id="strong1011" effect="bold">
+Music
+
+</emphasis>
+.
+
+
+</para>
+
+
+
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="Get_a_melody_array" effect="bold">
+
+Get a melody array
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1022">
+The code in 
+
+<link id="a1102" target-id="Listing_04">
+
+Listing 4
+
+</link>
+
+ is the same as code that you have seen in previous 
+modules. The only thing new is that this program requires a text file containing treble clef data and optionally a file
+    containing bass clef data in the subfolder named 
+
+<emphasis id="strong1012" effect="bold">
+Music
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Listing_04" effect="bold">
+
+Listing 4
+
+</emphasis>
+
+. Get a melody array.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">
+    AudioSignalGenerator02 sigGen = 
+                               new PlayerPiano01(audioParams,this.args,melody);
+    melody = sigGen.getMelody();
+    
+    //Play or file the audio data
+    new AudioPlayOrFile01(audioParams,melody,this.args[0]).playOrFileData();
+  }//end constructor
+  //-------------------------------------------------------------------------//
+}//end class MusicComposer09.java
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1023">
+<link id="a1103" target-id="Listing_04">
+
+Listing 4
+
+</link>
+
+ also signals the end of the constructor and the end of the 
+	class named 
+
+<emphasis id="strong1013" effect="bold">
+MusicComposer09
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+
+</section>
+</section>
+<section id="h21005">
+<title>
+<emphasis id="The_class_named_PlayerPiano01" effect="bold">
+
+The class named PlayerPiano01
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1024">
+This class simulates an old-fashioned player piano and makes it possible to
+compose a melody by specifying the sequence of notes and the duration of each 
+note for both the treble and bass clefs. 
+
+The program uses text files to store the notes. 
+
+
+
+</para>
+
+
+
+
+<para id="p1025">
+The notes are converted to frequencies, which are then used to produce mono or 
+stereo sound. 
+
+While not perfect, an attempt was made to cause that sound to resemble the sound 
+of a piano.
+
+</para>
+
+
+
+
+<section id="h31005">
+<title>
+<emphasis id="Treble_clef_and_bass_clef" effect="bold">
+
+Treble clef and bass clef
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1026">
+A file containing treble clef notes is required. Bass clef notes are optional. 
+If a file is provided containing bass clef notes, the bass clef melody is 
+emitted from the left speaker and the treble clef melody is emitted from the 
+right speaker. 
+
+If bass clef notes are not provided, the program defaults to monaural with the 
+treble clef melody being emitted with equal volume from both speakers. 
+
+
+</para>
+
+
+
+
+</section>
+<section id="h31006">
+<title>
+<emphasis id="Command-line_parameters" effect="bold">
+
+Command-line parameters
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1027">
+Various 
+operating parameters are provided by way of command-line parameters. One of 
+the command-line parameters makes it possible to play the music immediately or
+to write it into an audio file of type AU for playback later.
+
+The notes for the melody are specified in one or two text files. As mentioned 
+earlier, a file 
+containing treble clef notes is required. A file containing bass clef notes is
+optional. 
+
+
+</para>
+
+
+
+
+<para id="p1028">
+The input file names and other parameters are specified on the 
+command line as shown in the comments at the beginning of the source code file 
+for the class named 
+
+<emphasis id="strong1014" effect="bold">
+MusicComposer09
+
+</emphasis>
+.
+
+
+
+</para>
+
+
+
+
+</section>
+<section id="h31007">
+<title>
+<emphasis id="Required_text_file_format" effect="bold">
+
+Required text file format
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1029">
+Each line in the text file specifies the duration and one or more keys that
+would be pressed on a piano simultaneously. The items are delimited by commas, 
+and spaces are not allowed. For example, the following lines of
+text specify four instances of the A-Major chord for quarter, half,
+three-fourths, and whole notes with a whole note rest in between. 
+(See 
+
+<link id="a1104" url="http://www.true-piano-lessons.com/piano-chord-chart.html">
+
+http://www.true-piano-lessons.com/piano-chord-chart.html
+
+</link>
+
+ for chord 
+chars.) 
+Note that X is used as the symbol for silence or a musical rest.
+
+
+
+</para>
+
+
+
+
+<list id="ul1010" list-type="bulleted">
+
+	
+
+<item id="li1089">
+// This is a comment in the text file
+
+
+</item>
+
+
+	
+
+<item id="li1090">
+1,A3,C4#,E4
+
+
+</item>
+
+
+	
+
+<item id="li1091">
+4,X
+
+
+</item>
+
+
+	
+
+<item id="li1092">
+2,A3,C4#,E4
+
+
+</item>
+
+
+	
+
+<item id="li1093">
+4,X
+
+
+</item>
+
+
+	
+
+<item id="li1094">
+3,A3,C4#,E4
+
+
+</item>
+
+
+	
+
+<item id="li1095">
+4,X
+
+
+</item>
+
+
+	
+
+<item id="li1096">
+4,A3,C4#,E4
+
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1030">
+Normally, the first character on each line must be a number or a /. Comments must begin in 
+the first column with a forward slash (/).
+
+The program will ignore:
+
+ 
+
+</para>
+
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+	
+
+<item id="li1097">
+Comment lines that begin with /
+
+</item>
+
+
+	
+
+<item id="li1098">
+Blank lines that result in a string with a zero length 
+
+</item>
+
+
+	
+
+<item id="li1099">
+Lines that begin with a space
+
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1031">
+The frequency range extends from A2 (110 Hz) to A7 (3520 Hz). Note, however, that 
+some 
+audio speakers cannot produce sound at the low or high end of that spectrum. 
+
+Middle-C 
+
+<emphasis id="em1008" effect="italics">
+(261.63 Hz)
+
+</emphasis>
+ is specified as C4.
+
+
+
+</para>
+
+
+
+
+</section>
+<section id="h31008">
+<title>
+<emphasis id="Shaping_the_notes" effect="bold">
+
+Shaping the notes
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1032">
+The amplitude versus time of each note is shaped by a scale factor. The 
+amplitude is maximum at the beginning and decays linearly to zero at the end.
+
+
+
+</para>
+
+
+
+
+</section>
+<section id="h31009">
+<title>
+<emphasis id="Beginning_of_the_PlayerPiano01_class" effect="bold">
+
+Beginning of the 
+PlayerPiano01 class
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1033">
+The class named 
+
+<emphasis id="strong1015" effect="bold">
+PlayerPiano01
+
+</emphasis>
+ begins in 
+
+<link id="a1105" target-id="Listing_05">
+
+Listing 5
+
+</link>
+
+. 
+Assuming that you have studied the previous modules in this series, there is 
+nothing in 
+
+<link id="a1106" target-id="Listing_05">
+
+Listing 5
+
+</link>
+
+ that should require an explanation beyond the embedded 
+comments.
+
+</para>
+
+
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Listing_05" effect="bold">
+
+Listing 5
+
+</emphasis>
+
+. Beginning of the 
+				PlayerPiano01 class.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">
+import java.io.*;
+import java.nio.*;
+import java.util.*;
+
+public class PlayerPiano01 extends AudioSignalGenerator02{
+  
+  //Used to store treble clef notes as a list of arrays.
+  ArrayList trebleClef = null;
+  //Used to store bass clef notes as a list of arrays.
+  ArrayList bassClef = null;
+  
+  //Names of input text files are stored here.
+  String trebleFileName;
+  String bassFileName;
+
+  //Routine working variables
+  int trebleLengthInBeats;
+  int bassLengthInBeats;
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31010">
+<title>
+<emphasis id="The_constructor_for_PlayerPiano01" effect="bold">
+
+The constructor for 
+	the PlayerPiano01 class
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1034">
+The constructor is shown in 
+
+<link id="a1107" target-id="Listing_06">
+
+Listing 6
+
+</link>
+
+. The code in the constructor checks the 
+length of the 
+
+<emphasis id="strong1016" effect="bold">
+args
+
+</emphasis>
+ array. Depending on the length, it gets and saves the file 
+names for neither, either, or both of the text files that define the melody.
+
+</para>
+
+
+	
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Listing_06" effect="bold">
+
+Listing 6
+
+</emphasis>
+
+. The constructor for 
+				the PlayerPiano01 class.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+
+
+<code id="pre1005" display="block">
+  public PlayerPiano01(AudioFormatParameters01 audioParams,
+                       String[] args,
+                       byte[] melody){
+    super(audioParams,args,melody);
+    
+    //Get names of files containing the durations and notes.
+    if(args.length &gt;= 3){
+      //Required trebleFileName
+      trebleFileName = args[2];
+    }else{
+      System.out.println("No trebleFileName provided");
+    }//end else
+    
+    if(args.length &gt;= 4){
+      //Optional bassFileName
+      bassFileName = args[3];
+    }//end if
+  }//end constructor
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31011">
+<title>
+<emphasis id="Beginning_of_the_getMelody_method" effect="bold">
+
+Beginning of the getMelody 
+	method
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1035">
+This program uses the same structure as several programs in previous modules. 
+By now, you should be familiar with that structure. The 
+overridden 
+
+<emphasis id="strong1017" effect="bold">
+getMelody
+
+</emphasis>
+ method, which is inherited from the 
+abstract class name 
+
+<emphasis id="strong1018" effect="bold">
+AudioSignalGenerator02
+
+</emphasis>
+ and called from 
+
+
+<link id="a1108" target-id="Listing_04">
+
+Listing 4
+
+</link>
+
+, begins in 
+
+<link id="a1109" target-id="Listing_07">
+
+Listing 7
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1036">
+  This method returns a melody array that will play piano-like sounds using
+  input musical notation like 
+
+
+</para>
+
+
+
+
+<para id="p1037">
+  A, A#, B, C, C#, D, D# etc.
+  
+
+</para>
+
+
+
+
+<para id="p1038">
+  See 
+
+<link id="a1110" target-id="Listing_29">
+
+Listing 29
+
+</link>
+
+ for an example of a text file 
+containing the treble clef notes for the Greensleeves melody.
+
+</para>
+
+
+
+
+	
+
+<table id="table1006" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1006">
+
+			
+
+<row id="tr1012">
+
+				
+
+<entry id="th1006">
+<emphasis id="Listing_07" effect="bold">
+
+Listing 7
+
+</emphasis>
+
+. Beginning of the 
+				getMelody method.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1006">
+
+			
+
+<row id="tr1013">
+
+				
+
+<entry id="td1006">
+
+
+
+<code id="pre1006" display="block">
+  byte[] getMelody(){
+    if(bassFileName != null){
+      //Specify stereo output.
+      audioParams.channels = 2;
+    }else{
+      //Specify mono output.
+      audioParams.channels = 1;//superfluous - same as default
+    }//end else
+    System.out.println("audioParams.channels = " + audioParams.channels);
+
+    //Controls how fast or slow the notes are played.
+     int beatsPerSec = Integer.parseInt(args[1]);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31012">
+<title>
+   
+
+<emphasis id="The_treble_clef_and_bass_clef_data" effect="bold">
+
+The treble clef and bass 
+	clef data
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1039">
+   As explained earlier, a text file containing data for the treble clef must be provided. 
+	
+
+<emphasis id="em1009" effect="italics">
+(Actually, it doesn't matter which clef is represented by the 
+	single required text file. It could be data for the bass clef if you want to 
+	hear that absent of the treble clef melody. It could even be random notes. 
+However, I will continue to refer to the treble clef and the bass clef as a 
+convenient way to distinguish between the contents of the two text files.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1040">
+   If bass data 
+
+<emphasis id="em1010" effect="italics">
+(the optional second text file)
+
+</emphasis>
+ is provided, the output
+    audio data will be interlaced in the output melody array so that the
+    bass will be played through the left speaker and the treble will be
+    played through the right speaker.
+
+</para>
+
+
+
+
+<para id="p1041">
+   The code in 
+
+<link id="a1111" target-id="Listing_07">
+
+Listing 7
+
+</link>
+
+ sets the value for 
+
+<emphasis id="strong1019" effect="bold">
+channels
+
+</emphasis>
+ to 
+either 2 for stereo or 1 for monaural.
+
+</para>
+
+
+
+
+</section>
+<section id="h31013">
+<title>
+   
+
+<emphasis id="Beats_per_second" effect="bold">
+
+Beats per second
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1042">
+   
+
+<link id="a1112" target-id="Listing_07">
+
+Listing 7
+
+</link>
+
+ also gets and saves the value of 
+
+<emphasis id="strong1020" effect="bold">
+beatsPerSec
+
+</emphasis>
+ 
+from the 
+
+<emphasis id="strong1021" effect="bold">
+args
+
+</emphasis>
+ array. Recall that this value determines how fast or slow the 
+notes will be played. A low value causes the note to be played slowly and a 
+higher value causes the notes to be played faster.
+
+</para>
+
+
+
+
+</section>
+<section id="h31014">
+<title>
+<emphasis id="Get_and_save_treble_clef_note_data" effect="bold">
+
+Get and save treble clef note 
+data
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1043">
+The code in 
+
+<link id="a1113" target-id="Listing_08">
+
+Listing 8
+
+</link>
+
+ reads the text file 
+
+<emphasis id="em1011" effect="italics">
+(from the subfolder named
+
+
+<emphasis id="strong1022" effect="bold">
+Music
+
+</emphasis>
+)
+
+</emphasis>
+ containing the data for the treble clef 
+and saves that data in an 
+
+<emphasis id="strong1023" effect="bold">
+ArrayList
+
+</emphasis>
+ object in a form that is suitable for 
+processing later. 
+
+<emphasis id="em1012" effect="italics">
+(Hopefully you are familiar with the 
+
+<emphasis id="strong1024" effect="bold">
+ArrayList
+
+</emphasis>
+ class as a 
+result of your studies of the
+
+
+<link id="a1114" url="http://cnx.org/contents/05a3d262-597c-46a0-8d6a-ab4ceee293dd">
+
+Collections Framework
+
+</link>
+
+ in general and the module 
+titled 
+
+<link id="a1115" url="http://cnx.org/contents/7200eb80-ecc2-4f17-a3fd-44f16d9e3e6d">
+
+Java4040: Purpose of Framework Implementations and Algorithms
+
+</link>
+
+ in particular.)
+
+</emphasis>
+</para>
+
+
+
+
+	
+
+<table id="table1007" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1007">
+
+			
+
+<row id="tr1014">
+
+				
+
+<entry id="th1007">
+<emphasis id="Listing_08" effect="bold">
+
+Listing 8
+
+</emphasis>
+
+. Get and save treble clef 
+				note data.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1007">
+
+			
+
+<row id="tr1015">
+
+				
+
+<entry id="td1007">
+
+
+
+<code id="pre1007" display="block">
+    try{
+      trebleClef = new ArrayList();
+      BufferedReader in = new BufferedReader(
+                                    new FileReader("Music/" + trebleFileName));
+      String str;
+      while ((str = in.readLine()) != null) {
+        //Split the input string into multiple substrings using the comma as
+        // the delimiter and save them in an array object.
+        String[] strArr = str.split(",");
+
+        //Ignore:
+        // Blank lines that result in a string with a zero length
+        // Comments that begin with a /
+        // Lines that begin with a space
+        if(strArr[0].length() != 0 &amp;&amp; !(strArr[0].substring(0,1).equals("/")) 
+                                   &amp;&amp; !(strArr[0].substring(0,1).equals(" "))){
+          //Add the array to the end of the list.
+          trebleClef.add(strArr);
+        }//end if
+        
+      }//end while
+      in.close();//close the input file
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1044">
+Consider the format of the line of text shown near the end of 
+	
+
+<link id="a1116" target-id="Listing_30">
+
+Listing 
+	30
+
+</link>
+
+ that reads:
+
+</para>
+
+
+
+
+<para id="p1045">
+<emphasis id="strong1025" effect="bold">
+9,A3,C4,E4
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1046">
+To play this note on a piano, the user would press three piano keys 
+simultaneously and hold them down for nine beats.
+
+</para>
+
+
+
+
+</section>
+<section id="h31015">
+<title>
+<emphasis id="Parsing_the_data" effect="bold">
+
+Parsing the treble clef note data
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1047">
+The code in 
+
+<link id="a1117" target-id="Listing_08">
+
+Listing 8
+
+</link>
+
+ reads each line of text from the text file and parses 
+it into two or more strings using the comma as a delimiter. The two or more 
+strings are placed in an array object of type 
+
+<emphasis id="strong1026" effect="bold">
+String[]
+
+</emphasis>
+ and that object's 
+reference is added to the 
+
+<emphasis id="strong1027" effect="bold">
+ArrayList
+
+</emphasis>
+ object. 
+
+</para>
+
+
+
+
+<para id="p1048">
+Every line of text that is not ignored will contain at least two items separated by commas. 
+The first item must be a number. This is the amount of time that the note will 
+be held when it is played. The remaining one or more items specify the piano 
+keys that are to be pressed simultaneously to play that note. Therefore, the 
+arrays that are created from the lines of text in the text file are likely to be 
+of different lengths with the minimum length of two elements. The more complicated the 
+melody, the more likely is the occurrence of arrays with more than two elements.
+
+</para>
+
+
+
+
+<para id="p1049">
+The code in 
+
+<link id="a1118" target-id="Listing_08">
+
+Listing 8
+
+</link>
+
+ ignores:
+
+</para>
+
+
+
+
+<list id="ul1012" list-type="bulleted">
+
+	
+
+<item id="li1100">
+Blank lines that result in a string with a zero length
+
+</item>
+
+
+	
+
+<item id="li1101">
+Comments that begin with a forward slash character 
+
+<emphasis id="em1013" effect="italics">
+(/)
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1102">
+Lines that begin with a space
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1050">
+By ignore, I mean that they are not used to create an array that is added to 
+the end of the 
+
+<emphasis id="strong1028" effect="bold">
+ArrayList
+
+</emphasis>
+ object.
+
+</para>
+
+
+
+
+<para id="p1051">
+The text file with the given name in the subfolder named 
+
+<emphasis id="strong1029" effect="bold">
+Music
+
+</emphasis>
+ 
+is opened for reading by one of the early statements in 
+
+<link id="a1119" target-id="Listing_08">
+
+Listing 8
+
+</link>
+
+. It is closed 
+by the last statement in 
+
+<link id="a1120" target-id="Listing_08">
+
+Listing 8
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31016">
+<title>
+<emphasis id="Get_and_save_bass_clef_note_data" effect="bold">
+
+Get and save bass clef note data
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1052">
+<link id="a1121" target-id="Listing_09">
+
+Listing 9
+
+</link>
+
+ does essentially the same thing for the bass clef note data if a 
+bass clef text file is specified on the command line.
+
+</para>
+
+
+
+
+	
+
+<table id="table1008" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1008">
+
+			
+
+<row id="tr1016">
+
+				
+
+<entry id="th1008">
+<emphasis id="Listing_09" effect="bold">
+
+Listing 9
+
+</emphasis>
+
+. Get and save bass clef 
+				note data.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1008">
+
+			
+
+<row id="tr1017">
+
+				
+
+<entry id="td1008">
+
+
+
+<code id="pre1008" display="block">
+      if(bassFileName != null){
+        //A file was specified for bass cleft data. Need to process it.
+        bassClef = new ArrayList();
+        in = new BufferedReader(new FileReader("Music/" + bassFileName));
+        while ((str = in.readLine()) != null) {
+          String[] strArr = str.split(",");
+          
+        //Ignore:
+        // Blank lines that result in a string with a zero length
+        // Comments that begin with a /
+        // Lines that begin with a space
+        if(strArr[0].length() != 0 &amp;&amp; !(strArr[0].substring(0,1).equals("/")) 
+                                   &amp;&amp; !(strArr[0].substring(0,1).equals(" "))){
+            bassClef.add(strArr);
+          }//end if
+          
+        }//end while
+      }//end if
+    }catch(Exception ex){
+      ex.printStackTrace();
+    }//end catch
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31017">
+<title>
+<emphasis id="Compute_the_length_of_each_clef_in_beats" effect="bold">
+
+Compute the length of 
+	each clef in beats
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1053">
+Later on in the program, we will need to relate the notes from the 
+text file to real time in seconds. We will also need to know the total length of 
+the melody in seconds in order to create an array object of sufficient length to 
+contain the audio data at a specified sampling rate.
+
+</para>
+
+
+
+
+<para id="p1054">
+In 
+preparation for that requirement, 
+
+<link id="a1122" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+ uses an iterator to extract and 
+add the number of beats for each note for each clef in order to get the total 
+length of the melody in beats. 
+
+<emphasis id="em1014" effect="italics">
+(Hopefully you are familiar with the use of 
+an iterator as a result of your studies of the
+
+
+<link id="a1123" url="http://cnx.org/contents/05a3d262-597c-46a0-8d6a-ab4ceee293dd">
+
+
+Collections Framework
+
+</link>
+
+)
+
+</emphasis>
+</para>
+
+
+
+
+	
+
+<table id="table1009" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1009">
+
+			
+
+<row id="tr1018">
+
+				
+
+<entry id="th1009">
+<emphasis id="Listing_10" effect="bold">
+
+Listing 10
+
+</emphasis>
+
+. Compute the length of 
+				each clef in beats.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1009">
+
+			
+
+<row id="tr1019">
+
+				
+
+<entry id="td1009">
+
+
+
+<code id="pre1009" display="block">
+    //Compute length of trebleClef in beats
+    //Get an iterator on the trebleClef
+    Iterator iter = trebleClef.iterator();
+    while(iter.hasNext()){
+      //Extract the next array of notes from the ArrayList.
+      String[] array = (String[])iter.next();
+      //Get the duration in beats and add to the total.
+      trebleLengthInBeats += Integer.parseInt(array[0]);
+    }//end while
+    
+    if(bassFileName != null){
+      //Compute length of bassClef in beats
+      //Get an iterator on the trebleClef
+      iter = bassClef.iterator();
+      while(iter.hasNext()){
+        //Extract the next array of notes from the ArrayList
+        String[] array = (String[])iter.next();
+        //Get the duration in beats and add to the total.
+        bassLengthInBeats += Integer.parseInt(array[0]);
+      }//end while
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31018">
+<title>
+<emphasis id="Check_for_treble_and_bass_clefs_of_different_lengths" effect="bold">
+
+Check for 
+	treble and bass clefs of different lengths
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1055">
+<link id="a1124" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+ continues the 
+
+<emphasis id="strong1030" effect="bold">
+if
+
+</emphasis>
+ statement that began in 
+
+<link id="a1125" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1056">
+Given that the two text files were created separately and probably manually, 
+there is a good possibility that the total length in beats of the treble clef 
+data and the total length of the bass clef data are not exactly the same. 
+
+
+<link id="a1126" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+ checks for that possibility and prints out a warning if the lengths 
+don't match. As you will see later, if they don't match, the longer of the two 
+will be truncated to the length of the shorter one. 
+
+<emphasis id="em1015" effect="italics">
+(This might cause you to edit 
+the files and add some musical rests to the end of the shorter one to make them 
+match or, find and fix a problem somewhere within the melody.)
+
+</emphasis>
+</para>
+
+
+
+	
+
+
+	
+
+<table id="table1010" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1010">
+
+			
+
+<row id="tr1020">
+
+				
+
+<entry id="th1010">
+<emphasis id="Listing_11" effect="bold">
+
+Listing 11
+
+</emphasis>
+
+. Check for treble and 
+				bass clefs of different lengths.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1010">
+
+			
+
+<row id="tr1021">
+
+				
+
+<entry id="td1010">
+
+
+
+<code id="pre1010" display="block">
+      if(trebleLengthInBeats != bassLengthInBeats){
+        System.out.println("Treble and bass are different lengths.");
+        System.out.println("Will use the shorter of the two.");
+      }//end if
+    }//end if
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31019">
+<title>
+<emphasis id="Convert_treble_notes_to_amplitude_values" effect="bold">
+
+Convert treble notes 
+	to amplitude values
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1057">
+With the exception of the last statement in 
+
+<link id="a1127" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+, all the code in 
+
+
+<link id="a1128" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+ is very similar to code that you have seen before.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1011" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1011">
+
+			
+
+<row id="tr1022">
+
+				
+
+<entry id="th1011">
+<emphasis id="Listing_12" effect="bold">
+
+Listing 12
+
+</emphasis>
+
+. Convert treble notes to 
+				amplitude values.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1011">
+
+			
+
+<row id="tr1023">
+
+				
+
+<entry id="td1011">
+
+
+
+<code id="pre1011" display="block">
+    //Each channel requires two 8-bit bytes per 16-bit sample.
+    int bytesPerSampPerChan = 2;
+    
+    //Override the default sampleRate of 16000.0F. Allowable sample rates
+    // are 8000,11025,16000,22050, and 44100 samples per second.
+    audioParams.sampleRate = 8000.0F;
+   
+    
+    //Create an array of sufficient size to contain the treble melody. Treat
+    // as mono at this point. May combine with bass melody later to create
+    // a stereo output. Add an extra one-half second of capacity to deal with
+    // possible round off error at the end.
+    byte[] trebleMelody = new byte[
+                     (int)(audioParams.sampleRate/2 + trebleLengthInBeats*
+                      audioParams.sampleRate*bytesPerSampPerChan/beatsPerSec)];
+
+    System.out.println("trebleMelody.length = " + trebleMelody.length);
+
+    //Prepare a ByteBuffer for use
+    byteBuffer = ByteBuffer.wrap(trebleMelody);
+
+    //Call a method that transforms the notes for the clef into an array of
+    // amplitude values.
+    makeMusic(trebleClef,beatsPerSec);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1058">
+The last statement in 
+
+<link id="a1129" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+ calls a method named 
+
+<emphasis id="strong1031" effect="bold">
+makeMusic
+
+</emphasis>
+ 
+	passing the treble note data along with the value of 
+
+<emphasis id="strong1032" effect="bold">
+beatsPerSec
+
+</emphasis>
+ 
+	as parameters. The purpose of the 
+
+<emphasis id="strong1033" effect="bold">
+makeMusic
+
+</emphasis>
+ method is to transform the note 
+	data into an array of amplitude values that can be played or written into an 
+	audio output file. This method is the most important part of the entire 
+	program. I will come back and dedicate quite a lot of time to it later.
+
+</para>
+
+
+
+
+</section>
+<section id="h31020">
+<title>
+<emphasis id="Convert_bass_notes_to_amplitude_values" effect="bold">
+
+Convert bass notes to 
+amplitude values
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1059">
+Continuing with the 
+
+<emphasis id="strong1034" effect="bold">
+getMelody
+
+</emphasis>
+ method, 
+
+<link id="a1130" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+ does essentially the same 
+thing with the bass clef data if a file containing bass clef data was specified 
+as a command-line parameter.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1012" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1012">
+
+			
+
+<row id="tr1024">
+
+				
+
+<entry id="th1012">
+<emphasis id="Listing_13" effect="bold">
+
+Listing 13
+
+</emphasis>
+
+. Convert bass notes to 
+				amplitude values.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1012">
+
+			
+
+<row id="tr1025">
+
+				
+
+<entry id="td1012">
+
+
+
+<code id="pre1012" display="block">
+    //Process the bass clef if it exists.
+    if(bassFileName != null){
+
+      //Create an array of sufficient size to contain the bass melody. Treat
+      // as mono at this point. Will combine with the trebleMelody later to
+      // create a stereo output. Add an extra one-half second of capacity to
+      // deal with possible round off error at the end.
+      byte[] bassMelody = new byte[
+                      (int)(audioParams.sampleRate/2 + bassLengthInBeats*
+                      audioParams.sampleRate*bytesPerSampPerChan/beatsPerSec)];
+
+      System.out.println("bassMelody.length = " + bassMelody.length);
+  
+      //Prepare a ByteBuffer for use
+      byteBuffer = ByteBuffer.wrap(bassMelody);
+  
+      //Call a method that transforms the notes for the clef into an array
+      // of amplitude values.
+      makeMusic(bassClef,beatsPerSec);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31021">
+<title>
+<emphasis id="Populate_and_return_the_melody_array_with_stereo_data" effect="bold">
+
+Populate and return the melody array with stereo data
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1060">
+<link id="a1131" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+ continues the 
+
+<emphasis id="strong1035" effect="bold">
+if
+
+</emphasis>
+ statement that began at the top of 
+
+<link id="a1132" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+, 
+and is executed only if the user specified a bass data file on the command line.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1013" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1013">
+
+			
+
+<row id="tr1026">
+
+				
+
+<entry id="th1013">
+<emphasis id="Listing_14" effect="bold">
+
+Listing 14
+
+</emphasis>
+
+. Populate and return the 
+				melody array with stereo data.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1013">
+
+			
+
+<row id="tr1027">
+
+				
+
+<entry id="td1013">
+
+
+
+<code id="pre1013" display="block">
+      //Use the shorter of the two lengths if they don't match. Note the use
+      // of a Java conditional operator to accomplish this.
+      int lengthLimit = (trebleMelody.length &lt;= bassMelody.length) 
+                                     ? trebleMelody.length : bassMelody.length;
+
+      //Create an output array that is twice the length of the shorter of the
+      // bass or treble melodies to accommodate a stereo representation of the
+      // melody. The bass melody will be put in the left-channel bytes in the
+      // array. Similarly, the treble melody will be put in the right-channel
+      // bytes in the array.
+      melody = new byte[2*lengthLimit];
+
+      //Interlace the bass and treble melody data in the array so that the
+      // bass will be played through the left speaker and the treble will be
+      // played through the right speaker.
+
+      for(int cnt = 0;cnt &lt; melody.length-4;cnt+=4){
+        melody[cnt] = bassMelody[cnt/2];
+        melody[cnt+1] = bassMelody[1 + cnt/2];
+        melody[cnt+2] = trebleMelody[cnt/2];
+        melody[cnt+3] = trebleMelody[1 + cnt/2];
+      }//end for loop
+
+      return melody;//return the array and terminate the method
+
+    }//end if
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1061">
+All of the code in 
+
+<link id="a1133" target-id="Listing_17">
+
+Listing 17
+
+</link>
+
+ is straightforward and shouldn't require an 
+	explanation beyond the embedded comments. The 
+
+<emphasis id="strong1036" effect="bold">
+getMelody
+
+</emphasis>
+ method terminates 
+	when the 
+
+<emphasis id="strong1037" effect="bold">
+return
+
+</emphasis>
+ statement is executed near the bottom of 
+
+<link id="a1134" target-id="Listing_17">
+
+Listing 17
+
+</link>
+
+. At this 
+	point, the melody array has been populated with bass audio data for the left 
+	speaker and treble audio data for the right speaker. Control returns to 
+	
+
+<link id="a1135" target-id="Listing_04">
+
+Listing 4
+
+</link>
+
+, which causes the audio data in the melody array to be played or 
+	written into an output audio file of type AU.
+
+</para>
+
+
+
+
+</section>
+<section id="h31022">
+<title>
+<emphasis id="Populate_and_return_the_melody_array_with_monaural_data" effect="bold">
+
+Populate 
+and return the melody array with monaural data
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1062">
+The code in 
+
+<link id="a1136" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+ is executed only if the 
+
+
+<emphasis id="strong1038" effect="bold">
+if
+
+</emphasis>
+ statement at the beginning 
+of 
+
+<link id="a1137" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+ returned false, meaning that the user did not specify a file 
+containing bass note data on the command line. In that case, all of the code in 
+the 
+
+<emphasis id="strong1039" effect="bold">
+if
+
+</emphasis>
+ statement is skipped, passing control to the 
+
+<emphasis id="strong1040" effect="bold">
+return
+
+</emphasis>
+ statement in Listing 
+15.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1014" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1014">
+
+			
+
+<row id="tr1028">
+
+				
+
+<entry id="th1014">
+<emphasis id="Listing_15" effect="bold">
+
+Listing 15
+
+</emphasis>
+
+. Populate and return the 
+				melody array with monaural data.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1014">
+
+			
+
+<row id="tr1029">
+
+				
+
+<entry id="td1014">
+
+
+
+<code id="pre1014" display="block">
+    return trebleMelody;
+    
+  }//end method getMelody
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1063">
+<link id="a1138" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+ returns a reference to the monaural 
+
+<emphasis id="strong1041" effect="bold">
+trebleMelody
+
+</emphasis>
+ 
+	array containing only treble clef audio data.
+
+</para>
+
+
+
+
+<para id="p1064">
+<link id="a1139" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+ also signals the end of the 
+
+<emphasis id="strong1042" effect="bold">
+getMelody
+
+</emphasis>
+ method.
+
+</para>
+
+
+
+
+</section>
+<section id="h31023">
+<title>
+<emphasis id="The_getPiano_method" effect="bold">
+
+The getPiano method
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1065">
+At the end of 
+
+<link id="a1140" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+, you saw a call to a method named 
+
+<emphasis id="strong1043" effect="bold">
+makeMusic
+
+</emphasis>
+. 
+I told you that the purpose of the 
+
+<emphasis id="strong1044" effect="bold">
+makeMusic
+
+</emphasis>
+ method is to 
+transform the note data into an array of amplitude values that can be played or 
+written into an audio output file. I also told you that the 
+
+<emphasis id="strong1045" effect="bold">
+makeMusic
+
+</emphasis>
+ 
+method is the most important part of the entire program and that I would explain 
+it in detail later.
+
+</para>
+
+
+
+
+<para id="p1066">
+The 
+
+<emphasis id="strong1046" effect="bold">
+makeMusic
+
+</emphasis>
+ method must be able to determine the frequency 
+or pitch of every note that is specified in the text files containing the data 
+for a melody using musical annotation. That is no small task. I wrote a utility 
+method named 
+
+<emphasis id="strong1047" effect="bold">
+getPiano
+
+</emphasis>
+ that creates a 
+
+<emphasis id="strong1048" effect="bold">
+Hashtable
+
+</emphasis>
+ 
+object that ties note names to note frequencies and provides that 
+
+<emphasis id="strong1049" effect="bold">
+
+Hashtable
+
+</emphasis>
+ object to the 
+
+<emphasis id="strong1050" effect="bold">
+makeMusic
+
+</emphasis>
+ method. That method 
+begins in 
+
+<link id="a1141" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1067">
+In case you have forgotten, a 
+
+<emphasis id="strong1051" effect="bold">
+Hashtable
+
+</emphasis>
+ object is a data 
+structure that ties 
+
+<emphasis id="em1016" effect="italics">
+keys
+
+</emphasis>
+ to 
+
+<emphasis id="em1017" effect="italics">
+values
+
+</emphasis>
+. 
+
+<emphasis id="em1018" effect="italics">
+(Items in a 
+
+<emphasis id="strong1052" effect="bold">
+
+Hashtable
+
+</emphasis>
+ are called keys but this is unrelated to the keys on a piano 
+keyboard.)
+
+</emphasis>
+ In this case, the 
+
+<emphasis id="em1019" effect="italics">
+keys
+
+</emphasis>
+ in the 
+
+<emphasis id="strong1053" effect="bold">
+Hashtable
+
+</emphasis>
+ 
+are the note names and 
+the 
+
+<emphasis id="em1020" effect="italics">
+values
+
+</emphasis>
+ are the frequency values that are tied to those not names. The program can ask the 
+
+<emphasis id="strong1054" effect="bold">
+
+Hashtable
+
+</emphasis>
+ object to provide the frequency for a given note name. For 
+example, the piano key commonly known as middle-C is named 
+
+<emphasis id="strong1055" effect="bold">
+C4
+
+</emphasis>
+. 
+The program can ask the 
+
+<emphasis id="strong1056" effect="bold">
+Hashtable
+
+</emphasis>
+ for the frequency value for 
+the key 
+
+<emphasis id="strong1057" effect="bold">
+C4
+
+</emphasis>
+ and the 
+
+<emphasis id="strong1058" effect="bold">
+Hashtable
+
+</emphasis>
+ will return 261.63 Hz.
+
+</para>
+
+
+
+
+</section>
+<section id="h31024">
+<title>
+<emphasis id="Musical_instruments_must_be_tuned" effect="bold">
+
+Musical instruments must be 
+tuned
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1068">
+I mentioned earlier that I am not a musician and I am clearly not a musical 
+theoretician. What I about to report to you is what I have learned during the 
+past few weeks while working on this program.
+
+</para>
+
+
+
+
+<para id="p1069">
+In order for multiple instruments to play and sound well together, they must 
+be tuned using compatible frequencies regardless of the type of instrument. 
+There is a set of six notes or keys, moving from left to right on the piano 
+keyboard, where there is general agreement as to the frequency that should be 
+tuned for each piano key:
+
+</para>
+
+
+
+
+<list id="ul1013" list-type="bulleted">
+
+	
+
+<item id="li1103">
+A2 = 110 Hz
+
+</item>
+
+
+	
+
+<item id="li1104">
+A3 = 220 Hz
+
+</item>
+
+
+	
+
+<item id="li1105">
+A4 = 440 Hz
+
+</item>
+
+
+	
+
+<item id="li1106">
+A5 = 880 Hz
+
+</item>
+
+
+	
+
+<item id="li1107">
+A6 = 1760 Hz
+
+</item>
+
+
+	
+
+<item id="li1108">
+A7 = 3520 Hz
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1070">
+Note that each frequency is double the frequency above it in this list. This 
+doubling in frequency is known as an octave. There is one octave between A2 and 
+A3, one octave between A3 and A4, etc. As you move to the right on the piano 
+keyboard, the frequency doubles between a particular piano key and the next key 
+to the right with the same name 
+
+<emphasis id="em1021" effect="italics">
+(A, B, C, etc.)
+
+</emphasis>
+</para>
+
+
+
+
+</section>
+<section id="h31025">
+<title>
+<emphasis id="The_in-between_frequencies" effect="bold">
+
+The in-between frequencies
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1071">
+While there appears to be general agreement as to the frequencies that should 
+be assigned to the A keys, there appears to be something less than 
+total agreement as to the frequencies for the keys in between. However, I believe that I understand the formula that is 
+often used 
+to tune the keys on a piano. The frequency for any key is multiplied by a factor 
+that is the twelfth root of two 
+
+<emphasis id="em1022" effect="italics">
+(1.05946309436)
+
+</emphasis>
+ to obtain the frequency for the key 
+immediately to its right.
+
+</para>
+
+
+
+
+<para id="p1072">
+The key sequence from any A-key to the next A-key to the right is as follows:
+
+</para>
+
+
+
+
+<para id="p1073">
+A, A#, B, C, C#, D, D#, E, F, F#, G, G#, A
+
+</para>
+
+
+
+
+<para id="p1074">
+If you count the number of keys, there are twelve steps from an A-key to the 
+next A-key to the right. That is one octave, meaning that the frequency must 
+double from any A-key to the next A-key to the right. If you multiply the twelfth 
+root of two by itself twelve times, the result will be two. If you multiply the 
+frequency of any key by the twelfth root of two to get the frequency for the key 
+to the right, and you do that twelve times, the frequency after twelve steps 
+will have doubled.
+
+</para>
+
+
+
+
+<para id="p1075">
+Now that we know what we need to do, let's look at the code that will do it.
+
+</para>
+
+
+
+
+</section>
+<section id="h31026">
+<title>
+<emphasis id="Beginning_of_the_getPiano_method" effect="bold">
+
+Beginning of the getPiano method
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1076">
+The getPiano method begins in 
+
+<link id="a1142" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+. This method creates and returns a 
+reference to a 
+
+<emphasis id="strong1059" effect="bold">
+Hashtable
+
+</emphasis>
+ object containing the name 
+
+<emphasis id="em1023" effect="italics">
+(key)
+
+</emphasis>
+ and
+  frequency 
+
+<emphasis id="em1024" effect="italics">
+(value)
+
+</emphasis>
+ of every note from A2 
+
+<emphasis id="em1025" effect="italics">
+(110 Hz)
+
+</emphasis>
+ at the low end to A7 
+
+
+<emphasis id="em1026" effect="italics">
+(3520 Hz)
+
+</emphasis>
+ at the high end. This 61-note, five-octave range is close to 
+the limits of the frequency range that I can hear on my computer. In fact, I can 
+only barely hear A2. 
+
+<emphasis id="em1027" effect="italics">
+(Click
+
+
+<link id="a1143" url="AllNotes.au">
+
+AllNotes
+
+</link>
+
+ to hear each of the 61 notes played from 
+lowest to highest.)
+
+</emphasis>
+</para>
+
+
+
+
+
+	
+
+<table id="table1015" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1015">
+
+			
+
+<row id="tr1030">
+
+				
+
+<entry id="th1015">
+<emphasis id="Listing_16" effect="bold">
+
+Listing 16
+
+</emphasis>
+
+. Beginning of the 
+				getPiano method.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1015">
+
+			
+
+<row id="tr1031">
+
+				
+
+<entry id="td1015">
+
+
+
+<code id="pre1015" display="block">
+  
+  Hashtable getPiano(){
+    Hashtable piano = new Hashtable();
+    
+    double factor = 1.05946309436;//12th root of 2
+    
+    //Define the name and frequency of the first note.
+    double freq = 110;//Frequency of A2 at 110 Hz. Start with this.
+    String note = "A2";//Name of note at 110 Hz. Start with this.
+    
+    //Used to parse a note into 3 single-character substrings such
+    // as C, 5, and #.
+    String sub1 = null;
+    String sub2 = null;
+    String sub3 = null;
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1077">
+The first half of the code in 
+
+<link id="a1144" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+ is completely straightforward.
+
+</para>
+
+
+
+
+<para id="p1078">
+The number in the 
+center of the note names 
+
+<emphasis id="em1028" effect="italics">
+(such as A3#)
+
+</emphasis>
+ changes at C and not at A. Also, 
+the # character appears on some notes and 
+not on all notes. As a result, it is difficult to use a loop structure to deal with the names 
+of the notes. 
+
+</para>
+
+
+
+
+<para id="p1079">
+I will decompose each note into two or three substrings 
+for processing. In other words, the note name "A2" will be decomposed into an 
+"A" and a "2". The note name "C5#" will be decomposed into a "C", a "5", and a 
+"#". The last three variables that are declared in 
+
+<link id="a1145" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+ will be used to 
+save those strings.
+
+</para>
+
+
+
+
+</section>
+<section id="h31027">
+<title>
+<emphasis id="Store_the_current_note_and_compute_the_frequency_of_the_next_note" effect="bold">
+
+
+Store the current note and compute the frequency of the next note
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1080">
+The process of populating the 
+
+<emphasis id="strong1060" effect="bold">
+Hashtable
+
+</emphasis>
+ object with note 
+names and frequencies is controlled by a 
+
+<emphasis id="strong1061" effect="bold">
+for
+
+</emphasis>
+ loop that begins 
+in 
+
+<link id="a1146" target-id="Listing_17">
+
+Listing 17
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1081">
+<link id="a1147" target-id="Listing_17">
+
+Listing 17
+
+</link>
+
+ stores the name and frequency for the current note and computes 
+the frequency of the next note. (
+
+<emphasis id="em1029" effect="italics">
+The initial name and 
+frequency for the current note were defined in 
+
+<link id="a1148" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+.)
+
+</emphasis>
+ The frequency 
+of the next note is computed by multiplying the frequency of the current note by 
+the twelfth root of two, which is stored in the variable named factor.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1016" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1016">
+
+			
+
+<row id="tr1032">
+
+				
+
+<entry id="th1016">
+<emphasis id="Listing_17" effect="bold">
+
+Listing 17
+
+</emphasis>
+
+. Store the current note 
+				and compute the frequency of the next note.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1016">
+
+			
+
+<row id="tr1033">
+
+				
+
+<entry id="td1016">
+
+
+
+<code id="pre1016" display="block">
+    for(int cnt = 0;cnt &lt; 61;cnt++){
+      //This loop counts from A1 through A7 at 3520 Hz.
+      //Store the name and the frequency of the note in the next element in
+      // the hashtable.
+      piano.put(note,freq);
+      
+      //Compute the frequency of the next note
+      freq *= factor;
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31028">
+<title>
+<emphasis id="Construct_the_name_of_the_next_note" effect="bold">
+
+Construct the name of the 
+	next note
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1082">
+While it may be possible to write a loop structure to deal with note names, 
+it was not obvious to me how to do that. Therefore, I took a brute force 
+approach and wrote a long and tedious block of logic code to do the job.
+
+</para>
+
+
+
+
+<para id="p1083">
+<link id="a1149" target-id="Listing_18">
+
+Listing 18
+
+</link>
+
+ shows the logic used to decompose the name of the current note 
+into two or three single-character strings and to use those strings to construct 
+the name of the next note. That note will be the current note at the top of the 
+next iteration and will be saved, along with the frequency in the 
+
+<emphasis id="strong1062" effect="bold">
+
+Hashtable
+
+</emphasis>
+ object. I will leave it as an exercise for the student to 
+understand and possibly improve on this logic.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1017" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1017">
+
+			
+
+<row id="tr1034">
+
+				
+
+<entry id="th1017">
+<emphasis id="Listing_18" effect="bold">
+
+Listing 18
+
+</emphasis>
+
+. Construct the name of 
+				the next note.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1017">
+
+			
+
+<row id="tr1035">
+
+				
+
+<entry id="td1017">
+
+
+
+<code id="pre1017" display="block">
+      //Use logic to construct the name of the next note in a sequence such
+      // as A2,A2#,B2,C3,C3#,D3,D3#,E3,F3,F3#,G3,G3#,A3, etc.
+      //Begin by parsing the current note name into three single-character
+      // substrings, the third of which may be null.
+      if(note.length() == 3){
+        sub1 = note.substring(0,1);
+        sub2 = note.substring(1,2);
+        sub3 = note.substring(2,3);
+      }else{
+        sub1 = note.substring(0,1);
+        sub2 = note.substring(1,2);
+        sub3 = null;
+      }//end if
+      
+      //Use the three substrings of the current note name to determine the
+      // name of the next note. This is long and tedious but it works.
+      if((sub1.equals("A")) &amp;&amp; (sub3 == null)){
+        sub1 = "A";
+        sub3 = "#";
+      }else if((sub1.equals("A")) &amp;&amp; (sub3.equals("#"))){
+        sub1 = "B";
+        sub3 = null;
+      }else if((sub1.equals("B"))){
+        sub1 = "C";
+        sub3 = null;
+        //Increment the number
+        sub2 = "" + (1 + Integer.parseInt(sub2));
+      }else if((sub1.equals("C")) &amp;&amp; (sub3 == null)){
+        sub1 = "C";
+        sub3 = "#";
+      }else if((sub1.equals("C")) &amp;&amp; (sub3.equals("#"))){
+        sub1 = "D";
+        sub3 = null;
+      }else if((sub1.equals("D")) &amp;&amp; (sub3 == null)){
+        sub1 = "D";
+        sub3 = "#";
+      }else if((sub1.equals("D")) &amp;&amp; (sub3.equals("#"))){
+        sub1 = "E";
+        sub3 = null;
+      }else if((sub1.equals("E"))){
+        sub1 = "F";
+        sub3 = null;
+      }else if((sub1.equals("F")) &amp;&amp; (sub3 == null)){
+        sub1 = "F";
+        sub3 = "#";
+      }else if((sub1.equals("F")) &amp;&amp; (sub3.equals("#"))){
+        sub1 = "G";
+        sub3 = null;
+      }else if((sub1.equals("G")) &amp;&amp; (sub3 == null)){
+        sub1 = "G";
+        sub3 = "#";
+      }else if((sub1.equals("G")) &amp;&amp; (sub3.equals("#"))){
+        sub1 = "A";
+        sub3 = null;
+      }else{
+        System.out.println("Can't reach this point.");
+      }//end else
+      
+      
+      //Construct the next note from the updated substrings.
+      if(sub3 == null){
+        note = sub1 + sub2;
+      }else{
+        note = sub1 + sub2 + sub3;
+      }//end if
+    }//end for loop
+
+    return piano;
+  }//end getPiano
+
+}//end class PlayerPiano01
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1084">
+A reference to the populated 
+
+<emphasis id="strong1063" effect="bold">
+Hashtable
+
+</emphasis>
+ object referred 
+	to by piano is returned when the for loop terminates at the bottom of 
+	
+
+<link id="a1150" target-id="Listing_18">
+
+Listing 18
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1085">
+<link id="a1151" target-id="Listing_18">
+
+Listing 18
+
+</link>
+
+ also signals the end of the 
+
+<emphasis id="strong1064" effect="bold">
+getPiano
+
+</emphasis>
+ method and 
+the end of the class named 
+
+<emphasis id="strong1065" effect="bold">
+PlayerPiano01
+
+</emphasis>
+. However, we aren't 
+finished yet. We need to go back and examine the code in the method named
+
+
+<emphasis id="strong1066" effect="bold">
+makeMusic
+
+</emphasis>
+ that we put on the back burner a little earlier.
+
+</para>
+
+
+
+
+</section>
+<section id="h31029">
+<title>
+<emphasis id="Beginning_of_the_method_named_makeMusic" effect="bold">
+
+Beginning of the method 
+named makeMusic
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1086">
+  The method named 
+
+<emphasis id="strong1067" effect="bold">
+makeMusic
+
+</emphasis>
+ begins in 
+
+<link id="a1152" target-id="Listing_19">
+
+Listing 19
+
+</link>
+
+. This method transforms the notes for a clef into an array of amplitude
+  values. This method doesn't know the difference between a treble clef and a bass clef. 
+It is called once to transform the treble clef at the bottom of 
+
+<link id="a1153" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+. It 
+is called again to transform the bass clef in 
+
+<link id="a1154" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+ if the user provides a 
+text file containing bass clef data.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1018" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1018">
+
+			
+
+<row id="tr1036">
+
+				
+
+<entry id="th1018">
+<emphasis id="Listing_19" effect="bold">
+
+Listing 19
+
+</emphasis>
+
+. Beginning of the method 
+				named makeMusic.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1018">
+
+			
+
+<row id="tr1037">
+
+				
+
+<entry id="td1018">
+
+
+
+<code id="pre1018" display="block">
+  void makeMusic(ArrayList clef,int beatsPerSec){
+
+    double gain = 4000.0;//Set the output volume to a reasonable level.
+
+    //Get a hashtable that maps note names into note frequencies from A2
+    // through A7. Note that the name "X" is used to indicate a period of
+    // silence or a rest, so it is appended onto the end of the hashtable with
+    // a frequency of 0.0. 
+    //Frequency values can be checked against
+    // http://www.phy.mtu.edu/~suits/notefreqs.html.
+    Hashtable piano = getPiano();
+    piano.put("X",0.0);
+
+    //Miscellaneous variables
+    double freq = 0;
+    int beats = 0;
+    double scaleFactor = 0;
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1087">
+Nothing in 
+
+<link id="a1155" target-id="Listing_19">
+
+Listing 19
+
+</link>
+
+ should require an explanation beyond the embedded 
+	comments.
+
+</para>
+
+
+
+
+</section>
+<section id="h31030">
+<title>
+
+
+
+<emphasis id="Process_each_array_containing_duration_and_note_names_in_the_ArrayList_object" effect="bold">
+
+
+Process each array containing duration and note names in the ArrayList object
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1088">
+<link id="a1156" target-id="Listing_20">
+
+Listing 20
+
+</link>
+
+ shows the beginning of a 
+
+<emphasis id="strong1068" effect="bold">
+while
+
+</emphasis>
+ loop that uses an 
+iterator to process each array containing duration and note names in the 
+
+<emphasis id="strong1069" effect="bold">
+
+ArrayList
+
+</emphasis>
+ object
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1019" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1019">
+
+			
+
+<row id="tr1038">
+
+				
+
+<entry id="th1019">
+<emphasis id="Listing_20" effect="bold">
+
+Listing 20
+
+</emphasis>
+
+. Process each array 
+				containing duration and note names in the ArrayList object.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1019">
+
+			
+
+<row id="tr1039">
+
+				
+
+<entry id="td1019">
+
+
+
+<code id="pre1019" display="block">
+    Iterator iter = clef.iterator();
+
+    while(iter.hasNext()){
+      //Get the next array containing duration and note names
+      String[] array = (String[])iter.next();
+      //Get the duration of the note in beats
+      beats = Integer.parseInt(array[0]);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1089">
+The code in 
+
+<link id="a1157" target-id="Listing_20">
+
+Listing 20
+
+</link>
+
+ accesses the next array and then extracts the 
+	duration 
+
+<emphasis id="em1030" effect="italics">
+(in beats)
+
+</emphasis>
+ from the array and stores it in the variable 
+	named 
+
+<emphasis id="strong1070" effect="bold">
+beats
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31031">
+<title>
+<emphasis id="Process_each_sample" effect="bold">
+
+Process each sample
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1090">
+<link id="a1158" target-id="Listing_21">
+
+Listing 21
+
+</link>
+
+ shows the beginning of a 
+
+<emphasis id="strong1071" effect="bold">
+for
+
+</emphasis>
+ loop that is used to process each 
+sample that makes up this note. The output sampling rate is constant. Therefore, 
+notes with a short duration comprise fewer samples than notes with a long 
+duration.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1020" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1020">
+
+			
+
+<row id="tr1040">
+
+				
+
+<entry id="th1020">
+<emphasis id="Listing_21" effect="bold">
+
+Listing 21
+
+</emphasis>
+
+. Process each sample.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1020">
+
+			
+
+<row id="tr1041">
+
+				
+
+<entry id="td1020">
+
+
+
+<code id="pre1020" display="block">
+      for(int cnt = 0; cnt &lt; beats*audioParams.sampleRate/beatsPerSec; cnt++){
+        //Compute the time for this iteration to use when evaluating the
+        // cosine function.
+        double time = cnt/audioParams.sampleRate;
+        double sum = 0;//sum of values for this iteration
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31032">
+<title>
+<emphasis id="Process_each_piano_key_that_is_depressed" effect="bold">
+
+Process each piano 
+	key that is pressed
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1091">
+Recall that a human piano player can press several keys simultaneous, as in 
+
+<emphasis id="em1031" effect="italics">
+(9,A3,C4,E4)
+
+</emphasis>
+ 
+at the end of 
+
+<link id="a1159" target-id="Listing_30">
+
+Listing 30
+
+</link>
+
+. In this case, the piano player would 
+press three 
+keys simultaneously on the piano keyboard and hold them down for nine beats.
+
+</para>
+
+
+
+
+<para id="p1092">
+<link id="a1160" target-id="Listing_22">
+
+Listing 22
+
+</link>
+
+ shows a 
+
+<emphasis id="strong1072" effect="bold">
+for
+
+</emphasis>
+ loop that is used to compute the 
+amplitude at the current time in the current sample including the possibility of 
+two or more keys being pressed. When two or more keys are pressed 
+simultaneously, the amplitude of the output is computed as the sum of the 
+amplitudes of the individual keys. This code shouldn't require an explanation 
+beyond that provided by the embedded comments. Note that the name of the key is 
+used to extract the frequency for that key from the 
+
+<emphasis id="strong1073" effect="bold">
+Hashtable
+
+</emphasis>
+ 
+object that was created by the method named 
+
+<emphasis id="strong1074" effect="bold">
+getPiano
+
+</emphasis>
+ that was called in 
+
+<link id="a1161" target-id="Listing_19">
+
+Listing 19
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1021" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1021">
+
+			
+
+<row id="tr1042">
+
+				
+
+<entry id="th1021">
+<emphasis id="Listing_22" effect="bold">
+
+Listing 22
+
+</emphasis>
+
+. Process each piano key 
+				that is pressed.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1021">
+
+			
+
+<row id="tr1043">
+
+				
+
+<entry id="td1021">
+
+
+
+<code id="pre1021" display="block">
+        for(int element = 1;element &lt; array.length;element++){
+          //Iterate on the piano keys defined in the array.
+          //Get the name of the next key and make sure that it is upper-case.
+          String noteName = array[element].toUpperCase();
+          try{
+            //Use the noteName and get the corresponding frequency from the
+            // hashtable. Note that results are retrieved from the list as
+            // type Object and must be cast to the correct type.
+            freq = (double)piano.get(noteName);
+          }catch(java.lang.NullPointerException ex){
+            ex.printStackTrace();
+            System.out.println("noteName: " + noteName);
+          }//end catch
+          
+          //Compute the amplitude for this note at this time and add it to
+          // the sum unless it is a musical rest.
+          if(!noteName.equals("X")){
+            //This is not a musical rest.
+            sum += Math.cos(2*Math.PI*(freq)*time);
+          }//end if
+          //Go back to the top of the loop and get the next key from the
+          // array, if any.
+        }//end for loop
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+	
+
+</section>
+<section id="h31033">
+<title>
+<emphasis id="Use_a_scale_factor_to_shape_the_note" effect="bold">
+
+Use a scale factor to 
+	shape the note
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1093">
+If you press a key on some electronic keyboards and hold the key down, the 
+sound intensity will remain constant with time. However, if you press a piano 
+key and hold it down, the sound intensity decreases over time. The code in 
+
+
+<link id="a1162" target-id="Listing_23">
+
+Listing 23
+
+</link>
+
+ attempts to achieve that same effect.
+
+</para>
+
+
+
+
+
+
+
+	
+
+<table id="table1022" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1022">
+
+			
+
+<row id="tr1044">
+
+				
+
+<entry id="th1022">
+<emphasis id="Listing_23" effect="bold">
+
+Listing 23
+
+</emphasis>
+
+. Use a scale factor to 
+				shape the note.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1022">
+
+			
+
+<row id="tr1045">
+
+				
+
+<entry id="td1022">
+
+
+
+<code id="pre1022" display="block">
+        scaleFactor = gain*((beats*audioParams.sampleRate/beatsPerSec) - cnt)
+                                 /(beats*audioParams.sampleRate/beatsPerSec);
+
+        //Scale the amplitude value and put it into the output array.
+        byteBuffer.putShort((short)(scaleFactor*sum));
+        //Go back and compute the next sample values for this set of keys
+        // until the note duration is satisfied.
+      }//end for loop
+      //Go back, retrieve, and process the next set of keys for a given
+      // duration value.
+    }//end while
+    
+  }//end makeMusic method
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1094">
+At this point in the creation of the audio sample, the amplitude values for 
+all the keys that were pressed simultaneously have been added together.         
+	The resulting amplitude value is scaled so that each note has a maximum amplitude
+        at the beginning and a zero amplitude when the duration has expired. A 
+	linear scale factor is used to accomplish this.
+
+</para>
+
+
+
+
+<para id="p1095">
+The remaining code in 
+
+<link id="a1163" target-id="Listing_23">
+
+Listing 23
+
+</link>
+
+ shouldn't require an explanation.
+
+</para>
+
+
+
+
+<para id="p1096">
+<link id="a1164" target-id="Listing_23">
+
+Listing 23
+
+</link>
+
+ ends the 
+
+<emphasis id="strong1075" effect="bold">
+for
+
+</emphasis>
+ loop that began in 
+
+<link id="a1165" target-id="Listing_21">
+
+Listing 21
+
+</link>
+
+, ends 
+the 
+
+<emphasis id="strong1076" effect="bold">
+while
+
+</emphasis>
+ loop that began in 
+
+<link id="a1166" target-id="Listing_20">
+
+Listing 20
+
+</link>
+
+, and signals the end of 
+the 
+
+<emphasis id="strong1077" effect="bold">
+makeMusic
+
+</emphasis>
+ method.
+
+</para>
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1097">
+I encourage you to copy the code from 
+
+<link id="a1167" target-id="Listing_24">
+
+Listing 24
+
+</link>
+
+ through 
+
+<link id="a1168" target-id="Listing_28">
+
+Listing 28
+
+</link>
+
+. Compile the code and 
+execute it. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+
+
+<para id="p1098">
+When you compile this program, you will probably see the following 
+warnings:
+
+</para>
+
+
+
+
+<quote id="blockquote1000" display="block">
+Note: .\PlayerPiano01.java uses unchecked or unsafe operations.
+
+
+</quote>
+
+
+
+
+<quote id="blockquote1001" display="block">
+Note: Recompile with -Xlint:unchecked for details.
+
+</quote>
+
+
+
+
+<para id="p1099">
+You can simply ignore those warnings if you wish to do so. Otherwise, you can 
+learn how to eliminate the warnings by doing the following:
+
+</para>
+
+
+
+
+<list id="ul1014" list-type="bulleted">
+
+	
+
+<item id="li1109">
+Go to 
+	
+
+<link id="a1169" url="http://cnx.org/contents/fb64661c-5b3f-4ea8-97c6-e48df112438a">
+
+Object-Oriented Programming (OOP) with Java
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1110">
+Open Contents
+
+</item>
+
+
+	
+
+<item id="li1111">
+Open ITSE2317 - Java Programming (Intermediate)
+
+</item>
+
+
+	
+
+<item id="li1112">
+Open Generics
+
+</item>
+
+
+	
+
+<item id="li1113">
+Open Java4210: Getting Started with Generics
+
+</item>
+
+
+	
+
+<item id="li1114">
+Study that module and the seven modules following it as listed in the 
+	Contents.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1100">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1078" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1015" list-type="bulleted">
+
+					
+
+<item id="li1115">
+Module name: Jbs2060-A Player Piano Simulator
+
+</item>
+
+
+					
+
+<item id="li1116">
+File: Jbs2060.htm
+
+
+</item>
+
+
+					
+
+<item id="li1117">
+Published: 08/30/14
+
+</item>
+
+
+					
+
+<item id="li1118">
+Revised: 09/29/15
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1079" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1101">
+<emphasis id="strong1080" effect="bold">
+Financial
+
+</emphasis>
+: 
+				Although the 
+
+<emphasis id="strong1081" effect="bold">
+OpenStax CNX
+
+</emphasis>
+ site makes it 
+				possible for you to download a PDF file for the collection that 
+				contains this module at no charge, and also makes it possible 
+				for you to purchase a pre-printed version of the PDF file, you 
+				should be aware that some of the HTML elements in this module 
+				may not translate well into PDF.
+
+</para>
+
+
+				
+
+<para id="p1102">
+You also need to know that Prof. Baldwin receives no 
+				financial compensation from 
+
+<emphasis id="strong1082" effect="bold">
+OpenStax CNX 
+
+</emphasis>
+even 
+				if you purchase the PDF version of the collection.
+
+</para>
+
+
+				
+
+<para id="p1103">
+In the past, unknown individuals have copied Prof. Baldwin's 
+				modules from cnx.org, converted them to Kindle books, and placed 
+				them for sale on Amazon.com showing Prof. Baldwin as the author. 
+				Prof. Baldwin neither receives compensation for those sales nor 
+				does he know who does receive compensation. If you purchase such 
+				a book, please be aware that it is a copy of a collection that 
+				is freely available on 
+
+<emphasis id="strong1083" effect="bold">
+OpenStax CNX
+
+</emphasis>
+ and that it 
+				was made and published without the prior knowledge of Prof. 
+				Baldwin.
+
+</para>
+
+
+				
+
+<para id="p1104">
+<emphasis id="strong1084" effect="bold">
+Affiliation
+
+</emphasis>
+: Prof. Baldwin is a professor of 
+				Computer Information Technology at Austin Community College in 
+				Austin, TX. 
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Complete_program_listing" effect="bold">
+
+Complete program listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1105">
+Listings of the classes discussed in this module are provided below. Listings 
+of the musical notes for the Greensleeves melody are also provided. A 
+listing of a Windows batch file that can be used to compile, run, and play the 
+Greensleeves melody is also provided.
+
+</para>
+
+
+
+
+<para id="p1106">
+Click 
+
+<link id="a1170" url="Music.zip">
+
+here
+
+</link>
+
+ to download a zip file containing the text 
+files and the Windows batch files needed to play all of the melodies in the
+
+
+<link id="a1171" target-id="audio_files_from_ther">
+
+above list
+
+</link>
+
+. The zip file also contains the 
+audio files of type AU.
+
+</para>
+
+
+
+
+	
+
+<table id="table1023" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1023">
+
+			
+
+<row id="tr1046">
+
+				
+
+<entry id="th1023">
+<emphasis id="Listing_24" effect="bold">
+
+Listing 24
+
+</emphasis>
+
+. The class named AudioFormatParameters01.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1023">
+
+			
+
+<row id="tr1047">
+
+				
+
+<entry id="td1023">
+
+
+
+<code id="pre1023" display="block">
+
+/*File AudioFormatParameters01.java
+Copyright 2014, R.G.Baldwin
+Revised 08/16/14
+******************************************************************************/
+
+public class AudioFormatParameters01{
+  //The following are audio format parameters used by the Java audio system.
+  // They may be modified by the signal generator at runtime.  Values allowed
+  // by Java SDK 1.4.1 are shown in comments.
+  public float sampleRate = 16000.0F;
+  //Allowable 8000,11025,16000,22050,44100
+  public int sampleSizeInBits = 16;
+  //Allowable 8,16
+  public int channels = 1;
+  //Allowable 1,2
+  public boolean signed = true;
+  //Allowable true,false
+  public boolean bigEndian = true;
+  //Allowable true,false
+}//end class AudioFormatParameters01
+//===========================================================================//
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1107">
+...
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1024" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1024">
+
+			
+
+<row id="tr1048">
+
+				
+
+<entry id="th1024">
+<emphasis id="Listing_25" effect="bold">
+
+Listing 25
+
+</emphasis>
+
+. The class named AudioPlayOrFile01.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1024">
+
+			
+
+<row id="tr1049">
+
+				
+
+<entry id="td1024">
+
+
+
+<code id="pre1024" display="block">
+
+/*File AudioPlayOrFile01.java
+Copyright 2014, R.G.Baldwin
+Revised 08/16/14
+******************************************************************************/
+import javax.sound.sampled.*;
+import java.io.*;
+import java.util.*;
+
+public class AudioPlayOrFile01{
+  //An object of this class is used to either play the sound in the array
+  // named melody or to write it into an audio file of type AU.
+  
+  //The following are general instance variables used to create a
+  // SourceDataLine object.
+  AudioFormat audioFormat;
+  AudioInputStream audioInputStream;
+  SourceDataLine sourceDataLine;
+
+  AudioFormatParameters01 audioParams;
+  byte[] melody;
+  String playOrFile;//"play" to play immediately or a fileName to write
+                    // an output file of type AU.
+  //-------------------------------------------------------------------------//
+  
+  public AudioPlayOrFile01(AudioFormatParameters01 audioParams,
+                           byte[] melody,
+                           String playOrFile){//constructor
+
+    this.audioParams = audioParams;
+    this.melody = melody;
+    this.playOrFile = playOrFile;
+  }//end constructor
+  //-------------------------------------------------------------------------//
+
+  //This method plays or files the synthetic audio data that has been generated
+  // and saved in an array.
+  void playOrFileData() {
+    try{
+      //Get an input stream on the byte array containing the data
+      InputStream byteArrayInputStream = new ByteArrayInputStream(melody);
+
+      //Get the required audio format
+      audioFormat = new AudioFormat(audioParams.sampleRate,
+                                    audioParams.sampleSizeInBits,
+                                    audioParams.channels,
+                                    audioParams.signed,
+                                    audioParams.bigEndian);
+
+      //Get an audio input stream from the ByteArrayInputStream
+      audioInputStream = new AudioInputStream(
+                                     byteArrayInputStream,
+                                     audioFormat,
+                                     melody.length/audioFormat.getFrameSize());
+
+      //Get info on the required data line
+      DataLine.Info dataLineInfo = new DataLine.Info(SourceDataLine.class,
+                                                     audioFormat);
+
+      //Get a SourceDataLine object
+      sourceDataLine = (SourceDataLine)AudioSystem.getLine(dataLineInfo);
+                                   
+      //Decide whether to play the audio data immediately, or to write it
+      // into an audio file of type AU based on the incoming parameter named
+      // playOrFile.
+      if(playOrFile.toUpperCase().equals("PLAY")){
+        //Create a thread to play back the data and start it running.  It will
+        // run until all the data has been played back
+        new PlayAudioThread().start();
+      }else{
+        //Write the data to an output file with the name provided by the
+        // incoming parameter named playOrFile.
+        try{
+          AudioSystem.write(audioInputStream,
+                            AudioFileFormat.Type.AU,
+                            new File(playOrFile + ".au"));
+        }catch (Exception e) {
+          e.printStackTrace();
+          System.exit(0);
+        }//end catch
+      }//end else
+    }catch (Exception e) {
+      e.printStackTrace();
+      System.exit(0);
+    }//end catch
+  }//end playOrFileData
+//===========================================================================//
+
+  //Inner class to play back the data that was saved.
+  class PlayAudioThread extends Thread{
+    //This is a working buffer used to transfer the data between the
+    // AudioInputStream and the SourceDataLine.  The size is rather arbitrary.
+    byte playBuffer[] = new byte[16384];
+  
+    public void run(){
+      try{
+        //Open and start the SourceDataLine
+        sourceDataLine.open(audioFormat);
+        sourceDataLine.start();
+  
+        int cnt;
+        //Get beginning of elapsed time for playback
+        long startTime = new Date().getTime();
+  
+        //Transfer the audio data to the speakers
+        while((cnt = audioInputStream.read(
+                                       playBuffer,0,playBuffer.length)) != -1){
+          //Keep looping until the input read method returns -1 for empty
+          // stream.
+          if(cnt &gt; 0){
+            //Write data to the internal buffer of the data line where it will
+            // be delivered to the speakers in real time
+            sourceDataLine.write(playBuffer, 0, cnt);
+          }//end if
+        }//end while
+  
+        //Block and wait for internal buffer of the SourceDataLine to become
+        // empty.
+        sourceDataLine.drain();
+  
+  
+        //Get and display the elapsed time for the previous playback.
+        int elapsedTime = (int)(new Date().getTime() - startTime);
+        System.out.println("Elapsed time: " + elapsedTime);
+  
+        //Finish with the SourceDataLine
+        sourceDataLine.stop();
+        sourceDataLine.close();
+      }catch (Exception e) {
+        e.printStackTrace();
+        System.exit(0);
+      }//end catch
+  
+    }//end run
+  }//end inner class PlayAudioThread
+  //=========================================================================//
+}//end AudioPlayOrFile01 class
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1108">
+...
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1025" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1025">
+
+			
+
+<row id="tr1050">
+
+				
+
+<entry id="th1025">
+<emphasis id="Listing_26" effect="bold">
+
+Listing 26
+
+</emphasis>
+
+. The class named AudioSignalGenerator02.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1025">
+
+			
+
+<row id="tr1051">
+
+				
+
+<entry id="td1025">
+
+
+
+<code id="pre1025" display="block">
+
+/*File AudioSignalGenerator02.java
+Copyright 2014, R.G.Baldwin
+Revised 08/19/14
+
+This is an abstract class that serves as the base class for several other 
+classes that can be used to create melodies of different types.
+******************************************************************************/
+
+import java.io.*;
+import java.nio.*;
+import java.util.*;
+
+public abstract class AudioSignalGenerator02{
+  
+  //Note:  This class can only be used to generate signed 16-bit data.
+  ByteBuffer byteBuffer;
+  String[] args;
+  byte[] melody;
+  AudioFormatParameters01 audioParams;
+  //-------------------------------------------------------------------------//
+  
+  //Constructor
+  public AudioSignalGenerator02(AudioFormatParameters01 audioParams,
+                                String[] args,
+                                byte[] melody){
+    this.audioParams = audioParams;
+    this.args = args;
+    this.melody = melody;
+  }//end constructor
+  //-------------------------------------------------------------------------//
+
+  //The following abstract method must be overridden in a subclass for this
+  // class to be of any value.
+  abstract byte[] getMelody();
+}//end AudioSignalGenerator02
+//===========================================================================//
+
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1109">
+...
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1026" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1026">
+
+			
+
+<row id="tr1052">
+
+				
+
+<entry id="th1026">
+<emphasis id="Listing_27" effect="bold">
+
+Listing 27
+
+</emphasis>
+
+. The class named 
+				MusicComposer09.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1026">
+
+			
+
+<row id="tr1053">
+
+				
+
+<entry id="td1026">
+
+
+
+<code id="pre1026" display="block">
+
+/*File MusicComposer09.java
+Copyright 2014, R.G.Baldwin
+Revised 08/27/14
+
+This is a driver class for playing piano melodies. It works in 
+conjunction with the following classes:
+
+AudioSignalGenerator02
+AudioPlayOrFile01
+AudioFormatParameters01
+PlayerPiano01
+
+The melody to be played is defined in one and optionally two text files. The 
+required text file defines the notes and the duration of those notes on the 
+treble clef. The optional text file defines the notes and the durations of 
+those notes on the bass clef. Those text files must exist in a subfolder
+named Music.
+
+The melody can be played immediately or can be saved in an audio file of 
+type AU for playback later. You should be able to play the audio file with 
+any standard media player that can handle the AU file type
+
+Tested using JDK 1.8 under Win 7.
+******************************************************************************/
+
+public class MusicComposer09{
+  //Instantiate an object containing audio format parameters with predefined
+  // values. They may be modified by the signal generator at runtime. Values
+  // allowed by Java SDK 1.4.1 are shown in comments in the class definition.
+  AudioFormatParameters01 audioParams = new AudioFormatParameters01();
+  
+  //A buffer to hold the data for the melody that will be played or filed.
+  byte[] melody;
+  
+  //A place to store the incoming args array.
+  String[] args; 
+  //-------------------------------------------------------------------------//
+  
+  public static void main(String[] args){
+    /*Command-line parameters
+    0: "play" to play immediately, fileName to create an AU file. Note that 
+       the output filename cannot be named play.au.
+    1: Beats per second.
+    2: Name of file containing treble clef data (required).
+    3: Name of file containing bass clef data (optional).
+    */
+    
+    //Instantiate a new object of this class.
+    new MusicComposer09(args);
+  }//end main
+  //-------------------------------------------------------------------------//
+  
+  public MusicComposer09(String[] args){//constructor
+    //Save the args array.
+    this.args = args;
+    
+    //Create default args data if no args data is provided on the command 
+    // line. Requires that the files named GreensleevesTreble.txt and 
+    // GreensleevesBass.txt exist in a subfolder named Music.
+    if(args.length == 0){
+      this.args = new String[4];
+      this.args[0] = "play";//Play the melody immediately
+      this.args[1] = "16";//beats per second
+      this.args[2] = "GreensleevesTreble.txt";
+      this.args[3] = "GreensleevesBass.txt";
+    }//end if
+
+    //Requires a file containing treble clef data and optionally a file
+    // containing bass clef data in a subfolder named Music.
+    AudioSignalGenerator02 sigGen = 
+                               new PlayerPiano01(audioParams,this.args,melody);
+    melody = sigGen.getMelody();
+
+    //Play or file the audio data
+    new AudioPlayOrFile01(audioParams,melody,this.args[0]).playOrFileData();
+  }//end constructor
+  //-------------------------------------------------------------------------//
+}//end class MusicComposer09.java
+//===========================================================================//
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1110">
+...
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1027" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1027">
+
+			
+
+<row id="tr1054">
+
+				
+
+<entry id="th1027">
+<emphasis id="Listing_28" effect="bold">
+
+Listing 28
+
+</emphasis>
+
+. The class named PlayerPiano01.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1027">
+
+			
+
+<row id="tr1055">
+
+				
+
+<entry id="td1027">
+
+
+
+<code id="pre1027" display="block">
+
+/*File PlayerPiano01.java
+Copyright 2014, R.G.Baldwin
+Revised 08/27/14
+
+This class simulates an old-fashioned player piano and makes it possible to
+compose a melody by specifying the sequence of notes and the duration of each 
+note for both the treble and bass clefs. 
+
+The program uses text files to store the notes. 
+
+The notes are converted to frequencies, which are then used to produce mono or 
+stereo sound. 
+
+A file containing treble clef notes is required. Bass clef notes are optional. 
+If a file is provided containing bass clef notes, the bass clef melody is 
+emitted from the left speaker and the treble clef melody is emitted from the 
+right speaker. 
+
+If bass clef notes are not provided, the program defaults to mono with the 
+treble clef melody being emitted with equal volume from both speakers. Various 
+operating parameters are provided by way of command-line parameters. One of 
+the command-line parameters makes it possible to play the music immediately or
+to write it into an audio file of type AU for playback later.
+
+The notes for the melody are specified in one or two text files. A file 
+containing treble clef notes is required. A file containing bass clef notes is
+optional. The input file names and other parameters are specified on the 
+command line as shown in the comments at the beginning of the source code file 
+for the class named MusicComposer09.
+
+Each line in the text file specifies the duration and one or more keys that
+would be struck on a piano simultaneously. For example, the following lines of
+text specify four instances of the A-Major chord for quarter, half,
+three-fourths, and whole notes with a whole note rest in between. 
+(See http://www.true-piano-lessons.com/piano-chord-chart.html for chords.) 
+Note that X is used as the symbol for silence or a musical rest.
+
+// This is a comment in the text file
+1,A3,C4#,E4
+4,X
+2,A3,C4#,E4
+4,X
+3,A3,C4#,E4
+4,X
+4,A3,C4#,E4
+
+Normally, the first character must be a number or a /. Comments must begin in 
+the first column with a forward slash.
+
+The program will ignore:
+
+ Blank lines that result in a string with a zero length
+ Lines that begin with a space
+
+The range extends from A2 (110 Hz) to A7 (3520 Hz). Note, however, that many 
+audio speakers cannot produce sound at the low or high end of that spectrum. 
+
+Middle-C (261.63 Hz) is specified as C4.
+
+The amplitude versus time of each note is shaped by a scale factor. The 
+amplitude is maximum at the beginning and decays linearly to zero at the end.
+
+You should be able to play the audio file back with any standard media player
+that can handle the AU file type.
+******************************************************************************/
+import java.io.*;
+import java.nio.*;
+import java.util.*;
+
+public class PlayerPiano01 extends AudioSignalGenerator02{
+  
+  //Used to store treble clef notes as a list of arrays.
+  ArrayList trebleClef = null;
+  //Used to store bass clef notes as a list of arrays.
+  ArrayList bassClef = null;
+  
+  //Names of input text files are stored here.
+  String trebleFileName;
+  String bassFileName;
+
+  //Routine working variables
+  int trebleLengthInBeats;
+  int bassLengthInBeats;
+  
+  //Constructor
+  public PlayerPiano01(AudioFormatParameters01 audioParams,
+                       String[] args,
+                       byte[] melody){
+    super(audioParams,args,melody);
+    
+    //Get names of files containing the durations and notes.
+    if(args.length &gt;= 3){
+      //Required trebleFileName
+      trebleFileName = args[2];
+    }else{
+      System.out.println("No trebleFileName provided");
+    }//end else
+    
+    if(args.length &gt;= 4){
+      //Optional bassFileName
+      bassFileName = args[3];
+    }//end if
+  }//end constructor
+  //-------------------------------------------------------------------------//
+  
+
+  //This method returns a melody array that will play piano-like sounds using
+  // input nomenclature like A, A#, B, C, C#, D, D# etc.
+  byte[] getMelody(){
+    
+    //Treble data must be provided. If bass data is also provided, the output
+    // audio data will be interlaced in the output melody array so that the
+    // bass will be played through the left speaker and the treble will be
+    // played through the right speaker.
+    if(bassFileName != null){
+      //Specify stereo output.
+      audioParams.channels = 2;
+    }else{
+      //Specify mono output.
+      audioParams.channels = 1;//superfluous - same as default
+    }//end else
+    System.out.println("audioParams.channels = " + audioParams.channels);
+
+    //Controls how fast or slow the notes are played.
+    int beatsPerSec = Integer.parseInt(args[1]);
+
+    
+    //Read the input files to define the  that is to be played or
+    // filed. They must be stored in the subfolder named Music.
+    try{
+      trebleClef = new ArrayList();
+      BufferedReader in = new BufferedReader(
+                                    new FileReader("Music/" + trebleFileName));
+      String str;
+      while ((str = in.readLine()) != null) {
+        //Split the input string into multiple substrings using the comma as
+        // the delimiter and save them in an array object.
+        String[] strArr = str.split(",");
+
+        //Ignore:
+        // Blank lines that result in a string with a zero length
+        // Comments that begin with a /
+        // Lines that begin with a space
+        if(strArr[0].length() != 0 &amp;&amp; !(strArr[0].substring(0,1).equals("/")) 
+                                   &amp;&amp; !(strArr[0].substring(0,1).equals(" "))){
+          //Add the array to the end of the list.
+          trebleClef.add(strArr);
+        }//end if
+        
+      }//end while
+      in.close();//close the input file
+
+      if(bassFileName != null){
+        //A file was specified for bass cleft data. Need to process it.
+        bassClef = new ArrayList();
+        in = new BufferedReader(new FileReader("Music/" + bassFileName));
+        while ((str = in.readLine()) != null) {
+          String[] strArr = str.split(",");
+          
+        //Ignore:
+        // Blank lines that result in a string with a zero length
+        // Comments that begin with a /
+        // Lines that begin with a space
+        if(strArr[0].length() != 0 &amp;&amp; !(strArr[0].substring(0,1).equals("/")) 
+                                   &amp;&amp; !(strArr[0].substring(0,1).equals(" "))){
+            bassClef.add(strArr);
+          }//end if
+          
+        }//end while
+      }//end if
+    }catch(Exception ex){
+      ex.printStackTrace();
+    }//end catch
+    
+    //Compute length of trebleClef in beats
+    //Get an iterator on the trebleClef
+    Iterator iter = trebleClef.iterator();
+    while(iter.hasNext()){
+      //Extract the next array of notes from the ArrayList.
+      String[] array = (String[])iter.next();
+      //Get the duration in beats and add to the total.
+      trebleLengthInBeats += Integer.parseInt(array[0]);
+    }//end while
+    
+    if(bassFileName != null){
+      //Compute length of bassClef in beats
+      //Get an iterator on the trebleClef
+      iter = bassClef.iterator();
+      while(iter.hasNext()){
+        //Extract the next array of notes from the ArrayList
+        String[] array = (String[])iter.next();
+        //Get the duration in beats and add to the total.
+        bassLengthInBeats += Integer.parseInt(array[0]);
+      }//end while
+
+      //Check for the possibility that the treble clef and the bass clef
+      // are different lengths. If so, will play using the shorter of the
+      // two later. This could a portion of the end of the melody to not
+      // be played.
+      if(trebleLengthInBeats != bassLengthInBeats){
+        System.out.println("Treble and bass are different lengths.");
+        System.out.println("Will use the shorter of the two.");
+      }//end if
+    }//end if
+
+    //Each channel requires two 8-bit bytes per 16-bit sample.
+    int bytesPerSampPerChan = 2;
+    
+    //Override the default sampleRate of 16000.0F. Allowable sample rates
+    // are 8000,11025,16000,22050, and 44100 samples per second.
+    audioParams.sampleRate = 8000.0F;
+   
+    
+    //Create an array of sufficient size to contain the treble melody. Treat
+    // as mono at this point. May combine with bass melody later to create
+    // a stereo output. Add an extra one-half second of capacity to deal with
+    // possible round off error at the end.
+    byte[] trebleMelody = new byte[
+                     (int)(audioParams.sampleRate/2 + trebleLengthInBeats*
+                      audioParams.sampleRate*bytesPerSampPerChan/beatsPerSec)];
+
+    System.out.println("trebleMelody.length = " + trebleMelody.length);
+
+    //Prepare a ByteBuffer for use
+    byteBuffer = ByteBuffer.wrap(trebleMelody);
+
+    //Call a method that transforms the notes for the clef into an array of
+    // amplitude values.
+    makeMusic(trebleClef,beatsPerSec);
+    
+    //Process the bass clef if it exists.
+    if(bassFileName != null){
+
+      //Create an array of sufficient size to contain the bass melody. Treat
+      // as mono at this point. Will combine with the trebleMelody later to
+      // create a stereo output. Add an extra one-half second of capacity to
+      // deal with possible round off error at the end.
+      byte[] bassMelody = new byte[
+                      (int)(audioParams.sampleRate/2 + bassLengthInBeats*
+                      audioParams.sampleRate*bytesPerSampPerChan/beatsPerSec)];
+
+      System.out.println("bassMelody.length = " + bassMelody.length);
+  
+      //Prepare a ByteBuffer for use
+      byteBuffer = ByteBuffer.wrap(bassMelody);
+  
+      //Call a method that transforms the notes for the clef into an array
+      // of amplitude values.
+      makeMusic(bassClef,beatsPerSec);
+      
+      //Use the shorter of the two lengths if they don't match. Note the use
+      // of a Java conditional operator to accomplish this.
+      int lengthLimit = (trebleMelody.length &lt;= bassMelody.length) 
+                                     ? trebleMelody.length : bassMelody.length;
+
+      //Create an output array that is twice the length of the shorter of the
+      // bass or treble melodies to accommodate a stereo representation of the
+      // melody. The bass melody will be put in the left-channel bytes in the
+      // array. Similarly, the treble melody will be put in the right-channel
+      // bytes in the array.
+      melody = new byte[2*lengthLimit];
+
+      //Interlace the bass and treble melody data in the array so that the
+      // bass will be played through the left speaker and the treble will be
+      // played through the right speaker.
+
+      for(int cnt = 0;cnt &lt; melody.length-4;cnt+=4){
+        melody[cnt] = bassMelody[cnt/2];
+        melody[cnt+1] = bassMelody[1 + cnt/2];
+        melody[cnt+2] = trebleMelody[cnt/2];
+        melody[cnt+3] = trebleMelody[1 + cnt/2];
+      }//end for loop
+
+      return melody;//return the array and terminate the method
+
+    }//end if
+    
+    //There was no bass clef data. Return the trebleMelody to be played mono
+    // from both speakers equally.
+    return trebleMelody;
+    
+  }//end method getMelody
+  //-------------------------------------------------------------------------//
+
+  //This method transforms the notes for a clef into an array of amplitude
+  // values.
+  void makeMusic(ArrayList clef,int beatsPerSec){
+
+    double gain = 4000.0;//Set the output volume to a reasonable level.
+
+    //Get a hashtable that maps note names into note frequencies from A2
+    // through A7. Note that the name "X" is used to indicate a period of
+    // silence or a rest, so it is appended onto the end of the hashtable with
+    // a frequency of 0.0. 
+    //Frequency values can be checked against
+    // http://www.phy.mtu.edu/~suits/notefreqs.html.
+    Hashtable piano = getPiano();
+    piano.put("X",0.0);
+
+    //Miscellaneous variables
+    double freq = 0;
+    int beats = 0;
+    double scaleFactor = 0;
+    
+    //Get an iterator on the clef
+    Iterator iter = clef.iterator();
+
+    //Process each array containing duration and note names in the list.
+    while(iter.hasNext()){
+      //Get the next array containing duration and note names
+      String[] array = (String[])iter.next();
+      //Get the duration of the note in beats
+      beats = Integer.parseInt(array[0]);
+
+      //Transform the notes into sound data at the appropriate frequencies and
+      // duration.
+      for(int cnt = 0; cnt &lt; beats*audioParams.sampleRate/beatsPerSec; cnt++){
+        //Compute the time for this iteration to use when evaluating the
+        // cosine function.
+        double time = cnt/audioParams.sampleRate;
+        double sum = 0;//sum of values for this iteration
+
+        //Process each note in the array.
+        for(int element = 1;element &lt; array.length;element++){
+          //Iterate on the notes defined in the array.
+          //Get the name of the next note and make sure that it is upper-case.
+          String noteName = array[element].toUpperCase();
+          try{
+            //Use the noteName and get the corresponding frequency from the
+            // hashtable. Note that results are retrieved from the list as
+            // type Object and must be cast to the correct type.
+            freq = (double)piano.get(noteName);
+          }catch(java.lang.NullPointerException ex){
+            ex.printStackTrace();
+            System.out.println("noteName: " + noteName);
+          }//end catch
+          
+          //Compute the amplitude for this note at this time and add it to
+          // the sum unless it is a musical rest.
+          if(!noteName.equals("X")){
+            //This is not a musical rest.
+            sum += Math.cos(2*Math.PI*(freq)*time);
+          }//end if
+          //Go back to the top of the loop and get the next note from the
+          // array, if any.
+        }//end for loop
+        
+        //Amplitude values for all the notes at this time have been added into
+        // the sum.
+        //Scale the amplitude value so that each note has a maximum amplitude
+        // at the beginning and a zero amplitude at the end of the note. Use
+        // a linear scale factor.
+        scaleFactor = gain*((beats*audioParams.sampleRate/beatsPerSec) - cnt)
+                                 /(beats*audioParams.sampleRate/beatsPerSec);
+
+        //Scale the amplitude value and put it into the output array.
+        byteBuffer.putShort((short)(scaleFactor*sum));
+        //Go back and compute the next sample values for this set of notes
+        // until the note duration is satisfied.
+      }//end for loop
+      //Go back, retrieve, and process the next set of notes for a given
+      // duration value.
+    }//end while
+    
+  }//end makeMusic method
+  //-------------------------------------------//
+  
+  //This method creates and returns a hashtable containing the name and
+  // frequency of every note from A2 (110 Hz) at the low end to A7 (3520 Hz)
+  // at the high end. A7 is the highest A-note that I can hear on my computer.
+  
+  Hashtable getPiano(){
+    Hashtable piano = new Hashtable();
+    
+    double factor = 1.05946309436;//12th root of 2
+    double freq = 110;//Frequency of A2 at 110 Hz. Start with this.
+    String note = "A2";//Name of note at 110 Hz. Start with this.
+    
+    //Used to parse a note into 3 single-character substrings such
+    // as C, 5, and #.
+    String sub1 = null;
+    String sub2 = null;
+    String sub3 = null;
+    
+    for(int cnt = 0;cnt &lt; 61;cnt++){
+      //This loop counts up through A7 at 3520 Hz.
+      //Store the name and the frequency of the note in the next element in
+      // the hashtable.
+      piano.put(note,freq);
+      
+      //Compute the frequency of the next note
+      freq *= factor;
+      
+      //Use logic to determine the name of the next note in a sequence such
+      // as A2,A2#,B2,C3,C3#,D3,D3#,E3,F3,F3#,G3,G3#,A3
+      //Begin by parsing the current note name into three single-character
+      // substrings, the third of which may be null.
+      if(note.length() == 3){
+        sub1 = note.substring(0,1);
+        sub2 = note.substring(1,2);
+        sub3 = note.substring(2,3);
+      }else{
+        sub1 = note.substring(0,1);
+        sub2 = note.substring(1,2);
+        sub3 = null;
+      }//end if
+      
+      //Use the three substrings of the current note name to determine the
+      // name of the next note. This is long and tedious but it works.
+      if((sub1.equals("A")) &amp;&amp; (sub3 == null)){
+        sub1 = "A";
+        sub3 = "#";
+      }else if((sub1.equals("A")) &amp;&amp; (sub3.equals("#"))){
+        sub1 = "B";
+        sub3 = null;
+      }else if((sub1.equals("B"))){
+        sub1 = "C";
+        sub3 = null;
+        //Increment the number
+        sub2 = "" + (1 + Integer.parseInt(sub2));
+      }else if((sub1.equals("C")) &amp;&amp; (sub3 == null)){
+        sub1 = "C";
+        sub3 = "#";
+      }else if((sub1.equals("C")) &amp;&amp; (sub3.equals("#"))){
+        sub1 = "D";
+        sub3 = null;
+      }else if((sub1.equals("D")) &amp;&amp; (sub3 == null)){
+        sub1 = "D";
+        sub3 = "#";
+      }else if((sub1.equals("D")) &amp;&amp; (sub3.equals("#"))){
+        sub1 = "E";
+        sub3 = null;
+      }else if((sub1.equals("E"))){
+        sub1 = "F";
+        sub3 = null;
+      }else if((sub1.equals("F")) &amp;&amp; (sub3 == null)){
+        sub1 = "F";
+        sub3 = "#";
+      }else if((sub1.equals("F")) &amp;&amp; (sub3.equals("#"))){
+        sub1 = "G";
+        sub3 = null;
+      }else if((sub1.equals("G")) &amp;&amp; (sub3 == null)){
+        sub1 = "G";
+        sub3 = "#";
+      }else if((sub1.equals("G")) &amp;&amp; (sub3.equals("#"))){
+        sub1 = "A";
+        sub3 = null;
+      }else{
+        System.out.println("Can't reach this point.");
+      }//end else
+      
+      
+      //Construct the next note from the updated substrings.
+      if(sub3 == null){
+        note = sub1 + sub2;
+      }else{
+        note = sub1 + sub2 + sub3;
+      }//end if
+    }//end for loop
+
+    return piano;
+  }//end getPiano
+
+}//end class PlayerPiano01
+//===========================================================================//
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1111">
+...
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1028" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1028">
+
+			
+
+<row id="tr1056">
+
+				
+
+<entry id="th1028">
+<emphasis id="Listing_29" effect="bold">
+
+Listing 29
+
+</emphasis>
+
+. The file named 
+				GreensleevesTreble.txt
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1028">
+
+			
+
+<row id="tr1057">
+
+				
+
+<entry id="td1028">
+
+
+
+<code id="pre1028" display="block">
+//GreensleevesTreble
+//0
+3,A4
+//1
+6,C5
+3,D5
+//2
+5,E5
+1,F5
+3,E5
+//3
+6,D5
+3,B4
+//4
+5,G4
+1,A4
+3,B4
+//5
+6,C5
+3,A4
+//6
+5,A4
+1,G4#
+3,A4
+//7
+6,B4
+3,G4#
+//8
+6,E4
+3,A4
+//9
+6,C5
+3,D5
+//10
+5,E5
+1,F5
+3,E5
+//11
+6,D5
+3,B4
+//12
+5,G4
+1,A4
+3,B4
+//13
+5,C5
+1,B4
+3,A4
+//14
+5,G4#
+1,F4#
+3,G4#
+//15
+9,A4
+//16
+9,A4
+//17
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1112">
+...
+
+</para>
+
+
+
+
+
+
+	
+
+<table id="table1029" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1029">
+
+			
+
+<row id="tr1058">
+
+				
+
+<entry id="th1029">
+<emphasis id="Listing_30" effect="bold">
+
+Listing 30
+
+</emphasis>
+
+. The file named 
+				GreensleevesBass.txt
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1029">
+
+			
+
+<row id="tr1059">
+
+				
+
+<entry id="td1029">
+
+
+
+<code id="pre1029" display="block">
+//GreensleevesBass
+//0
+3,x
+//1
+6,A3
+3,A3
+//2
+6,A3
+3,E4
+//3
+6,G3
+3,D4
+//4
+6,G3
+3,D4
+//5
+6,F3
+3,C4
+//6
+6,F3
+3,C4
+//7
+6,E3
+3,B3
+//8
+6,E3
+3,B3
+//9
+6,A3
+3,E4
+//10
+6,G3
+3,D4
+//11
+6,G3
+3,D4
+//12
+6,G3
+3,D4
+//13
+6,F3
+3,C4
+//14
+6,E3
+3,B3
+//15
+3,A3
+3,C4
+3,E4
+//16
+9,A3,C4,E4
+//17
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1113">
+...
+
+</para>
+
+
+
+
+
+
+	
+
+<table id="table1030" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1030">
+
+			
+
+<row id="tr1060">
+
+				
+
+<entry id="th1030">
+<emphasis id="Listing_31" effect="bold">
+
+Listing 31
+
+</emphasis>
+
+. The file named 
+				Greensleeves.bat.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1030">
+
+			
+
+<row id="tr1061">
+
+				
+
+<entry id="td1030">
+
+
+
+<code id="pre1030" display="block">
+echo off
+del *.class
+
+del Greensleeves.au
+
+echo on
+javac MusicComposer09.java
+java MusicComposer09 play 8 GreensleevesTreble.txt GreensleevesBass.txt
+java MusicComposer09 Greensleeves 8 GreensleevesTreble.txt GreensleevesBass.txt
+
+echo off
+del *.class
+
+pause
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+
+<para id="p1114">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

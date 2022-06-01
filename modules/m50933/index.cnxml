@@ -1,0 +1,3358 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Jbs2040-An Audio Graph of a Sinusoid</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m50933</md:content-id>
+  <md:title>Jbs2040-An Audio Graph of a Sinusoid</md:title>
+  <md:abstract>This module explains how to create an audio graph of a sinusoid in a format that is accessible to blind students. The program could easily be modified to create audio graphs of other functions such as parabolas, exponentials, etc. The module also explains how to create stereo sound.</md:abstract>
+  <md:uuid>abed3fac-b923-4eaf-9234-5364b34640ff</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1003">
+<link id="a1003" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1005">
+<link id="a1005" target-id="Three_classes_are_unchanged">
+
+Three classes are unchanged
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="The_class_named_MusicComposer07">
+
+The class named MusicComposer07
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="The_class_named_AudioGraphSinusoidal">
+
+The class named AudioGraphSinusoidal
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+			
+
+<item id="li1008">
+<link id="a1008" target-id="Beginning_of_the_class_named_AudioGraphSinusoidal">
+
+Beginning of the class named AudioGraphSinusoidal
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1009">
+<link id="a1009" target-id="Beginning_of_the_getMelody_method">
+
+Beginning of the getMelody method
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1010">
+<link id="a1010" target-id="Controlling_the_output_volume_for_each_speaker">
+
+Controlling the output volume for each speaker
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1011">
+<link id="a1011" target-id="Miscellaneous_operations">
+
+Miscellaneous operations
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1012">
+
+			
+
+<link id="a1012" target-id="Map_the_sinusoidal_function_values_into_pulse_frequencies">
+
+Map the sinusoidal function values into pulse frequencies
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1013">
+<link id="a1013" target-id="Compute_the_current_time">
+
+Compute the current time
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1014">
+<link id="a1014" target-id="Compute_the_pitch_of_the_pulse">
+
+Compute the pitch of the pulse
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1015">
+<link id="a1015" target-id="Shape_the_pulse_amplitude_from_beginning_to_end">
+
+Shape the pulse amplitude from beginning to end
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1016">
+<link id="a1016" target-id="Compute_the_gain_for_the_left_and_right_speakers">
+
+Compute the gain for the left and right speakers
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1017">
+<link id="a1017" target-id="Required_audio_data_format">
+
+Required audio data format
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+				
+
+<item id="li1018">
+<link id="a1018" target-id="Monaural_channels__1">
+
+Monaural, channels = 1
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1019">
+<link id="a1019" target-id="Stereo_channels__2">
+
+Stereo, channels = 2
+
+</link>
+
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+			
+
+<item id="li1020">
+<link id="a1020" target-id="Deposit_stereo_audio_data_in_the_melody_file">
+
+Deposit stereo audio data in the melody file
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1021">
+<link id="a1021" target-id="Controlling_stereo_speaker_output_levels">
+
+Controlling 
+			stereo speaker output levels
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1022">
+<link id="a1022" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1023">
+<link id="a1023" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1024">
+<link id="a1024" target-id="Complete_program_listing">
+
+Complete program listings
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1000">
+This module is part of a collection titled 
+
+<emphasis id="strong1000" effect="bold">
+Accessible 
+	Objected-Oriented Programming Concepts for Blind Students using Java
+
+</emphasis>
+. 
+	It explains how to create an audio graph of a sinusoid in a format that is 
+	accessible to blind students. The program could easily be modified to create 
+	audio graphs of other functions such as parabolas, exponentials, etc. 
+	
+
+</para>
+
+
+
+
+<para id="p1001">
+Previous modules have created only monaural sound. This module also explains 
+	how to create stereo sound.
+
+</para>
+
+
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1002">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find the listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1006" list-type="bulleted">
+
+		
+
+<item id="li1025">
+<link id="a1025" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Beginning of the class named AudioGraphSinusoidal.
+
+</item>
+
+
+		
+
+<item id="li1026">
+<link id="a1026" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. Beginning of the getMelody method.
+
+</item>
+
+
+		
+
+<item id="li1027">
+<link id="a1027" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. Declare speaker volume variables. 
+
+</item>
+
+
+		
+
+<item id="li1028">
+<link id="a1028" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. Miscellaneous operations. 
+
+</item>
+
+
+		
+
+<item id="li1029">
+<link id="a1029" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Map the sinusoidal function values into pulse frequencies.
+
+</item>
+
+
+		
+
+<item id="li1030">
+<link id="a1030" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+. Shape the pulse amplitude from beginning to end.
+
+</item>
+
+
+		
+
+<item id="li1031">
+<link id="a1031" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+. Compute the gain for the left and right speakers.
+
+</item>
+
+
+		
+
+<item id="li1032">
+<link id="a1032" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. Deposit stereo audio data in the melody file.
+
+</item>
+
+
+		
+
+<item id="li1033">
+<link id="a1033" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+. The class named MusicComposer07.
+
+</item>
+
+
+		
+
+<item id="li1034">
+<link id="a1034" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. The class named AudioGraphSinusoidal.
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="General_background_information" effect="bold">
+
+General 
+	background information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1003">
+Previous modules have introduced you to the concept of an audio graph 
+consisting of audio pulses that represent points on the graph of a function. 
+Click 
+
+<link id="a1035" url="AudioGraphSquareWave.au">
+
+AudioGraphSquareWave
+
+</link>
+
+ to hear an 
+audio graph of a square wave function. Click 
+
+<link id="a1036" url="AudioGraphSinusoidal.au">
+
+
+AudioGraphSinusoidal
+
+</link>
+
+ to hear an audio graph of a sinusoidal function. 
+
+<emphasis id="em1000" effect="italics">
+
+(You should be able to play these audio files with any standard media player 
+that can handle the AU file type. In case you are on the OpenStax site and you 
+are unable to download the audio files, click the 
+
+</emphasis>
+<emphasis id="strong1001" effect="bold">
+<emphasis id="em1001" effect="italics">
+Legacy Site
+
+</emphasis>
+</emphasis>
+<emphasis id="em1002" effect="italics">
+ 
+link at the top of this page to switch over to the same module on the Legacy 
+site. You should be able to download the audio files from there.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1004">
+In this module, I will explain how to create the audio graph of the sinusoid. 
+The program could easily be modified to create audio graphs of other functions 
+such as parabolas, exponentials, etc. 
+
+</para>
+
+
+
+
+<para id="p1005">
+Previous modules have created only 
+monaural sound. This module also explains how to create stereo sound.
+
+</para>
+
+
+	
+	
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1006">
+<emphasis id="This_program_requires" effect="bold">
+
+This program requires
+
+</emphasis>
+
+ the following 
+	five classes:
+
+</para>
+
+
+
+
+<list id="ul1007" list-type="bulleted">
+
+	
+
+<item id="li1035">
+AudioFormatParameters01
+
+</item>
+
+
+	
+
+<item id="li1036">
+AudioPlayOrFile01
+
+</item>
+
+
+	
+
+<item id="li1037">
+AudioSignalGenerator02
+
+</item>
+
+
+	
+
+<item id="li1038">
+MusicComposer07 
+
+<emphasis id="em1003" effect="italics">
+(see 
+
+<link id="a1037" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+)
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1039">
+<emphasis id="em1004" effect="italics">
+AudioGraphSinusoidal (see 
+
+<link id="a1038" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+)
+
+</emphasis>
+</item>
+
+
+
+
+</list>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="Three_classes_are_unchanged" effect="bold">
+
+Three classes are unchanged
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1007">
+I won't bore you by repeating the discussion from earlier modules. The first 
+three classes in the
+
+
+<link id="a1039" target-id="This_program_requires">
+
+
+above list
+
+</link>
+
+ are completely unchanged from the module titled 
+
+<emphasis id="em1005" effect="italics">
+Jbs2010-Your 
+First Sound Program
+
+</emphasis>
+. By now, you probably have source code files and 
+compiled class files for those three classes. If not, you can obtain the source 
+code from the earlier module titled 
+
+<emphasis id="em1006" effect="italics">
+Jbs2010-Your 
+First Sound Program
+
+</emphasis>
+. Because they haven't changed, I won't discuss these 
+classes further in this module.
+
+</para>
+
+
+	
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="The_class_named_MusicComposer07" effect="bold">
+
+The class named 
+	MusicComposer07
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1008">
+The class named 
+
+<emphasis id="strong1002" effect="bold">
+MusicComposer07
+
+</emphasis>
+ differs from the previous 
+version only in the following respects:
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1040">
+Changes in the explanatory comments.
+
+</item>
+
+
+	
+
+<item id="li1041">
+Replacement of the term 
+
+<emphasis id="strong1003" effect="bold">
+WhiteNoise
+
+</emphasis>
+ with the term
+	
+
+<emphasis id="strong1004" effect="bold">
+AudioGraphSinusoidal
+
+</emphasis>
+.
+
+</item>
+
+
+	
+
+<item id="li1042">
+Replacement of the term 
+
+<emphasis id="strong1005" effect="bold">
+whiteNoise
+
+</emphasis>
+ with the term
+	
+
+<emphasis id="strong1006" effect="bold">
+audioGraphSinusoidal
+
+</emphasis>
+.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1009">
+Therefore, I also won't discuss this class further in this module.
+
+</para>
+
+
+	
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="The_class_named_AudioGraphSinusoidal" effect="bold">
+
+The class named 
+	AudioGraphSinusoidal
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1010">
+A complete listing of the class named
+	
+
+<emphasis id="strong1007" effect="bold">
+AudioGraphSinusoidal 
+
+</emphasis>
+is provided in 
+
+<link id="a1040" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. I will 
+break this class down and explain it in fragments.
+
+</para>
+
+
+
+
+<section id="h31001">
+<title>
+<emphasis id="Beginning_of_the_class_named_AudioGraphSinusoidal" effect="bold">
+
+Beginning of the class named AudioGraphSinusoidal
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1011">
+The sound that you heard when you listened to the audio file named
+
+
+<link id="a1041" url="../Jbs2030-A%20Pure%20Sinusoidal%20Tone/AudioGraphSinusoidal.au">
+
+
+AudioGraphSinusoidal
+
+</link>
+
+ was produced by the 
+
+<emphasis id="strong1008" effect="bold">
+getMelody
+
+</emphasis>
+ method 
+of the 
+
+<emphasis id="strong1009" effect="bold">
+AudioGraphSinusoidal
+
+</emphasis>
+ class. The 
+
+<emphasis id="strong1010" effect="bold">
+
+AudioGraphSinusoidal
+
+</emphasis>
+ class begins in 
+
+<link id="a1042" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ and the 
+
+<emphasis id="strong1011" effect="bold">
+
+getMelody
+
+</emphasis>
+ method begins in 
+
+<link id="a1043" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1012">
+The code in 
+
+<link id="a1044" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ differs from the corresponding 
+
+<emphasis id="strong1012" effect="bold">
+WhiteNoise
+
+</emphasis>
+ 
+code from the earlier module only with respect to the name of the class. 
+Therefore, I won't discuss it further.
+
+</para>
+
+
+	
+
+<table id="table1000" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. Beginning of the class named AudioGraphSinusoidal.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">
+import java.io.*;
+import java.nio.*;
+import java.util.*;
+
+public class AudioGraphSinusoidal extends AudioSignalGenerator02{
+  
+  public AudioGraphSinusoidal(AudioFormatParameters01 audioParams,
+               String[] args,
+               byte[] melody){
+    super(audioParams,args,melody);
+  }//end constructor
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31002">
+<title>
+<emphasis id="Beginning_of_the_getMelody_method" effect="bold">
+
+Beginning of the getMelody 
+	method
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1013">
+  This method returns a melody array that will play an 8-second melody consisting of 32 pulses at different frequencies. The frequencies of the pulses are centered on middle-C (261.63 Hz). The frequency deviation from middle-C versus time is based on a sinusoidal function with a frequency of 0.5 Hz. 
+
+</para>
+
+
+
+
+<para id="p1014">
+  Each pulse represents one point on a graph of the sinusoid. Pulses with frequencies at or above middle-C are delivered to the left speaker. Pulses with frequencies below middle-C are delivered to the right speaker. 
+
+</para>
+
+
+
+
+<para id="p1015">
+  The audio output can be thought of as an audio representation of a graph of a sinusoid. Pulses with frequencies above middle-C represent points on the positive lobe of the sinusoid. Increasing pitch represents increasing amplitude on the graph of the sinusoid. Pulses with frequencies below middle-C can be thought of as representing points on the negative lobe of the sinusoid. In this case, decreasing pitch represents points on the sinusoid that are further from the horizontal axis in the negative direction. Pulses with a frequency of middle-C can be thought of as representing points on the horizontal axis with a value of zero. 
+
+</para>
+
+
+
+
+<para id="p1016">
+  In order to eliminate pops and clicks caused by abrupt frequency changes in the audio signal, the amplitude of each pulse is scaled by a triangular 
+
+
+<emphasis id="em1007" effect="italics">
+(rooftop)
+
+</emphasis>
+ function that has a value that is zero at both ends and 1.0 in the center with a linear progression from the center to the ends in both directions. 
+
+</para>
+
+
+
+
+<para id="p1017">
+  Four complete cycles of the 0.5 Hz sinusoid are represented by the 32 pulses in the 8-second melody.
+
+</para>
+
+
+
+
+<para id="p1018">
+<link id="a1045" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ shows the beginning of the overridden 
+
+<emphasis id="strong1013" effect="bold">
+getMelody
+
+</emphasis>
+ 
+method. 
+
+<emphasis id="em1008" effect="italics">
+(Recall that an abstract version of this method is inherited from 
+the class named 
+
+<emphasis id="strong1014" effect="bold">
+AudioSignalGenerator02
+
+</emphasis>
+.
+
+</emphasis>
+</para>
+
+
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. Beginning of the getMelody method.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">
+  byte[] getMelody(){
+    //Set channels to 2 for stereo overriding the default value of 1.
+    audioParams.channels = 2;
+    System.out.println("audioParams.channels = " + audioParams.channels);
+
+    //Each channel requires two 8-bit bytes per 16-bit sample.
+    int bytesPerSampPerChan = 2;
+    
+    //Override the default sampleRate of 16000.0F. Allowable sample rates
+    // are 8000,11025,16000,22050, and 44100 samples per second.
+    audioParams.sampleRate = 8000.0F;
+    
+    // Specify the length of the melody in seconds.
+    double lengthInSeconds = 8.0;
+    
+    //Set the center frequency. Audio pulses will be generated above and
+    // below this frequency to represent points on the graph of a 
+    // sinusoidal function.
+    double centerFreq = 261.63;//middle C
+    
+    //Create an output array of sufficient size to contain the melody at
+    // "sampleRate" samples per second, "bytesPerSampPerChan" bytes per
+    // sample per channel and "channels" channels.
+    melody = new byte[(int)(lengthInSeconds*audioParams.sampleRate*
+                                    bytesPerSampPerChan*audioParams.channels)];
+    System.out.println("melody.length = " + melody.length);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1019">
+Note the statement in 
+
+<link id="a1046" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ that sets the value for 
+	
+
+<emphasis id="strong1015" effect="bold">
+channels
+
+</emphasis>
+ to 2 for 
+	stereo. That is new in this module.
+
+</para>
+
+
+
+
+<para id="p1020">
+Also note the statement that sets the center frequency to 261.63 Hz. That is 
+the pitch that represents zero amplitude in the audio graph of the sinusoidal 
+function.
+
+</para>
+
+
+
+
+<para id="p1021">
+Otherwise, there is nothing new in 
+
+<link id="a1047" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="Controlling_the_output_volume_for_each_speaker" effect="bold">
+
+Controlling the 
+output volume for each speaker
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1022">
+Recall that I explained earlier that pulses that represent points on the 
+positive lobe of the sinusoidal function are delivered to the left speaker. 
+Pulses that represent points on the negative lobe of the sinusoidal function are 
+delivered to the right speaker.
+
+</para>
+
+
+
+
+<para id="p1023">
+This is accomplished by scaling the audio values emitted by each speaker by a 
+factor that is either zero or non zero. When scaled by zero, there is no audio 
+output from a speaker. This makes it possible to switch the audio back and forth 
+between the two speakers.
+
+</para>
+
+
+
+
+<para id="p1024">
+This is accomplished later using the variables that are declared in 
+
+<link id="a1048" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. Declare speaker volume 
+				variables.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">
+    double gain = 0.0;
+    double leftGain = 0.0;
+    double rightGain = 0.0;
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="Miscellaneous_operations" effect="bold">
+
+Miscellaneous operations
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1025">
+<link id="a1049" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ continues with several miscellaneous operations. The embedded 
+comments should be sufficient to explain these operations.
+
+</para>
+
+
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4
+
+</emphasis>
+
+. Miscellaneous operations.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">
+    //Declare a variable that is used to control the frequency of each pulse.
+    double freq = 0.0;
+
+    //Prepare a ByteBuffer for use
+    byteBuffer = ByteBuffer.wrap(melody);
+
+    //Compute the number of audio samples in the melody.
+    int sampLength = (int)(lengthInSeconds*audioParams.sampleRate);
+
+    //Set the length of each pulse in seconds and in samples.
+    double pulseLengthInSec = 0.25;//in seconds
+    int pulseLengthInSamples = (int)(pulseLengthInSec*audioParams.sampleRate);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31005">
+<title>
+<emphasis id="Map_the_sinusoidal_function_values_into_pulse_frequencies" effect="bold">
+
+Map 
+	the sinusoidal function values into pulse frequencies
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1026">
+<link id="a1050" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ begins with a 
+
+<emphasis id="strong1016" effect="bold">
+for
+
+</emphasis>
+ loop that 
+eventually deposits audio output 
+values in the 
+
+<emphasis id="strong1017" effect="bold">
+melody
+
+</emphasis>
+ array.
+
+</para>
+
+
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5
+
+</emphasis>
+
+. Map the sinusoidal 
+				function values into pulse frequencies.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">
+    for(int cnt = 0; cnt &lt; sampLength; cnt++){
+      //Compute the time in seconds for this sample.
+      double time = cnt/audioParams.sampleRate;
+      
+      if(cnt%pulseLengthInSamples == 0){
+        //Time to create a new pulse at a different pitch. Compute the
+        // frequency for the next pulse to represent a point on a sinusoidal
+        // function of time. This section of code could easily be modified
+        // to create audio graphs of many different functions.
+        
+        //Evaluate and scale the function
+        double val = 0.35 * Math.sin(2*Math.PI*0.5*time);
+        
+        //Compute the frequency for the next pulse as a deviation from the
+        // center frequency. For this scaled sinusoidal function, the Range
+        // is from 0.65*centerFreq to 1.35*centerFreq or from 170.05 Hz
+        // to 353.2 Hz.
+        freq = (1+val)*centerFreq;
+
+      }//end if
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31006">
+<title>
+<emphasis id="Compute_the_current_time" effect="bold">
+
+Compute the current time
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1027">
+The code inside the 
+
+<emphasis id="strong1018" effect="bold">
+for
+
+</emphasis>
+ loop in 
+
+<link id="a1051" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ 
+begins by computing the time in seconds 
+for the current sample. This value will be used later to evaluate the sinusoidal 
+function that is being graphed using audio. It will also be used to compute the 
+values of the higher-frequency sinusoids used to control the pitch of the 
+pulses.
+
+</para>
+
+
+
+
+</section>
+<section id="h31007">
+<title>
+<emphasis id="Compute_the_pitch_of_the_pulse" effect="bold">
+
+Compute the pitch of the pulse
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1028">
+An 
+
+<emphasis id="strong1019" effect="bold">
+if
+
+</emphasis>
+ statement is used with the modulus operator to cause 
+the pitch to change from one pulse to the next. The code inside the 
+
+<emphasis id="strong1020" effect="bold">
+if
+
+</emphasis>
+ 
+statement computes the amplitude of the sinusoidal function being graphed at the 
+current point in time. This value will range from -1.0 to +1.0 for a sinusoidal 
+function, but the range may be different if you apply this approach to other 
+functions such as a parabola. It then uses that amplitude value to compute the 
+required pitch of the pulse, at, above, or below the center frequency to 
+represent the amplitude of the sinusoidal function at, above, or below 0.0. The 
+new pitch value is stored in the variable named 
+
+<emphasis id="strong1021" effect="bold">
+freq
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31008">
+<title>
+<emphasis id="Shape_the_pulse_amplitude_from_beginning_to_end" effect="bold">
+
+Shape the pulse 
+amplitude from beginning to end
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1029">
+     When I first wrote this program, I noticed there were a lot of pops and 
+clicks as the pulse frequency changed abruptly from one pulse to the next. To 
+eliminate that problem, I applied a shaping scale factor to the amplitude of each pulse 
+to cause it to:
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1043">
+Start at zero at the beginning of the pulse.
+
+</item>
+
+
+	
+
+<item id="li1044">
+Increase linearly to a maximum value at the center of the pulse.
+
+</item>
+
+
+	
+
+<item id="li1045">
+Decrease linearly back to zero at the end of the pulse.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1030">
+     This is accomplished using the gain factor that is computed in 
+
+
+<link id="a1052" target-id="Listing_6">
+
+Listing 
+6
+
+</link>
+
+. The gain factor ranges from 0.0 at the ends to 1.0 in the
+      center of the pulse. I will leave it as an exercise for the student to 
+decipher this code. 
+
+<emphasis id="em1009" effect="italics">
+(Hint: It would help to know the equation for a straight 
+line.)
+
+</emphasis>
+</para>
+
+
+	
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6
+
+</emphasis>
+
+. Shape the pulse amplitude 
+				from beginning to end.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+
+
+<code id="pre1005" display="block">
+      gain = (cnt%pulseLengthInSamples)/(double)pulseLengthInSamples;
+      
+      if(gain &gt; 0.5){
+        //Change to a negative slope.
+        gain = (pulseLengthInSamples - 
+                        cnt%pulseLengthInSamples)/(double)pulseLengthInSamples;
+      }//end if
+
+      //Set the gain to a value that is compatible with 16-bit audio data.
+      gain = 8000*gain;
+
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1031">
+<link id="a1053" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ ends by scaling the gain factor by 8000 to produce a reasonable 
+	audio output level.
+
+</para>
+
+
+
+
+</section>
+<section id="h31009">
+<title>
+<emphasis id="Compute_the_gain_for_the_left_and_right_speakers" effect="bold">
+
+Compute the gain 
+for the left and right speakers
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1032">
+<link id="a1054" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ examines the sign 
+
+<emphasis id="em1010" effect="italics">
+(positive or negative)
+
+</emphasis>
+ of the current 
+value of the sinusoidal function 
+
+<emphasis id="em1011" effect="italics">
+(based on the pulse frequency relative to 
+the center frequency)
+
+</emphasis>
+ and uses that information to compute gain factors 
+that will turn one speaker on and turn the other speaker off. 
+
+</para>
+
+
+
+
+	
+
+<table id="table1006" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1006">
+
+			
+
+<row id="tr1012">
+
+				
+
+<entry id="th1006">
+<emphasis id="Listing_7" effect="bold">
+
+Listing 7
+
+</emphasis>
+
+. Compute the gain for the 
+				left and right speakers.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1006">
+
+			
+
+<row id="tr1013">
+
+				
+
+<entry id="td1006">
+
+
+
+<code id="pre1006" display="block">
+      if(freq &gt;= centerFreq){
+        leftGain = gain;
+        rightGain = 0;//switch off the right channel
+      }else{
+        rightGain = gain;
+        leftGain = 0;//switch off the left channel
+      }//
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+<section id="h31010">
+<title>
+<emphasis id="Required_audio_data_format" effect="bold">
+
+Required audio data format
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1033">
+As you learned in an earlier module, given the values that we are using in the 
+
+<emphasis id="strong1022" effect="bold">
+AudioFormatParameters01
+
+</emphasis>
+ 
+object, the format requirements for monaural and stereo are shown below. 
+
+<emphasis id="em1012" effect="italics">
+
+(Note that in both cases, each audio value must be a signed 16-bit value 
+decomposed into a pair of 8-bit bytes.)
+
+</emphasis>
+</para>
+
+
+
+
+<section id="h41000">
+<title>
+<emphasis id="Monaural_channels__1" effect="bold">
+
+Monaural, channels = 1
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1034">
+For mono, each successive pair of bytes in the 
+
+<emphasis id="strong1023" effect="bold">
+melody
+
+</emphasis>
+ array must contain one audio 
+value. The element with the lower index must contain the most significant eight 
+bits of the 16-bit audio value.
+
+</para>
+
+
+
+
+</section>
+<section id="h41001">
+<title>
+<emphasis id="Stereo_channels__2" effect="bold">
+
+Stereo, channels = 2
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1035">
+For stereo, alternating pairs of bytes must each contain one audio value in 
+the same byte order as for mono. One pair of bytes is routed to the left speaker 
+and the other pair of bytes is routed to the right speaker 
+
+<emphasis id="em1013" effect="italics">
+(almost)
+
+</emphasis>
+ 
+simultaneously.
+
+</para>
+
+
+
+
+<para id="p1036">
+Within the four bytes, the pair with the lowest index is routed to the left 
+speaker and the other pair is routed to the right speaker.
+
+</para>
+
+
+
+
+<para id="p1037">
+You learned how to use the 
+
+<emphasis id="strong1024" effect="bold">
+putShort
+
+</emphasis>
+ method belonging to an 
+object of the 
+
+<emphasis id="strong1025" effect="bold">
+ByteBuffer
+
+</emphasis>
+ class to 
+deposit the 
+
+<emphasis id="strong1026" effect="bold">
+short
+
+</emphasis>
+ data into the 
+
+<emphasis id="strong1027" effect="bold">
+byte
+
+</emphasis>
+ array in 
+the earlier module titled 
+
+<emphasis id="em1014" effect="italics">
+Jbs2030-A Pure Sinusoidal Tone
+
+</emphasis>
+.
+
+</para>
+
+
+	
+
+</section>
+</section>
+<section id="h31011">
+<title>
+<emphasis id="Deposit_stereo_audio_data_in_the_melody_file" effect="bold">
+
+Deposit stereo 
+	audio data in the melody file
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1038">
+<link id="a1055" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ used the information from above to compute the current audio value 
+of the pulse and to deposit it into two consecutive pairs of bytes in the
+
+
+<emphasis id="strong1028" effect="bold">
+melody
+
+</emphasis>
+ array. Note that the 
+
+<emphasis id="strong1029" effect="bold">
+putShort
+
+</emphasis>
+ method is 
+called twice, once for each channel. Note also that the values of 
+
+<emphasis id="strong1030" effect="bold">
+
+leftGain
+
+</emphasis>
+ and 
+
+<emphasis id="strong1031" effect="bold">
+rightGain
+
+</emphasis>
+ are used to scale each audio 
+value so that it will be emitted from only one of the two stereo speakers.
+
+</para>
+
+
+
+
+	
+
+<table id="table1007" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1007">
+
+			
+
+<row id="tr1014">
+
+				
+
+<entry id="th1007">
+<emphasis id="Listing_8" effect="bold">
+
+Listing 8
+
+</emphasis>
+
+. Deposit stereo audio data 
+				in the melody file.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1007">
+
+			
+
+<row id="tr1015">
+
+				
+
+<entry id="td1007">
+
+
+
+<code id="pre1007" display="block">
+      byteBuffer.putShort((short)(leftGain*Math.sin(2*Math.PI*freq*time)));
+      byteBuffer.putShort((short)(rightGain*Math.sin(2*Math.PI*freq*time)));
+
+    }//end for loop
+    
+    return melody;
+  }//end method getMelody
+  //-------------------------------------------------------------------------//
+
+}//end class AudioGraphSinusoidal
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1039">
+Listing 8 returns a reference to the 
+
+<emphasis id="strong1032" effect="bold">
+melody
+
+</emphasis>
+ array when the
+
+
+<emphasis id="strong1033" effect="bold">
+for
+
+</emphasis>
+ loop terminates.
+
+</para>
+
+
+
+
+<para id="p1040">
+Listing 8 also signals the end of the 
+
+<emphasis id="strong1034" effect="bold">
+getMelody
+
+</emphasis>
+ method and 
+the end of the 
+
+<emphasis id="strong1035" effect="bold">
+AudioGraphSinusoidal
+
+</emphasis>
+ class.
+
+</para>
+
+
+	
+
+</section>
+<section id="h31012">
+<title>
+<emphasis id="Controlling_stereo_speaker_output_levels" effect="bold">
+
+Controlling stereo 
+	speaker output levels
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1041">
+This module demonstrates one way to control the output levels from the two 
+	speakers in a stereo melody. It is not necessary that one speaker be turned 
+	completely 
+
+<emphasis id="em1015" effect="italics">
+off
+
+</emphasis>
+ and the other speaker turned completely 
+
+<emphasis id="em1016" effect="italics">
+on
+
+</emphasis>
+ 
+as is the case here. The relative 
+	levels of the audio outputs from the two speakers can be controlled by 
+	adjusting the relative values of the left and right gain values.
+
+</para>
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1042">
+I encourage you to copy the code from 
+
+<link id="a1056" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ and 
+
+<link id="a1057" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. Retrieve the 
+necessary source code for the other three classes from the module titled 
+
+<emphasis id="em1017" effect="italics">
+
+Jbs2010-Your First Sound Program
+
+</emphasis>
+. Compile the code and 
+execute it. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1043">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1036" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1010" list-type="bulleted">
+
+					
+
+<item id="li1046">
+Module name: Jbs2040-An Audio Graph of a Sinusoid
+
+</item>
+
+
+					
+
+<item id="li1047">
+File: Jbs2040.htm
+
+
+</item>
+
+
+					
+
+<item id="li1048">
+Published: 08/27/14
+
+</item>
+
+
+					
+
+<item id="li1049">
+Revised: 09/29/15
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1037" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1044">
+<emphasis id="strong1038" effect="bold">
+Financial
+
+</emphasis>
+: 
+				Although the 
+
+<emphasis id="strong1039" effect="bold">
+OpenStax CNX
+
+</emphasis>
+ site makes it 
+				possible for you to download a PDF file for the collection that 
+				contains this module at no charge, and also makes it possible 
+				for you to purchase a pre-printed version of the PDF file, you 
+				should be aware that some of the HTML elements in this module 
+				may not translate well into PDF.
+
+</para>
+
+
+				
+
+<para id="p1045">
+You also need to know that Prof. Baldwin receives no 
+				financial compensation from 
+
+<emphasis id="strong1040" effect="bold">
+OpenStax CNX 
+
+</emphasis>
+even 
+				if you purchase the PDF version of the collection.
+
+</para>
+
+
+				
+
+<para id="p1046">
+In the past, unknown individuals have copied Prof. Baldwin's 
+				modules from cnx.org, converted them to Kindle books, and placed 
+				them for sale on Amazon.com showing Prof. Baldwin as the author. 
+				Prof. Baldwin neither receives compensation for those sales nor 
+				does he know who does receive compensation. If you purchase such 
+				a book, please be aware that it is a copy of a collection that 
+				is freely available on 
+
+<emphasis id="strong1041" effect="bold">
+OpenStax CNX
+
+</emphasis>
+ and that it 
+				was made and published without the prior knowledge of Prof. 
+				Baldwin.
+
+</para>
+
+
+				
+
+<para id="p1047">
+<emphasis id="strong1042" effect="bold">
+Affiliation
+
+</emphasis>
+:: Prof. Baldwin is a professor of 
+				Computer Information Technology at Austin Community College in 
+				Austin, TX. 
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Complete_program_listing" effect="bold">
+
+Complete program listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1048">
+Complete listings of two of the classes discussed in this module are provided 
+below. Source code for the remaining three classes can be obtained from the 
+module titled 
+
+<emphasis id="em1018" effect="italics">
+Jbs2010-Your First Sound Program
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1008" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1008">
+
+			
+
+<row id="tr1016">
+
+				
+
+<entry id="th1008">
+<emphasis id="Listing_9" effect="bold">
+
+Listing 9
+
+</emphasis>
+
+. The class named MusicComposer07.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1008">
+
+			
+
+<row id="tr1017">
+
+				
+
+<entry id="td1008">
+
+
+
+<code id="pre1008" display="block">
+/*File MusicComposer07.java
+Copyright 2014, R.G.Baldwin
+Revised 08/23/14
+
+This program creates and plays an audio graph of a sinusoid. It works in 
+conjunction with the following classes:
+
+AudioGraphSinusoidal
+AudioSignalGenerator02
+AudioPlayOrFile01
+AudioFormatParameters01
+
+The sound can be played immediately or can be saved in an audio file of 
+type AU for playback later. You should be able to play the audio file with any
+standard media player that can handle the AU file type
+
+Tested using JDK 1.8 under Win 7.
+******************************************************************************/
+
+public class MusicComposer07{
+  //Instantiate an object containing audio format parameters with predefined
+  // values. They may be modified by the signal generator at runtime. Values
+  // allowed by Java SDK 1.4.1 are shown in comments in the class definition.
+  AudioFormatParameters01 audioParams = new AudioFormatParameters01();
+  
+  //A buffer to hold the audio data that will be played or filed.
+  byte[] melody;
+  
+  //A place to store the incoming args array.
+  String[] args; 
+  //-------------------------------------------------------------------------//
+
+  //Command-line parameter (only one parameter is needed)
+  //If "play", the sound will be played immediately. Otherwise, the string will
+  // be used as a filename for an audio file of type AU. In the latter case,
+  // it must be a string that would be valid as a file name for the operating
+  // system in use.  
+  public static void main(String[] args){
+    //Instantiate a new object of this class.
+    new MusicComposer07(args);
+  }//end main
+  //-------------------------------------------------------------------------//
+  
+  public MusicComposer07(String[] args){//constructor
+    //Save the args array.
+    this.args = args;
+    
+    //Create default args data if no args data is provided on the command line.
+    if(args.length == 0){
+      this.args = new String[1];
+      this.args[0] = "play";//Play the melody immediately
+    }//end if
+
+    //Get a populated array containing audio data for white or pink noise.
+    AudioGraphSinusoidal audioGraphSinusoidal = 
+                        new AudioGraphSinusoidal(audioParams,this.args,melody);
+    melody = audioGraphSinusoidal.getMelody();
+
+    //Play or file the audio data
+    new AudioPlayOrFile01(audioParams,melody,this.args[0]).playOrFileData();
+  }//end constructor
+  //-------------------------------------------------------------------------//
+}//end class MusicComposer07.java
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1049">
+..
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1009" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1009">
+
+			
+
+<row id="tr1018">
+
+				
+
+<entry id="th1009">
+<emphasis id="Listing_10" effect="bold">
+
+Listing 10
+
+</emphasis>
+
+. The class named AudioGraphSinusoidal.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1009">
+
+			
+
+<row id="tr1019">
+
+				
+
+<entry id="td1009">
+
+
+
+<code id="pre1009" display="block">
+/*File AudioGraphSinusoidal.java
+Copyright 2014, R.G.Baldwin
+Revised 08/23/14
+
+This class can be used to create an 8-second melody consisting of 32 pulses
+at different frequencies.
+******************************************************************************/
+
+import java.io.*;
+import java.nio.*;
+import java.util.*;
+
+public class AudioGraphSinusoidal extends AudioSignalGenerator02{
+  
+  public AudioGraphSinusoidal(AudioFormatParameters01 audioParams,
+               String[] args,
+               byte[] melody){
+    super(audioParams,args,melody);
+  }//end constructor
+  //-------------------------------------------------------------------------//
+  
+
+  //This method returns a melody array that will play an 8-second melody
+  // consisting of 32 pulses at different frequencies. The frequencies of the
+  // pulses are centered on middle-C (261.63 Hz).
+  
+  //The frequency deviation from middle-C versus time is based on a sinusoidal
+  // function with a frequency of 0.5 Hz. Each pulse represents one point on
+  // a graph of the sinusoid. Pulses with frequencies at or above middle-C are
+  // delivered to the left speaker. Pulses with frequencies below middle-C are
+  // delivered to the right speaker.
+
+  //The audio output can be thought of as an audio representation of a graph
+  // of a sinusoid. Pulses with frequencies above middle-C represent points
+  // on the positive lobe of the sinusoid. Increasing pitch represents
+  // increasing amplitude on the graph of the sinusoid. Pulses with
+  // frequencies below middle-C can be thought of as representing points on
+  // the negative lobe of the sinusoid. In this case, decreasing pitch
+  // represents points on the sinusoid that are further from the horizontal
+  // axis in the negative direction. Pulses with a frequency of middle-C can
+  // be thought of as representing points on the horizontal axis with a value
+  // of zero.
+
+  //In order to eliminate pops and clicks caused by abrupt frequency changes
+  // in the audio signal, the amplitude of each pulse is scaled by a
+  // triangular (rooftop) function that has a value that is zero at both ends
+  // and 1.0 in the center with a linear progression from the center to the
+  // ends in both directions.
+
+  //Four complete cycles of the 0.5 Hz sinusoid are represented by the 32
+  // pulses in the 8-second melody.
+  
+  byte[] getMelody(){
+    //Set channels to 2 for stereo overriding the default value of 1.
+    audioParams.channels = 2;
+    System.out.println("audioParams.channels = " + audioParams.channels);
+
+    //Each channel requires two 8-bit bytes per 16-bit sample.
+    int bytesPerSampPerChan = 2;
+    
+    //Override the default sampleRate of 16000.0F. Allowable sample rates
+    // are 8000,11025,16000,22050, and 44100 samples per second.
+    audioParams.sampleRate = 8000.0F;
+    
+    // Specify the length of the melody in seconds.
+    double lengthInSeconds = 8.0;
+    
+    //Set the center frequency. Audio pulses will be generated above and
+    // below this frequency to represent points on the graph of a 
+    // sinusoidal function.
+    double centerFreq = 261.63;//middle C
+    
+    //Create an output array of sufficient size to contain the melody at
+    // "sampleRate" samples per second, "bytesPerSampPerChan" bytes per
+    // sample per channel and "channels" channels.
+    melody = new byte[(int)(lengthInSeconds*audioParams.sampleRate*
+                                    bytesPerSampPerChan*audioParams.channels)];
+    System.out.println("melody.length = " + melody.length);
+    
+    //Declare variables used to control the output volume on the left and
+    // right speaker channels. These values will be used to cause pulses
+    // representing negative values of the sinusoidal function to emit from
+    // one speaker and pulses representing positive values to emit from
+    // the other speaker.
+    double gain = 0.0;
+    double leftGain = 0.0;
+    double rightGain = 0.0;
+
+    //Declare a variable that is used to control the frequency of each pulse.
+    double freq = 0.0;
+
+    //Prepare a ByteBuffer for use
+    byteBuffer = ByteBuffer.wrap(melody);
+
+    //Compute the number of audio samples in the melody.
+    int sampLength = (int)(lengthInSeconds*audioParams.sampleRate);
+
+    //Set the length of each pulse in seconds and in samples.
+    double pulseLengthInSec = 0.25;//in seconds
+    int pulseLengthInSamples = (int)(pulseLengthInSec*audioParams.sampleRate);
+
+    //Compute the audio sample values and deposit them in the output melody
+    // array.
+    for(int cnt = 0; cnt &lt; sampLength; cnt++){
+      //Compute the time in seconds for this sample.
+      double time = cnt/audioParams.sampleRate;
+      
+      if(cnt%pulseLengthInSamples == 0){
+        //Time to create a new pulse at a different pitch. Compute the
+        // frequency for the next pulse to represent a point on a sinusoidal
+        // function of time. This section of code could easily be modified
+        // to create audio graphs of many different functions.
+        
+        //Evaluate and scale the function
+        double val = 0.35 * Math.sin(2*Math.PI*0.5*time);
+        
+        //Compute the frequency for the next pulse as a deviation from the
+        // center frequency. For this scaled sinusoidal function, the Range
+        // is from 0.65*centerFreq to 1.35*centerFreq or from 170.05 Hz
+        // to 353.2 Hz.
+        freq = (1+val)*centerFreq;
+
+      }//end if
+
+      //Deposit audio data in the melody for each channel. Scale the amplitude
+      // of each pulse with a triangular scale factor (rooftop shape) to
+      // minimize the undesirable pops and clicks that occur when there is an
+      // abrupt change in the frequency from one pulse to the next. The 
+      // following gain factor ranges from 0.0 at the ends to 1.0 in the
+      // center of the pulse.
+      gain = (cnt%pulseLengthInSamples)/(double)pulseLengthInSamples;
+      if(gain &gt; 0.5){
+        //Change to a negative slope.
+        gain = (pulseLengthInSamples - 
+                        cnt%pulseLengthInSamples)/(double)pulseLengthInSamples;
+      }//end if
+      
+      //Set the final gain to a value that is compatible with 16-bit audio
+      // data.
+      gain = 8000*gain;
+
+      //Switch the left and right channels on and off depending on the location
+      // of the pulse frequency relative to the center frequency.
+      if(freq &gt;= centerFreq){
+        leftGain = gain;
+        rightGain = 0;//switch off the right channel
+      }else{
+        rightGain = gain;
+        leftGain = 0;//switch off the left channel
+      }//
+      
+      //Compute scaled pulse values and deposit them into the melody.
+      byteBuffer.putShort((short)(leftGain*Math.sin(2*Math.PI*freq*time)));
+      byteBuffer.putShort((short)(rightGain*Math.sin(2*Math.PI*freq*time)));
+
+    }//end for loop
+    
+    return melody;
+  }//end method getMelody
+  //-------------------------------------------------------------------------//
+
+}//end class AudioGraphSinusoidal
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1050">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

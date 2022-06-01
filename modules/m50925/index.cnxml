@@ -1,0 +1,5456 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Jbs2010-Your First Sound Program</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m50925</md:content-id>
+  <md:title>Jbs2010-Your First Sound Program</md:title>
+  <md:abstract>This module explains how to write a program that creates an audio output consisting of white noise in a format that is accessible to blind students.</md:abstract>
+  <md:uuid>466aa986-1eca-4a5e-80f6-460da1892e23</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1003">
+<link id="a1003" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1005">
+<link id="a1005" target-id="The_class_named_AudioPlayOrFile01">
+
+The class named AudioPlayOrFile01
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+			
+
+<item id="li1006">
+<link id="a1006" target-id="A_formal_mechanism_for_code_reuse">
+
+A formal mechanism for code reuse
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1007">
+<link id="a1007" target-id="The_Java_Standard_edition_library">
+
+The Java Standard 
+			edition library
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1008">
+<link id="a1008" target-id="Two_special_classes">
+
+Two special classes
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1009">
+<link id="a1009" target-id="Code_reuse">
+
+Code reuse
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1010">
+<link id="a1010" target-id="The_class_named_AudioFormatParameters01">
+
+The class named AudioFormatParameters01
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1011">
+<link id="a1011" target-id="Disk_organization">
+
+Disk organization
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1012">
+<link id="a1012" target-id="The_class_named_MusicComposer04">
+
+The class named MusicComposer04
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+			
+
+<item id="li1013">
+<link id="a1013" target-id="Beginning_of_class_MusicComposer04">
+
+Beginning of the 
+			class named MusicComposer04
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1014">
+<link id="a1014" target-id="The_instance_variables">
+
+The instance variables
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1015">
+<link id="a1015" target-id="CommandLine_parameters">
+
+Command-line parameters
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1016">
+<link id="a1016" target-id="The_main_method">
+
+The main method
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1017">
+<link id="a1017" target-id="Compiling_and_executing_the_program">
+
+Compiling and executing the program
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1018">
+<link id="a1018" target-id="The_constructor_for_MusicComposer04">
+
+The constructor for MusicComposer04
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1019">
+<link id="a1019" target-id="Get_and_play_or_file_the_sound">
+
+Get and play or file the sound
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1020">
+<link id="a1020" target-id="The_class_named_AudioSignalGenerator02">
+
+The class named AudioSignalGenerator02
+
+</link>
+
+
+<list id="ul1006" list-type="bulleted">
+
+			
+
+<item id="li1021">
+<link id="a1021" target-id="Beginning_of_the_class_named_AudioSignalGenerator02">
+
+Beginning of the class named AudioSignalGenerator02
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1022">
+<link id="a1022" target-id="The_constructor_for_AudioSignalGenerator02">
+
+The constructor for AudioSignalGenerator02
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1023">
+<link id="a1023" target-id="The_abstract_method_named_getMelody">
+
+The abstract method named getMelody
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1024">
+<link id="a1024" target-id="The_class_named_WhiteNoise">
+
+The class named WhiteNoise
+
+</link>
+
+
+<list id="ul1007" list-type="bulleted">
+
+			
+
+<item id="li1025">
+<link id="a1025" target-id="Beginning_of_the_class_named_WhiteNoise">
+
+Beginning of the class named WhiteNoise
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1026">
+<link id="a1026" target-id="The_constructor_for_the_WhiteNoise_class">
+
+The constructor for the WhiteNoise class
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1027">
+<link id="a1027" target-id="Beginning_of_the_getMelody_method">
+
+Beginning of the getMelody method
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1028">
+<link id="a1028" target-id="Overall_structure_of_the_program">
+
+Overall structure of the program
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1029">
+<link id="a1029" target-id="The_predefined_audio_parameters">
+
+The predefined audio parameters
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1030">
+<link id="a1030" target-id="Miscellaneous_setup_operations">
+
+Miscellaneous setup operations
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1031">
+<link id="a1031" target-id="Generating_the_white_random_noise">
+
+Generating the white (random) noise
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1032">
+<link id="a1032" target-id="A_stream_of_pseudorandom_numbers">
+
+A stream of pseudorandom numbers
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1033">
+<link id="a1033" target-id="The_sound_of_a_stream_of_random_numbers">
+
+The sound of a stream of random numbers
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1034">
+<link id="a1034" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1035">
+<link id="a1035" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1036">
+<link id="a1036" target-id="Complete_program_listing">
+
+Complete program listings
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1000">
+This module is part of a collection titled 
+
+<emphasis id="strong1000" effect="bold">
+Accessible 
+	Objected-Oriented Programming Concepts for Blind Students using Java
+
+</emphasis>
+. 
+	It explains how to write a program that creates an audio output consisting 
+	of white noise.
+
+</para>
+
+
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1001">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find the listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1008" list-type="bulleted">
+
+		
+
+<item id="li1037">
+<link id="a1037" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Beginning of class MusicComposer04.
+
+</item>
+
+
+		
+
+<item id="li1038">
+<link id="a1038" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. The file named WhiteNoise.bat.
+
+</item>
+
+
+		
+
+<item id="li1039">
+<link id="a1039" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. Beginning of the constructor for MusicComposer04.
+
+</item>
+
+
+		
+
+<item id="li1040">
+<link id="a1040" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. Get and play or file the sound.
+
+</item>
+
+
+		
+
+<item id="li1041">
+<link id="a1041" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Beginning of the class named AudioSignalGenerator02.
+
+</item>
+
+
+		
+
+<item id="li1042">
+<link id="a1042" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+. The constructor for AudioSignalGenerator02.
+
+</item>
+
+
+		
+
+<item id="li1043">
+<link id="a1043" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+. The abstract method named getMelody.
+
+</item>
+
+
+		
+
+<item id="li1044">
+<link id="a1044" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. Beginning of the class named WhiteNoise.
+
+</item>
+
+
+		
+
+<item id="li1045">
+<link id="a1045" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+. Beginning of the getMelody method.
+
+</item>
+
+
+		
+
+<item id="li1046">
+<link id="a1046" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. Miscellaneous setup operations.
+
+</item>
+
+
+		
+
+<item id="li1047">
+<link id="a1047" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+. Generating the white (random) noise.
+
+</item>
+
+
+		
+
+<item id="li1048">
+<link id="a1048" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+. The class named AudioPlayOrFile01.
+
+</item>
+
+
+		
+
+<item id="li1049">
+<link id="a1049" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+. The class named AudioFormatParameters01.
+
+</item>
+
+
+		
+
+<item id="li1050">
+<link id="a1050" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+. The class named MusicComposer04.
+
+</item>
+
+
+		
+
+<item id="li1051">
+<link id="a1051" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+. The class named AudioSignalGenerator02.
+
+</item>
+
+
+		
+
+<item id="li1052">
+<link id="a1052" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+. The class named WhiteNoise.
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="General_background_information" effect="bold">
+
+General 
+	background information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1002">
+By this point in the course, you should have learned enough that you can put 
+Java OOP to work in a substantive way. In this course, which is designed 
+specifically for blind students, you will write substantive programs that deal 
+with something that you are probably very good at -- sound.
+
+</para>
+
+
+
+
+<para id="p1003">
+An earlier module explained some of the physical aspects of sound. It also 
+explained a little about how you can write programs to create sound with a 
+computer.
+
+</para>
+
+
+
+
+<para id="p1004">
+This module will show you how to write a Java OOP program that uses a random 
+number generator to produce 
+
+<emphasis id="em1000" effect="italics">
+white noise
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1005">
+<emphasis id="em1001" effect="italics">
+(White noise is usually thought to be noise that contains equal 
+contributions of all frequencies. Pink noise is thought of as noise that 
+contains almost equal contributions of almost all frequencies. In reality, the 
+program that we will examine in this module will probably produce pink noise 
+instead of white noise.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1006">
+Download and play the file named 
+
+<link id="a1053" url="WhiteNoise.au">
+
+WhiteNoise
+
+</link>
+
+ to 
+hear what white or pink noise sounds like. You will probably conclude that it 
+isn't very pleasant to listen to. You should be able to play the audio file with any
+standard media player that can handle the AU file type. 
+
+<emphasis id="em1002" effect="italics">
+(In case you are on the OpenStax site and 
+you are unable to download the audio file, click the 
+
+<emphasis id="strong1001" effect="bold">
+Legacy Site
+
+</emphasis>
+ link at the top 
+of this page to switch over to the same module on the Legacy site. You should be 
+able to download the audio file from there.)
+
+</emphasis>
+</para>
+
+
+	
+	
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="The_class_named_AudioPlayOrFile01" effect="bold">
+
+The class named 
+AudioPlayOrFile01
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h31001">
+<title>
+<emphasis id="A_formal_mechanism_for_code_reuse" effect="bold">
+
+A formal mechanism for code 
+reuse
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1007">
+One of the most important aspects of OOP is that it provides a formal 
+mechanism for code reuse without a requirement for the distribution of source 
+code. For example, if some other programmer 
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1053">
+has developed a class 
+
+<emphasis id="em1003" effect="italics">
+(or a group of classes)
+
+</emphasis>
+ that does 
+	something that you need to do, and
+
+</item>
+
+
+	
+
+<item id="li1054">
+if you have confidence in that programmer, and 
+
+</item>
+
+
+	
+
+<item id="li1055">
+if that programmer is willing to provide you with the compiled files for 
+	those classes, then
+
+</item>
+
+
+	
+
+<item id="li1056">
+you can use them in your program without knowing or caring how they are 
+	implemented. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1008">
+All you need is documentation on how to use the classes.
+
+</para>
+
+
+
+
+</section>
+<section id="h31002">
+<title>
+<emphasis id="The_Java_Standard_edition_library" effect="bold">
+
+The Java Standard edition 
+library
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1009">
+The Java Standard edition library contains thousands of compiled class files 
+that are available for every Java programmer to use whenever and wherever they 
+are needed. Java 
+programmers routinely use those classes every day without knowing or caring how 
+they are actually implemented.
+
+</para>
+
+
+
+
+<para id="p1010">
+For example, the library contains a class named 
+
+<emphasis id="strong1002" effect="bold">
+Random
+
+</emphasis>
+ that 
+can be used to produce a series of pseudo-random numbers. We will use that class 
+in the program in this module. I don't know, nor do I care, how the code in that 
+class produces the numbers. I'm confident that it behaves as advertised. 
+Therefore, all I care about is how to use it. I can learn that from the library 
+documentation.
+
+</para>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="Two_special_classes" effect="bold">
+
+Two special classes
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1011">
+I will provide the source code for two special classes in this module that I will use 
+in several future modules without modification. I suggest that you simply have confidence that 
+they behave as advertised and use them. I will provide very little, if any, explanation as to how they do 
+what they do. Those classes are named
+
+</para>
+
+
+
+
+<list id="ul1010" list-type="bulleted">
+
+	
+
+<item id="li1057">
+<emphasis id="strong1003" effect="bold">
+AudioPlayOrFile01
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1058">
+<emphasis id="strong1004" effect="bold">
+AudioFormatParameters01
+
+</emphasis>
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1012">
+The class named 
+
+<emphasis id="strong1005" effect="bold">
+AudioPlayOrFile01
+
+</emphasis>
+ accepts an array of
+
+
+<emphasis id="strong1006" effect="bold">
+byte
+
+</emphasis>
+ 
+data as input, along with some other information, and causes electrical currents 
+to flow through audio speakers that are attached to the computer. A complete listing of the class named 
+
+<emphasis id="strong1007" effect="bold">
+
+AudioPlayOrFile01
+
+</emphasis>
+ is provided in 
+
+<link id="a1054" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1013">
+This class is very simple to use. As you can see in 
+
+<link id="a1055" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+, the constructor for the 
+class requires three parameters:
+
+</para>
+
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+	
+
+<item id="li1059">
+A reference to an object of the class 
+
+<emphasis id="strong1008" effect="bold">
+AudioFormatParameters01
+
+</emphasis>
+
+	
+
+<emphasis id="em1004" effect="italics">
+(see 
+
+<link id="a1056" target-id="The_class_named_AudioFormatParameters01">
+
+this section
+
+</link>
+
+)
+
+</emphasis>
+.
+
+</item>
+
+
+	
+
+<item id="li1060">
+A reference to an array containing elements of type 
+
+<emphasis id="strong1009" effect="bold">
+byte
+
+</emphasis>
+, 
+	which define the sound that is to be played or filed. The format of the 
+	array will be defined later.
+
+</item>
+
+
+	
+
+<item id="li1061">
+A reference to an object of type 
+
+<emphasis id="strong1010" effect="bold">
+String
+
+</emphasis>
+ containing either "play", which 
+	will cause the sound to be played immediately, or containing a string that 
+	can be used as the name of an output audio file of type AU. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="Code_reuse" effect="bold">
+
+Code reuse
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1014">
+It is unlikely that the class named 
+
+<emphasis id="strong1011" effect="bold">
+
+AudioPlayOrFile01
+
+</emphasis>
+ will be modified throughout the next several 
+modules. Therefore, unless I change the name of the class, 
+
+<emphasis id="em1005" effect="italics">
+(which I will do 
+if I modify the file)
+
+</emphasis>
+, you will only need to copy and compile the source 
+code once. After that, you can simply copy the compiled class file from one 
+project folder to the next.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21002">
+<title>
+<emphasis id="The_class_named_AudioFormatParameters01" effect="bold">
+
+The class named 
+AudioFormatParameters01
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1015">
+An object of the class named 
+
+<emphasis id="strong1012" effect="bold">
+AudioFormatParameters01
+
+</emphasis>
+ is simply a 
+container for some of the parameters required by the class named 
+
+<emphasis id="strong1013" effect="bold">
+
+AudioPlayOrFile01
+
+</emphasis>
+. A complete listing of the class named 
+
+<emphasis id="strong1014" effect="bold">
+
+AudioFormatParameters01
+
+</emphasis>
+ is provided in 
+
+<link id="a1057" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1016">
+With the exception of 
+
+<emphasis id="strong1015" effect="bold">
+bigEndian
+
+</emphasis>
+, the comments should be 
+sufficient to describe the parameters. If you would like to learn more about 
+
+<emphasis id="strong1016" effect="bold">
+bigEndian
+
+</emphasis>
+, simply Google it.
+
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="Disk_organization" effect="bold">
+
+Disk organization
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1017">
+Although there are more elegant ways to organize your disk by making use of the
+
+
+<emphasis id="em1006" effect="italics">
+classpath
+
+</emphasis>
+ environment variable, unless stated otherwise, the disk 
+organization that I will use in this collection of sound modules will not use 
+the
+
+<emphasis id="em1007" effect="italics">
+ classpath
+
+</emphasis>
+ environment variable.
+
+</para>
+
+
+
+
+<para id="p1018">
+With the exception of the classes in the Java Standard Edition library, these 
+modules will assume that source code files or compiled class files for all 
+required classes are physically contained in the folder from which the program 
+is executed. For the program that I will explain in this module, this means that the following source code or 
+compiled class files must be contained in the execution folder:
+
+</para>
+
+
+
+
+<list id="ul1012" list-type="bulleted">
+
+	
+
+<item id="li1062">
+MusicComposer04
+
+</item>
+
+
+	
+
+<item id="li1063">
+AudioSignalGenerator02
+
+</item>
+
+
+	
+
+<item id="li1064">
+WhiteNoise
+
+</item>
+
+
+	
+
+<item id="li1065">
+AudioFormatParameters01
+
+</item>
+
+
+	
+
+<item id="li1066">
+AudioPlayOrFile01
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="The_class_named_MusicComposer04" effect="bold">
+
+The class named MusicComposer04
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1019">
+An object of this class creates and plays three seconds of monaural 
+
+<emphasis id="em1008" effect="italics">
+white
+
+</emphasis>
+ or 
+
+
+<emphasis id="em1009" effect="italics">
+pink
+
+</emphasis>
+ noise.
+It works in conjunction with the following classes:
+
+
+
+</para>
+
+
+
+
+<list id="ul1013" list-type="bulleted">
+
+	
+
+<item id="li1067">
+WhiteNoise
+
+
+</item>
+
+
+	
+
+<item id="li1068">
+AudioSignalGenerator02
+
+
+</item>
+
+
+	
+
+<item id="li1069">
+AudioPlayOrFile01
+
+
+</item>
+
+
+	
+
+<item id="li1070">
+AudioFormatParameters01
+
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1020">
+The sound can be played immediately or can be saved in an audio file of 
+type AU for playback later. 
+
+<emphasis id="em1010" effect="italics">
+(Click 
+
+<link id="a1058" url="WhiteNoise.au">
+
+WhiteNoise
+
+</link>
+
+ to 
+download and play the audio file produced by this program.)
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1021">
+A complete listing of 
+the class named 
+
+<emphasis id="strong1017" effect="bold">
+MusicComposer04
+
+</emphasis>
+ is provided in 
+
+<link id="a1059" target-id="Listing_14">
+
+Listing 14
+
+</link>
+
+. I 
+will break this code down and explain it in fragments. The first fragment is 
+shown in 
+
+<link id="a1060" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<section id="h31005">
+<title>
+<emphasis id="Beginning_of_class_MusicComposer04" effect="bold">
+
+Beginning of class MusicComposer04
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1022">
+<link id="a1061" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ shows the beginning of the class named 
+
+<emphasis id="strong1018" effect="bold">
+MusicComposer04
+
+</emphasis>
+ 
+along with the 
+
+<emphasis id="strong1019" effect="bold">
+main
+
+</emphasis>
+ method.
+
+</para>
+
+
+
+
+	
+
+<table id="table1000" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. Beginning of the class 
+				named MusicComposer04.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">
+public class MusicComposer04{
+
+  AudioFormatParameters01 audioParams = new AudioFormatParameters01();
+  byte[] melody;
+  String[] args; 
+  //-------------------------------------------------------------------------//
+
+  public static void main(String[] args){
+    new MusicComposer04(args);
+  }//end main
+  //-------------------------------------------------------------------------//
+
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31006">
+<title>
+<emphasis id="The_instance_variables" effect="bold">
+
+The instance variables
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1023">
+The first instance variable named 
+
+<emphasis id="strong1020" effect="bold">
+audioParams
+
+</emphasis>
+ instantiates 
+and saves a reference to an 
+	object containing audio format parameters with predefined values. They 
+	may be modified by the signal generator later at runtime. Values that are 
+allowed by Java SDK 1.4.1 are shown in comments in the class definition for the 
+class named 
+
+<link id="a1062" target-id="The_class_named_AudioFormatParameters01">
+
+AudioFormatParameters01
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1024">
+<emphasis id="The_instance_variable_named_melody" effect="bold">
+
+The instance variable named 
+
+<emphasis id="strong1021" effect="bold">
+melody
+
+</emphasis>
+</emphasis>
+
+ will ultimately refer to 
+an array object that holds the audio data that will be played or filed.
+
+</para>
+
+
+
+
+<para id="p1025">
+<emphasis id="The_instance_variable_named_args" effect="bold">
+
+The instance variable named 
+
+<emphasis id="strong1022" effect="bold">
+args
+
+</emphasis>
+</emphasis>
+
+ will ultimately refer to an 
+array object that holds an incoming command-line parameter.
+
+</para>
+
+
+
+
+</section>
+<section id="h31007">
+<title>
+<emphasis id="CommandLine_parameters" effect="bold">
+
+Command-line parameters
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1026">
+  Only one command-line parameter is needed 
+and it is optional. If the value of the parameter is "play", the sound will be played immediately. Otherwise, the 
+parameter string will
+  be used as a filename for an audio file of type AU. In this case,
+  it must be a string that would be valid as a file name for your operating 
+system.
+
+</para>
+
+
+
+
+</section>
+<section id="h31008">
+<title>
+<emphasis id="The_main_method" effect="bold">
+
+The main method
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1027">
+The 
+
+<emphasis id="strong1023" effect="bold">
+main
+
+</emphasis>
+ method simply instantiates a new object of this 
+class passing the incoming 
+
+<emphasis id="strong1024" effect="bold">
+args
+
+</emphasis>
+ array's reference to the constructor.
+
+</para>
+
+
+
+
+</section>
+<section id="h31009">
+<title>
+<emphasis id="Compiling_and_executing_the_program" effect="bold">
+
+Compiling and executing the 
+program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1028">
+I typically use Windows batch files to compile and execute my Java program. 
+
+
+<link id="a1063" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ shows the contents of such a batch file. This batch file will attempt 
+to:
+
+</para>
+
+
+
+
+<list id="ul1014" list-type="bulleted">
+
+	
+
+<item id="li1071">
+Delete all class files in the folder.
+
+</item>
+
+
+	
+
+<item id="li1072">
+Delete a file named WhiteNoise.au if it exists.
+
+</item>
+
+
+	
+
+<item id="li1073">
+Compile the program.
+
+</item>
+
+
+	
+
+<item id="li1074">
+Execute the program once to play the sound immediately.
+
+</item>
+
+
+	
+
+<item id="li1075">
+Execute the program again to write the sound to the audio file named 
+	WhiteNoise.au.
+
+</item>
+
+
+	
+
+<item id="li1076">
+Delete all the class files in the folder.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. The file named 
+				WhiteNoise.bat.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">
+echo off
+del *.class
+
+del WhiteNoise.au
+
+echo on
+javac MusicComposer04.java
+java MusicComposer04 play
+java MusicComposer04 WhiteNoise
+
+echo off
+del *.class
+
+pause
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31010">
+<title>
+<emphasis id="The_constructor_for_MusicComposer04" effect="bold">
+
+The constructor for MusicComposer04
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1029">
+<link id="a1064" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ shows the beginning of the constructor for 
+
+<emphasis id="strong1025" effect="bold">
+MusicComposer04
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. Beginning of the constructor for MusicComposer04.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">
+  public MusicComposer04(String[] args){//constructor
+
+    this.args = args;
+    
+    //Create default args data if no args data is provided on the command line.
+    if(args.length == 0){
+      this.args = new String[1];
+      this.args[0] = "play";//Play the melody immediately
+    }//end if
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1030">
+The constructor begins by saving the incoming reference to the 
+
+<emphasis id="strong1026" effect="bold">
+
+	args
+
+</emphasis>
+ array containing the command-line parameter.
+
+</para>
+
+
+
+
+<para id="p1031">
+If the length of the 
+
+<emphasis id="strong1027" effect="bold">
+args
+
+</emphasis>
+ array is zero, this means that the user did not enter a command-line 
+parameter. In that case, the constructor instantiates an appropriate array 
+object, populates its only element with a reference to a "play" string, and 
+saves that array object's reference in the instance variable discussed
+
+
+<link id="a1065" target-id="The_instance_variable_named_args">
+
+earlier
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31011">
+<title>
+<emphasis id="Get_and_play_or_file_the_sound" effect="bold">
+
+Get and play or file the sound
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1032">
+<link id="a1066" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ instantiates a new object of the 
+
+<emphasis id="strong1028" effect="bold">
+WhiteNoise
+
+</emphasis>
+ class and saves the 
+object's reference in a local reference variable of type 
+
+<emphasis id="strong1029" effect="bold">
+WhiteNoise
+
+</emphasis>
+ named
+
+
+<emphasis id="strong1030" effect="bold">
+whiteNoise
+
+</emphasis>
+. You are already familiar with the three parameters 
+that are passed to the constructor for the 
+
+<emphasis id="strong1031" effect="bold">
+WhiteNoise
+
+</emphasis>
+ class.
+
+</para>
+
+
+
+
+<para id="p1033">
+<emphasis id="em1011" effect="italics">
+(Later when we discuss runtime polymorphism, we will save such an 
+object's reference in a reference variable of type 
+
+<emphasis id="strong1032" effect="bold">
+AudioSignalGenerator02
+
+</emphasis>
+, which 
+is the immediate superclass of the 
+
+<emphasis id="strong1033" effect="bold">
+WhiteNoise
+
+</emphasis>
+ class.)
+
+</emphasis>
+</para>
+
+
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4
+
+</emphasis>
+
+. Get and play or file the sound.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">
+    //Get a populated array containing audio data for white or pink noise.
+    WhiteNoise whiteNoise = new WhiteNoise(audioParams,this.args,melody);
+    melody = whiteNoise.getMelody();
+
+    //Play or file the audio data
+    new AudioPlayOrFile01(audioParams,melody,this.args[0]).playOrFileData();
+  }//end constructor
+  //-------------------------------------------------------------------------//
+}//end class MusicComposer04.java
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1034">
+Then 
+
+<link id="a1067" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1034" effect="bold">
+getMelody
+
+</emphasis>
+ method and saves the 
+	reference that is returned by the method in the instance variable named 
+
+<emphasis id="strong1035" effect="bold">
+melody
+
+</emphasis>
+ 
+	discussed 
+
+<link id="a1068" target-id="The_instance_variable_named_melody">
+
+earlier
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1035">
+Finally, 
+
+<link id="a1069" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ instantiates an object of the
+
+
+<link id="a1070" target-id="The_class_named_AudioPlayOrFile01">
+
+AudioPlayOrFile01
+
+</link>
+
+ class, passing
+
+
+<emphasis id="strong1036" effect="bold">
+audioParams
+
+</emphasis>
+, 
+
+<emphasis id="strong1037" effect="bold">
+melody
+
+</emphasis>
+, and 
+
+<emphasis id="strong1038" effect="bold">
+args[0]
+
+</emphasis>
+ 
+as parameters, and then calls the method named 
+
+<emphasis id="strong1039" effect="bold">
+playOrFileData
+
+</emphasis>
+ 
+on that object's reference. Depending on the value of 
+
+<emphasis id="strong1040" effect="bold">
+args[0]
+
+</emphasis>
+, 
+this method will either play the sound contained in 
+
+<emphasis id="strong1041" effect="bold">
+melody
+
+</emphasis>
+ 
+immediately, or write it into an output audio file.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21005">
+<title>
+<emphasis id="The_class_named_AudioSignalGenerator02" effect="bold">
+
+The class named 
+AudioSignalGenerator02
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1036">
+The class named 
+
+<emphasis id="strong1042" effect="bold">
+AudioSignalGenerator02
+
+</emphasis>
+ is shown in 
+
+<link id="a1071" target-id="Listing_15">
+
+Listing 15
+
+</link>
+
+. This is another class that will probably be used throughout this series of 
+modules on Java sound and which probably won't change, at least for the early 
+modules in the series. Therefore, we will only need to discuss it this one time.
+
+</para>
+
+
+
+
+<section id="h31012">
+<title>
+<emphasis id="Beginning_of_the_class_named_AudioSignalGenerator02" effect="bold">
+
+Beginning of the class named AudioSignalGenerator02
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1037">
+This is an abstract class that serves as the base class or superclass for several other 
+classes that can be used to create sounds or melodies of different types.
+
+</para>
+
+
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5
+
+</emphasis>
+
+. Beginning of the class named AudioSignalGenerator02.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">
+
+import java.io.*;
+import java.nio.*;
+import java.util.*;
+
+public abstract class AudioSignalGenerator02{
+  
+  //Note:  This class can only be used to generate signed 16-bit data.
+  ByteBuffer byteBuffer;
+  String[] args;
+  byte[] melody;
+  AudioFormatParameters01 audioParams;
+  //-------------------------------------------------------------------------//
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1038">
+The code in 
+
+<link id="a1072" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ declares four instance variables. You are already 
+	familiar with the purpose of three of them. The variable named 
+	
+
+<emphasis id="strong1043" effect="bold">
+byteBuffer
+
+</emphasis>
+ isn't actually used in the program in this 
+	module, but will be used in later modules. I will explain it in the first 
+	module in which it is actually used.
+
+</para>
+
+
+
+
+</section>
+<section id="h31013">
+<title>
+<emphasis id="The_constructor_for_AudioSignalGenerator02" effect="bold">
+
+The constructor for AudioSignalGenerator02
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1039">
+The constructor is shown in 
+
+<link id="a1073" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+. The constructor simply receives three 
+input parameters and saves them in the instance variables shown in 
+
+<link id="a1074" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+.
+
+</para>
+
+
+	
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6
+
+</emphasis>
+
+. The constructor for AudioSignalGenerator02.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+
+
+<code id="pre1005" display="block">
+  public AudioSignalGenerator02(AudioFormatParameters01 audioParams,
+                                String[] args,
+                                byte[] melody){
+    this.audioParams = audioParams;
+    this.args = args;
+    this.melody = melody;
+  }//end constructor
+  //-------------------------------------------------------------------------//
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31014">
+<title>
+<emphasis id="The_abstract_method_named_getMelody" effect="bold">
+
+The abstract method named 
+	getMelody
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1040">
+<link id="a1075" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ shows an abstract method named 
+
+<emphasis id="strong1044" effect="bold">
+getMelody
+
+</emphasis>
+. In case 
+you don't remember what an abstract method is, see
+
+
+<link id="a1076" url="http://cnx.org/contents/26ea43c9-3556-45cd-b3c4-0dbbdb0d92dd">
+
+
+
+
+<emphasis id="em1012" effect="italics">
+Ap0100
+
+</emphasis>
+</link>
+
+
+<emphasis id="em1013" effect="italics">
+: Self-assessment, The this keyword, static final 
+variables, and initialization of instance variables
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1041">
+Briefly, an abstract 
+method is a method that is designed to be overridden. The method named 
+
+<emphasis id="strong1045" effect="bold">
+getMelody
+
+</emphasis>
+ 
+in 
+
+<link id="a1077" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ must be overridden in a subclass to be of any use. You will see the 
+overridden version of the method named 
+
+<emphasis id="strong1046" effect="bold">
+getMelody
+
+</emphasis>
+ shortly in the 
+class named 
+
+<emphasis id="strong1047" effect="bold">
+WhiteNoise
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1042">
+Recall that the method was called on a reference to a 
+
+<emphasis id="strong1048" effect="bold">
+WhiteNoise
+
+</emphasis>
+ 
+object in 
+
+<link id="a1078" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. 
+
+<emphasis id="em1014" effect="italics">
+(You will get a better idea of the purpose of this abstract 
+method when we discuss runtime polymorphism in a future module.)
+
+</emphasis>
+</para>
+
+
+
+
+	
+
+<table id="table1006" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1006">
+
+			
+
+<row id="tr1012">
+
+				
+
+<entry id="th1006">
+<emphasis id="Listing_7" effect="bold">
+
+Listing 7
+
+</emphasis>
+
+. The abstract method named getMelody.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1006">
+
+			
+
+<row id="tr1013">
+
+				
+
+<entry id="td1006">
+
+
+
+<code id="pre1006" display="block">
+  abstract byte[] getMelody();
+}//end AudioSignalGenerator02
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+</section>
+<section id="h21006">
+<title>
+<emphasis id="The_class_named_WhiteNoise" effect="bold">
+
+The class named WhiteNoise
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h31015">
+<title>
+<emphasis id="Beginning_of_the_class_named_WhiteNoise" effect="bold">
+
+Beginning of the class named WhiteNoise
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1043">
+The sound that you heard when you listened to the audio file named 
+
+<link id="a1079" url="WhiteNoise.au">
+
+WhiteNoise
+
+</link>
+
+ was actually produced by the 
+
+<emphasis id="strong1049" effect="bold">
+
+getMelody
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1050" effect="bold">
+WhiteNoise
+
+</emphasis>
+ class. That class 
+begins in 
+
+<link id="a1080" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ and the 
+
+<emphasis id="strong1051" effect="bold">
+getMelody
+
+</emphasis>
+ method begins in 
+
+
+<link id="a1081" target-id="Listing_9">
+
+Listing 
+9
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1044">
+The first thing to notice about 
+
+<link id="a1082" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ is that the 
+
+<emphasis id="strong1052" effect="bold">
+WhiteNoise
+
+</emphasis>
+ 
+class extends 
+
+<emphasis id="em1015" effect="italics">
+(is a subclass of)
+
+</emphasis>
+ the abstract 
+
+<emphasis id="strong1053" effect="bold">
+
+AudioSignalGenerator02
+
+</emphasis>
+ class.
+
+</para>
+
+
+
+
+</section>
+<section id="h31016">
+<title>
+<emphasis id="The_constructor_for_the_WhiteNoise_class" effect="bold">
+
+The constructor for the 
+WhiteNoise class
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1045">
+The constructor for the class named 
+
+<emphasis id="strong1054" effect="bold">
+WhiteNoise
+
+</emphasis>
+, which is shown in 
+
+<link id="a1083" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+, receives three incoming 
+parameters and passes them up to the superclass named 
+
+<emphasis id="strong1055" effect="bold">
+
+AudioSignalGenerator02
+
+</emphasis>
+ through the use of the
+
+
+<emphasis id="strong1056" effect="bold">
+super
+
+</emphasis>
+ keyword where they are saved 
+
+<emphasis id="em1016" effect="italics">
+(see 
+
+<link id="a1084" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+)
+
+</emphasis>
+. In case you don't remember the 
+
+<emphasis id="strong1057" effect="bold">
+super
+
+</emphasis>
+ keyword, see
+
+
+<link id="a1085" url="http://cnx.org/contents/3b385770-09eb-4afa-8b02-725b0f59c17e">
+
+
+
+
+<emphasis id="em1017" effect="italics">
+Java1628
+
+</emphasis>
+</link>
+
+
+<emphasis id="em1018" effect="italics">
+: The this and super Keywords.
+
+</emphasis>
+ Also see
+
+
+<link id="a1086" url="http://cnx.org/contents/a85b46e1-faad-4ec3-ae32-2da7a1fa8f7b">
+
+
+
+
+<emphasis id="em1019" effect="italics">
+Ap0090
+
+</emphasis>
+</link>
+
+
+<emphasis id="em1020" effect="italics">
+: Self-assessment, the super keyword, final keyword, and 
+static methods
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+	
+
+<table id="table1007" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1007">
+
+			
+
+<row id="tr1014">
+
+				
+
+<entry id="th1007">
+<emphasis id="Listing_8" effect="bold">
+
+Listing 8
+
+</emphasis>
+
+. Beginning of the class named WhiteNoise.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1007">
+
+			
+
+<row id="tr1015">
+
+				
+
+<entry id="td1007">
+
+
+
+<code id="pre1007" display="block">
+
+import java.io.*;
+import java.nio.*;
+import java.util.*;
+
+public class WhiteNoise extends AudioSignalGenerator02{
+  
+  public WhiteNoise(AudioFormatParameters01 audioParams,
+                    String[] args,
+                    byte[] melody){
+    super(audioParams,args,melody);
+  }//end constructor
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31017">
+<title>
+<emphasis id="Beginning_of_the_getMelody_method" effect="bold">
+
+Beginning of the getMelody 
+	method
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1046">
+<link id="a1087" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ shows the beginning of the overridden 
+
+<emphasis id="strong1058" effect="bold">
+getMelody
+
+</emphasis>
+ method.
+
+
+<emphasis id="em1021" effect="italics">
+(Recall that an abstract version of this method is inherited from the class 
+named 
+
+<emphasis id="strong1059" effect="bold">
+AudioSignalGenerator02
+
+</emphasis>
+, see 
+
+<link id="a1088" target-id="Listing_7">
+
+Listing 
+7
+
+</link>
+
+)
+
+</emphasis>
+</para>
+
+
+
+
+	
+
+<table id="table1008" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1008">
+
+			
+
+<row id="tr1016">
+
+				
+
+<entry id="th1008">
+<emphasis id="Listing_9" effect="bold">
+
+Listing 9
+
+</emphasis>
+
+. Beginning of the getMelody method.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1008">
+
+			
+
+<row id="tr1017">
+
+				
+
+<entry id="td1008">
+
+
+
+<code id="pre1008" display="block">
+  byte[] getMelody(){
+    //Set the audio parameters to mono
+    audioParams.channels = 1;//superfluous -- default value
+    System.out.println("audioParams.channels = " + audioParams.channels);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1047">
+Note that the 
+
+<emphasis id="strong1060" effect="bold">
+getMelody
+
+</emphasis>
+ method returns a reference to an 
+	array object containing elements of type 
+
+<emphasis id="strong1061" effect="bold">
+Byte
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31018">
+<title>
+<emphasis id="Overall_structure_of_the_program" effect="bold">
+
+Overall structure of the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1048">
+The code in 
+
+<link id="a1089" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ declares an instance variable named 
+
+<emphasis id="strong1062" effect="bold">
+melody
+
+</emphasis>
+ 
+as a reference to an array object containing elements of type 
+
+<emphasis id="strong1063" effect="bold">
+Byte
+
+</emphasis>
+. The code in 
+
+<link id="a1090" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1064" effect="bold">
+getMelody
+
+</emphasis>
+ 
+method on a reference to an object of the 
+
+<emphasis id="strong1065" effect="bold">
+WhiteNoise
+
+</emphasis>
+ class and 
+assigns the returned reference to the instance variable named 
+
+<emphasis id="strong1066" effect="bold">
+melody
+
+</emphasis>
+ that is declared 
+in 
+
+<link id="a1091" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1049">
+<link id="a1092" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ passes that reference to the 
+
+<emphasis id="strong1067" effect="bold">
+playOrFileData
+
+</emphasis>
+ 
+method to cause the contents of the array to be played through the computer 
+speakers or saved in an audio file.
+
+</para>
+
+
+
+
+<para id="p1050">
+Now that you understand the overall structure, we need to examine the details 
+of the code to determine how the method named 
+
+<emphasis id="strong1068" effect="bold">
+getMelody
+
+</emphasis>
+ 
+actually returns a reference to 
+an array object containing data that represents three seconds of monaural white 
+noise.
+
+</para>
+
+
+
+
+</section>
+<section id="h31019">
+<title>
+<emphasis id="The_predefined_audio_parameters" effect="bold">
+
+The predefined audio parameters
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1051">
+Because the class named 
+
+<emphasis id="strong1069" effect="bold">
+WhiteNoise
+
+</emphasis>
+ extends the class named 
+
+
+<emphasis id="strong1070" effect="bold">
+AudioSignalGenerator02
+
+</emphasis>
+, it inherits a reference to an object 
+of the class 
+
+<emphasis id="strong1071" effect="bold">
+AudioFormatParameters01
+
+</emphasis>
+. The name of the inherited 
+reference is 
+
+<emphasis id="strong1072" effect="bold">
+audioParams
+
+</emphasis>
+. As you learned
+
+
+<link id="a1093" target-id="The_class_named_AudioFormatParameters01">
+
+earlier
+
+</link>
+
+, this object 
+contains several predefined audio parameters. As you can see in 
+
+<link id="a1094" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+, the 
+predefined values are all stored in public instance variables. Therefore, code 
+in methods of the 
+
+<emphasis id="strong1073" effect="bold">
+WhiteNoise
+
+</emphasis>
+ class can modify the values stored 
+in that object by joining the object's 
+reference to the name of the variable as shown in 
+
+<link id="a1095" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+
+
+
+<emphasis id="em1022" effect="italics">
+(
+
+</emphasis>
+<emphasis id="strong1074" effect="bold">
+<emphasis id="em1023" effect="italics">
+audioParams.channels
+
+</emphasis>
+</emphasis>
+ for example).
+
+</para>
+
+
+
+
+<para id="p1052">
+The predefined value for the variable named 
+
+<emphasis id="strong1075" effect="bold">
+channels
+
+</emphasis>
+ in 
+
+
+<link id="a1096" target-id="Listing_13">
+
+Listing 13
+
+</link>
+
+ is 1 
+for monaural. That is the value that is needed for this monaural program. 
+
+
+<link id="a1097" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ contains a statement that sets the value of 
+
+<emphasis id="strong1076" effect="bold">
+
+audioParams.channels
+
+</emphasis>
+ to 1 simply to illustrate the syntax involved. 
+That statement is superfluous. However, as you will see in 
+
+<link id="a1098" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+, there is a statement that sets the value 
+of 
+
+<emphasis id="strong1077" effect="bold">
+audioParams.sampleRate
+
+</emphasis>
+ replacing the default value of 
+16000.0F with 8000.0F. That statement is not superfluous. 
+
+<emphasis id="em1024" effect="italics">
+(Recall that the F suffix causes the value to be 
+treated as type 
+
+<emphasis id="strong1078" effect="bold">
+float
+
+</emphasis>
+ instead of type 
+
+<emphasis id="strong1079" effect="bold">
+double
+
+</emphasis>
+.)
+
+</emphasis>
+</para>
+
+
+
+
+</section>
+<section id="h31020">
+<title>
+<emphasis id="Miscellaneous_setup_operations" effect="bold">
+
+Miscellaneous setup operations
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1053">
+<link id="a1099" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+ contains several miscellaneous setup operations. The comments should be 
+sufficient to describe the purpose of each of those operations.
+
+</para>
+
+
+
+
+	
+
+<table id="table1009" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1009">
+
+			
+
+<row id="tr1018">
+
+				
+
+<entry id="th1009">
+<emphasis id="Listing_10" effect="bold">
+
+Listing 10
+
+</emphasis>
+
+. Miscellaneous 
+				setup operations.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1009">
+
+			
+
+<row id="tr1019">
+
+				
+
+<entry id="td1009">
+
+
+
+<code id="pre1009" display="block">
+    //Each channel requires two 8-bit bytes per 16-bit sample.
+    int bytesPerSampPerChan = 2;
+    
+    //Override the default sample rate. Allowable sample rates are 8000,11025,
+    // 16000,22050,44100 samples per second.
+    audioParams.sampleRate = 8000.0F;
+    
+    // Set the length of the melody in seconds
+    double lengthInSeconds = 3.0;
+    
+    //Create an output data array sufficient to contain the melody
+    // at "sampleRate" samples per second, "bytesPerSampPerChan" bytes per
+    // sample per channel and "channels" channels.
+    melody = new byte[(int)(lengthInSeconds*audioParams.sampleRate*
+                                    bytesPerSampPerChan*audioParams.channels)];
+    System.out.println("melody.length = " + melody.length);
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31021">
+<title>
+<emphasis id="Generating_the_white_random_noise" effect="bold">
+
+Generating the white (random) noise
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1054">
+Audio data consisting of a sequence of random values is believed to be 
+	white, or at least pink. The code in 
+
+<link id="a1100" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+ uses a class named 
+
+<emphasis id="strong1080" effect="bold">
+Random
+
+</emphasis>
+ 
+	from the Java Standard Edition library to populate the array with bytes 
+	having random values.
+
+</para>
+
+
+
+	
+
+
+	
+
+<table id="table1010" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1010">
+
+			
+
+<row id="tr1020">
+
+				
+
+<entry id="th1010">
+<emphasis id="Listing_11" effect="bold">
+
+Listing 11
+
+</emphasis>
+
+. Generating the white 
+				(random) noise.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1010">
+
+			
+
+<row id="tr1021">
+
+				
+
+<entry id="td1010">
+
+
+
+<code id="pre1010" display="block">
+    Random generator = new Random(new Date().getTime());
+    for(int cnt = 0;cnt &lt; melody.length; cnt++){
+      melody[cnt] = (byte)generator.nextInt();
+    }//end for loop    
+    return melody;
+  }//end method getMelody
+  //-------------------------------------------------------------------------//
+
+}//end class WhiteNoise
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h31022">
+<title>
+<emphasis id="A_stream_of_pseudorandom_numbers" effect="bold">
+
+A stream of pseudorandom 
+	numbers
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1055">
+According to the documentation, an instance of the 
+
+<emphasis id="strong1081" effect="bold">
+Random
+
+</emphasis>
+ 
+	class can be used to generate a stream of pseudorandom numbers. 
+
+<emphasis id="em1025" effect="italics">
+(The 
+	prefix pseudo means that the numbers in the stream are almost random but may 
+	not be completely random.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1056">
+We need a stream of pseudorandom 
+
+<emphasis id="strong1082" effect="bold">
+byte
+
+</emphasis>
+ values. The 
+
+<emphasis id="strong1083" effect="bold">
+Random
+
+</emphasis>
+ class provides methods named 
+
+<emphasis id="strong1084" effect="bold">
+nextBoolean
+
+</emphasis>
+,
+
+
+<emphasis id="strong1085" effect="bold">
+nextDouble
+
+</emphasis>
+, 
+
+<emphasis id="strong1086" effect="bold">
+nextFloat
+
+</emphasis>
+, 
+
+<emphasis id="strong1087" effect="bold">
+nextGaussian
+
+</emphasis>
+,
+
+
+<emphasis id="strong1088" effect="bold">
+nextInt
+
+</emphasis>
+, and 
+
+<emphasis id="strong1089" effect="bold">
+nextLong
+
+</emphasis>
+ that can be called to 
+get one new value from the pseudorandom stream as the type indicated by the name 
+of the method. However, there is no method that returns the next value  
+as type 
+
+<emphasis id="strong1090" effect="bold">
+short
+
+</emphasis>
+ or as type 
+
+<emphasis id="strong1091" effect="bold">
+byte
+
+</emphasis>
+. 
+
+<emphasis id="em1026" effect="italics">
+(There is a 
+method named 
+
+<emphasis id="strong1092" effect="bold">
+nextBytes
+
+</emphasis>
+ -- note the plural. It behaves 
+differently from what is needed.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1057">
+Fortunately there 
+is an easy workaround for this issue. We will simply get a stream of 
+
+<emphasis id="strong1093" effect="bold">
+int
+
+</emphasis>
+ 
+values and use the (byte) cast operator to discard the 24 most significant bits 
+from each 
+
+<emphasis id="strong1094" effect="bold">
+int
+
+</emphasis>
+ value. It is probably safe to assume that if the
+
+
+<emphasis id="strong1095" effect="bold">
+int
+
+</emphasis>
+ values are random, the eight least significant bits of each
+
+
+<emphasis id="strong1096" effect="bold">
+int
+
+</emphasis>
+ value will also be random. Given that assumption, 
+
+
+<link id="a1101" target-id="Listing_11">
+
+Listing 
+11
+
+</link>
+
+ gets and populates the 
+
+<emphasis id="strong1097" effect="bold">
+melody
+
+</emphasis>
+ array with those values and 
+then returns a reference to the 
+
+<emphasis id="strong1098" effect="bold">
+melody
+
+</emphasis>
+ array.
+
+</para>
+
+
+
+
+</section>
+<section id="h31023">
+<title>
+<emphasis id="The_sound_of_a_stream_of_random_numbers" effect="bold">
+
+The sound of a stream of 
+random numbers
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1058">
+When you listen to the 
+
+<link id="a1102" url="WhiteNoise.au">
+
+WhiteNoise
+
+</link>
+
+ 
+audio file, you hear the result of transforming those random numbers into electrical 
+currents that circulate through the computer speakers. That transformation is 
+accomplished by the call to the 
+
+<emphasis id="strong1099" effect="bold">
+playOrFileData
+
+</emphasis>
+ method as the 
+last statement in the constructor for the 
+
+<emphasis id="strong1100" effect="bold">
+MusicComposer04
+
+</emphasis>
+ class in 
+
+<link id="a1103" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1059">
+Random numbers don't produce a very pleasant sound. Future modules will populate the 
+melody array with values that are somewhat more interesting than random 
+
+<emphasis id="strong1101" effect="bold">
+
+byte
+
+</emphasis>
+ values.
+
+</para>
+
+
+
+
+<para id="p1060">
+<link id="a1104" target-id="Listing_11">
+
+Listing 
+11
+
+</link>
+
+ also signals the end of the 
+
+<emphasis id="strong1102" effect="bold">
+getMelody
+
+</emphasis>
+ method and 
+the end of the 
+
+<emphasis id="strong1103" effect="bold">
+WhiteNoise
+
+</emphasis>
+ class.
+
+</para>
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1061">
+I encourage you to copy the code from 
+
+<link id="a1105" target-id="Listing_12">
+
+Listing 12
+
+</link>
+
+ through 
+
+<link id="a1106" target-id="Listing_16">
+
+Listing 16
+
+</link>
+
+. Compile the code and 
+execute it. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1062">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1104" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1015" list-type="bulleted">
+
+					
+
+<item id="li1077">
+Module name: Jbs2010-Your First Sound Program
+
+</item>
+
+
+					
+
+<item id="li1078">
+File: Jbs2010.htm
+
+
+</item>
+
+
+					
+
+<item id="li1079">
+Published: 08/26/14
+
+</item>
+
+
+					
+
+<item id="li1080">
+Revised: 09/29/15
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1105" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1063">
+<emphasis id="strong1106" effect="bold">
+Financial
+
+</emphasis>
+: 
+				Although the 
+
+<emphasis id="strong1107" effect="bold">
+OpenStax CNX
+
+</emphasis>
+ site makes it 
+				possible for you to download a PDF file for the collection that 
+				contains this module at no charge, and also makes it possible 
+				for you to purchase a pre-printed version of the PDF file, you 
+				should be aware that some of the HTML elements in this module 
+				may not translate well into PDF.
+
+</para>
+
+
+				
+
+<para id="p1064">
+You also need to know that Prof. Baldwin receives no 
+				financial compensation from 
+
+<emphasis id="strong1108" effect="bold">
+OpenStax CNX 
+
+</emphasis>
+even 
+				if you purchase the PDF version of the collection.
+
+</para>
+
+
+				
+
+<para id="p1065">
+In the past, unknown individuals have copied Prof. Baldwin's 
+				modules from cnx.org, converted them to Kindle books, and placed 
+				them for sale on Amazon.com showing Prof. Baldwin as the author. 
+				Prof. Baldwin neither receives compensation for those sales nor 
+				does he know who does receive compensation. If you purchase such 
+				a book, please be aware that it is a copy of a collection that 
+				is freely available on 
+
+<emphasis id="strong1109" effect="bold">
+OpenStax CNX
+
+</emphasis>
+ and that it 
+				was made and published without the prior knowledge of Prof. 
+				Baldwin.
+
+</para>
+
+
+				
+
+<para id="p1066">
+<emphasis id="strong1110" effect="bold">
+Affiliation
+
+</emphasis>
+: Prof. Baldwin is a professor of 
+				Computer Information Technology at Austin Community College in 
+				Austin, TX. 
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Complete_program_listing" effect="bold">
+
+Complete program listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1067">
+Complete listings of the class files required by this program are provided 
+below.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1011" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1011">
+
+			
+
+<row id="tr1022">
+
+				
+
+<entry id="th1011">
+<emphasis id="Listing_12" effect="bold">
+
+Listing 12
+
+</emphasis>
+
+. The class named AudioPlayOrFile01.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1011">
+
+			
+
+<row id="tr1023">
+
+				
+
+<entry id="td1011">
+
+
+
+<code id="pre1011" display="block">
+/*File AudioPlayOrFile01.java
+Copyright 2014, R.G.Baldwin
+Revised 08/16/14
+******************************************************************************/
+import javax.sound.sampled.*;
+import java.io.*;
+import java.util.*;
+
+public class AudioPlayOrFile01{
+  //An object of this class is used to either play the sound in the array
+  // named melody or to write it into an audio file of type AU.
+  
+  //The following are general instance variables used to create a
+  // SourceDataLine object.
+  AudioFormat audioFormat;
+  AudioInputStream audioInputStream;
+  SourceDataLine sourceDataLine;
+
+  AudioFormatParameters01 audioParams;
+  byte[] melody;
+  String playOrFile;//"play" to play immediately or a fileName to write
+                    // an output file of type AU.
+  //-------------------------------------------------------------------------//
+  
+  public AudioPlayOrFile01(AudioFormatParameters01 audioParams,
+                           byte[] melody,
+                           String playOrFile){//constructor
+
+    this.audioParams = audioParams;
+    this.melody = melody;
+    this.playOrFile = playOrFile;
+  }//end constructor
+  //-------------------------------------------------------------------------//
+
+  //This method plays or files the synthetic audio data that has been generated
+  // and saved in an array.
+  void playOrFileData() {
+    try{
+      //Get an input stream on the byte array containing the data
+      InputStream byteArrayInputStream = new ByteArrayInputStream(melody);
+
+      //Get the required audio format
+      audioFormat = new AudioFormat(audioParams.sampleRate,
+                                    audioParams.sampleSizeInBits,
+                                    audioParams.channels,
+                                    audioParams.signed,
+                                    audioParams.bigEndian);
+
+      //Get an audio input stream from the ByteArrayInputStream
+      audioInputStream = new AudioInputStream(
+                                     byteArrayInputStream,
+                                     audioFormat,
+                                     melody.length/audioFormat.getFrameSize());
+
+      //Get info on the required data line
+      DataLine.Info dataLineInfo = new DataLine.Info(SourceDataLine.class,
+                                                     audioFormat);
+
+      //Get a SourceDataLine object
+      sourceDataLine = (SourceDataLine)AudioSystem.getLine(dataLineInfo);
+                                   
+      //Decide whether to play the audio data immediately, or to write it
+      // into an audio file of type AU based on the incoming parameter named
+      // playOrFile.
+      if(playOrFile.toUpperCase().equals("PLAY")){
+        //Create a thread to play back the data and start it running.  It will
+        // run until all the data has been played back
+        new PlayAudioThread().start();
+      }else{
+        //Write the data to an output file with the name provided by the
+        // incoming parameter named playOrFile.
+        try{
+          AudioSystem.write(audioInputStream,
+                            AudioFileFormat.Type.AU,
+                            new File(playOrFile + ".au"));
+        }catch (Exception e) {
+          e.printStackTrace();
+          System.exit(0);
+        }//end catch
+      }//end else
+    }catch (Exception e) {
+      e.printStackTrace();
+      System.exit(0);
+    }//end catch
+  }//end playOrFileData
+//===========================================================================//
+
+  //Inner class to play back the data that was saved.
+  class PlayAudioThread extends Thread{
+    //This is a working buffer used to transfer the data between the
+    // AudioInputStream and the SourceDataLine.  The size is rather arbitrary.
+    byte playBuffer[] = new byte[16384];
+  
+    public void run(){
+      try{
+        //Open and start the SourceDataLine
+        sourceDataLine.open(audioFormat);
+        sourceDataLine.start();
+  
+        int cnt;
+        //Get beginning of elapsed time for playback
+        long startTime = new Date().getTime();
+  
+        //Transfer the audio data to the speakers
+        while((cnt = audioInputStream.read(
+                                       playBuffer,0,playBuffer.length)) != -1){
+          //Keep looping until the input read method returns -1 for empty
+          // stream.
+          if(cnt &gt; 0){
+            //Write data to the internal buffer of the data line where it will
+            // be delivered to the speakers in real time
+            sourceDataLine.write(playBuffer, 0, cnt);
+          }//end if
+        }//end while
+  
+        //Block and wait for internal buffer of the SourceDataLine to become
+        // empty.
+        sourceDataLine.drain();
+  
+  
+        //Get and display the elapsed time for the previous playback.
+        int elapsedTime = (int)(new Date().getTime() - startTime);
+        System.out.println("Elapsed time: " + elapsedTime);
+  
+        //Finish with the SourceDataLine
+        sourceDataLine.stop();
+        sourceDataLine.close();
+      }catch (Exception e) {
+        e.printStackTrace();
+        System.exit(0);
+      }//end catch
+  
+    }//end run
+  }//end inner class PlayAudioThread
+  //=========================================================================//
+}//end AudioPlayOrFile01 class
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+
+<para id="p1068">
+..
+
+</para>
+
+
+
+	
+
+<table id="table1012" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1012">
+
+			
+
+<row id="tr1024">
+
+				
+
+<entry id="th1012">
+<emphasis id="Listing_13" effect="bold">
+
+Listing 13
+
+</emphasis>
+
+. The class named AudioFormatParameters01.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1012">
+
+			
+
+<row id="tr1025">
+
+				
+
+<entry id="td1012">
+
+
+
+<code id="pre1012" display="block">
+/*File AudioFormatParameters01.java
+Copyright 2014, R.G.Baldwin
+Revised 08/16/14
+******************************************************************************/
+
+public class AudioFormatParameters01{
+  //The following are audio format parameters used by the Java audio system.
+  // They may be modified by the signal generator at runtime.  Values allowed
+  // by Java SDK 1.4.1 are shown in comments.
+  public float sampleRate = 16000.0F;
+  //Allowable 8000,11025,16000,22050,44100 samples per second
+  public int sampleSizeInBits = 16;
+  //Allowable 8,16
+  public int channels = 1;
+  //Allowable 1 for mono and 2 for stereo
+  public boolean signed = true;
+  //Allowable true,false
+  public boolean bigEndian = true;
+  //Allowable true,false
+}//end class AudioFormatParameters01
+//===========================================================================//
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1069">
+..
+
+</para>
+
+
+
+
+
+
+	
+
+<table id="table1013" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1013">
+
+			
+
+<row id="tr1026">
+
+				
+
+<entry id="th1013">
+<emphasis id="Listing_14" effect="bold">
+
+Listing 14
+
+</emphasis>
+
+. The class named MusicComposer04.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1013">
+
+			
+
+<row id="tr1027">
+
+				
+
+<entry id="td1013">
+
+
+
+<code id="pre1013" display="block">
+/*File MusicComposer04.java
+Copyright 2014, R.G.Baldwin
+Revised 08/20/14
+
+This program creates and plays three seconds of monaural white or pink noise.
+It works in conjunction with the following classes:
+
+WhiteNoise
+AudioSignalGenerator02
+AudioPlayOrFile01
+AudioFormatParameters01
+
+The sound can be played immediately or can be saved in an audio file of 
+type AU for playback later. You should be able to play the audio file with any
+standard media player that can handle the AU file type
+
+Tested using JDK 1.8 under Win 7.
+******************************************************************************/
+
+public class MusicComposer04{
+  //Instantiate an object containing audio format parameters with predefined
+  // values. They may be modified by the signal generator at runtime. Values
+  // allowed by Java SDK 1.4.1 are shown in comments in the class definition.
+  AudioFormatParameters01 audioParams = new AudioFormatParameters01();
+  
+  //A buffer to hold the audio data that will be played or filed.
+  byte[] melody;
+  
+  //A place to store the incoming args array.
+  String[] args; 
+  //-------------------------------------------------------------------------//
+
+  //Command-line parameter (only one parameter is needed)
+  //If "play", the sound will be played immediately. Otherwise, the string will
+  // be used as a filename for an audio file of type AU. In the latter case,
+  // it must be a string that would be valid as a file name for the operating
+  // system in use.  
+  public static void main(String[] args){
+    //Instantiate a new object of this class.
+    new MusicComposer04(args);
+  }//end main
+  //-------------------------------------------------------------------------//
+  
+  public MusicComposer04(String[] args){//constructor
+    //Save the args array.
+    this.args = args;
+    
+    //Create default args data if no args data is provided on the command line.
+    if(args.length == 0){
+      this.args = new String[1];
+      this.args[0] = "play";//Play the melody immediately
+    }//end if
+
+    //Get a populated array containing audio data for white or pink noise.
+    WhiteNoise whiteNoise = new WhiteNoise(audioParams,this.args,melody);
+    melody = whiteNoise.getMelody();
+
+    //Play or file the audio data
+    new AudioPlayOrFile01(audioParams,melody,this.args[0]).playOrFileData();
+  }//end constructor
+  //-------------------------------------------------------------------------//
+}//end class MusicComposer04.java
+//===========================================================================//
+
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1070">
+--
+
+</para>
+
+
+
+
+
+
+	
+
+<table id="table1014" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1014">
+
+			
+
+<row id="tr1028">
+
+				
+
+<entry id="th1014">
+<emphasis id="Listing_15" effect="bold">
+
+Listing 15
+
+</emphasis>
+
+. The class named AudioSignalGenerator02.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1014">
+
+			
+
+<row id="tr1029">
+
+				
+
+<entry id="td1014">
+
+
+
+<code id="pre1014" display="block">
+/*File AudioSignalGenerator02.java
+Copyright 2014, R.G.Baldwin
+Revised 08/19/14
+
+This is an abstract class that serves as the base class for several other 
+classes that can be used to create melodies of different types.
+******************************************************************************/
+
+import java.io.*;
+import java.nio.*;
+import java.util.*;
+
+public abstract class AudioSignalGenerator02{
+  
+  //Note:  This clsss can only be used to generate signed 16-bit data.
+  ByteBuffer byteBuffer;
+  String[] args;
+  byte[] melody;
+  AudioFormatParameters01 audioParams;
+  //-------------------------------------------------------------------------//
+  
+  //Constructor
+  public AudioSignalGenerator02(AudioFormatParameters01 audioParams,
+                                String[] args,
+                                byte[] melody){
+    this.audioParams = audioParams;
+    this.args = args;
+    this.melody = melody;
+  }//end constructor
+  //-------------------------------------------------------------------------//
+
+  //The following abstract method must be overridden in a subclass for this
+  // class to be of any value.
+  abstract byte[] getMelody();
+}//end AudioSignalGenerator02
+//===========================================================================//
+
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1071">
+..
+
+</para>
+
+
+
+
+
+
+	
+
+<table id="table1015" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1015">
+
+			
+
+<row id="tr1030">
+
+				
+
+<entry id="th1015">
+<emphasis id="Listing_16" effect="bold">
+
+Listing 16
+
+</emphasis>
+
+. The class named WhiteNoise.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1015">
+
+			
+
+<row id="tr1031">
+
+				
+
+<entry id="td1015">
+
+
+
+<code id="pre1015" display="block">
+/*File WhiteNoise.java
+Copyright 2014, R.G.Baldwin
+Revised 08/19/14
+
+This is a simple class that can be used to create "white noise"
+******************************************************************************/
+
+import java.io.*;
+import java.nio.*;
+import java.util.*;
+
+public class WhiteNoise extends AudioSignalGenerator02{
+  
+  public WhiteNoise(AudioFormatParameters01 audioParams,
+               String[] args,
+               byte[] melody){
+    super(audioParams,args,melody);
+  }//end constructor
+  //-------------------------------------------------------------------------//
+  
+
+  //This method returns an array containing three seconds of monaural
+  // white noise.
+
+  byte[] getMelody(){
+    //Set the audio parameters to mono
+    audioParams.channels = 1;//superfluous -- default value
+    System.out.println("audioParams.channels = " + audioParams.channels);
+    
+    //Each channel requires two 8-bit bytes per 16-bit sample.
+    int bytesPerSampPerChan = 2;
+    
+    //Override the default sample rate. Allowable sample rates are 8000,11025,
+    // 16000,22050,44100 samples per second.
+    audioParams.sampleRate = 8000.0F;
+    
+    // Set the length of the melody in seconds
+    double lengthInSeconds = 3.0;
+    
+    //Create an output data array sufficient to contain the melody
+    // at "sampleRate" samples per second, "bytesPerSampPerChan" bytes per
+    // sample per channel and "channels" channels.
+    melody = new byte[(int)(lengthInSeconds*audioParams.sampleRate*
+                                    bytesPerSampPerChan*audioParams.channels)];
+    System.out.println("melody.length = " + melody.length);
+
+    Random generator = new Random(new Date().getTime());
+    for(int cnt = 0;cnt &lt; melody.length; cnt++){
+      melody[cnt] = (byte)generator.nextInt();
+    }//end for loop    
+    return melody;
+  }//end method getMelody
+  //-------------------------------------------------------------------------//
+
+}//end class WhiteNoise 
+//===========================================================================//
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1072">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

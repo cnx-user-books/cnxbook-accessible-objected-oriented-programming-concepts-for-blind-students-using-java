@@ -1,0 +1,279 @@
+﻿<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>OOP for blind students</title>
+<style type="text/css">
+a:link {color:#0000ff;}
+a:visited {color:#cc00cc;}
+a:active {color:#ff0000;}
+a:hover {color: #cc0000;text-decoration: none;}
+
+pre {color: black;}
+p{color:black;}
+h1{color:black}
+h2{color: black}
+h3{color: black}
+b{color: black}
+strong{color: black}
+blockquote{color: black}
+ul{color: black}
+ol{color: black}
+table{border: 1px solid black}
+th{border: 1px solid black}
+body{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12pt;
+	background-color: #FEFFF0;}
+</style>
+</head>
+
+<body>
+
+
+<h1 class="style1">Table of Contents</h1>
+<ul>
+	<li><a href="#Preface">Preface</a>
+	</li>
+
+	<li><a href="#General_background_information">General background information</a></li>
+	<li><a href="#Discussion">Discussion</a><ul>
+		<li><a href="#What_is_sound">What is sound?</a><ul>
+			<li><a href="#Vibration">Vibration</a></li>
+			<li><a href="#Sensing_the_vibrations">Sensing vibration</a></li>
+		</ul>
+		</li>
+		<li><a href="#Creating_sound_with_a_hammer">Creating sound with a hammer</a></li>
+		<li><a href="#Creating_sound_with_a_computer">Creating sound with a computer</a><ul>
+			<li><a href="#An_object_of_a_class">An object of a class</a></li>
+			<li><a href="#Alternating_positive_and_negative_values">Alternating positive and negative values</a></li>
+		</ul>
+		</li>
+		<li><a href="#Sine_and_cosine_functions">Sine and cosine functions</a><ul>
+			<li><a href="#Populating_the_array">Populating the array</a></li>
+			<li><a href="#The_shape_of_a_sinusoid">The shape of a sinusoid</a></li>
+			<li><a href="#An_audio_graph_of_a_sinusoid">An audio graph of a sinusoid</a></li>
+			<li><a href="#Points_on__graph">Points on  graph</a></li>
+			<li><a href="#A_dual_purpose">A dual purpose</a></li>
+		</ul>
+		</li>
+
+	</ul>
+	</li>
+	<li><a href="#Miscellaneous">Miscellaneous</a></li>
+</ul>
+	
+	<h1><a name="Preface">Preface</a></h1>
+<p>This module is part of a collection titled <strong>Accessible 
+Objected-Oriented Programming Concepts for Blind Students using Java</strong>. 
+It explains some of the physical aspects of sound in 
+	a format that is accessible to blind students. It also explains a little 
+	about the trigonometric sine and cosine functions and suggests that they can 
+	be used to create sound with a computer. An audio file is provided where 
+	audio pulses of different frequencies are used to represent points on a 
+	graph of a sinusoid.</p>
+	<h1 class="style1"><a name="General_background_information">General 
+	background information</a></h1>
+<p id="p1016">By this point in the course, you should have learned enough that 
+you can put Java OOP to work in a substantive way. Normally at this point, my 
+sighted students would begin using OOP to manipulate the pixels and colors in 
+digital images. That is not well suited to teaching OOP to blind students. 
+In this course, which is designed specifically for blind students, you will 
+begin writing substantive programs that deal with something that you are 
+probably very good at -- sound.</p>
+<p id="p1017">For example, you will soon learn how to write a Java OOP program to 
+produce simple sounds such as
+<a href="TonesStereo.au">TonesStereo</a> . </p>
+<p><em>(Note that if you are viewing the HTML version of this module on the Legacy 
+site, you should be able to download this file and the other audio files in this 
+module and play them using any standard 
+media player that supports audio files of type AU. However, if you are on the OpenStax site, or if 
+you are viewing the PDF version of this module on either site, you may not be 
+able to download the file.) </em></p>
+<p id="p1018">As you study future modules in this collection, you will learn to write OOP 
+programs to produce more complex sounds such as
+<a id="a1137" href="StereoPingpong.au">
+StereoPingpong </a>. </p>
+<p id="p1019">Ultimately you will learn to write OOP programs that can be used 
+to compose and play various melodies such as the following: </p>
+<ul id="ul1008">
+	<li id="li1117">
+	<a href="FourScales.au">FourScales </a></li>
+	<li id="li1118">
+	<a href="MaryHadALittleLamb.au">MaryHadALittleLamb </a></li>
+	<li id="li1119">
+	<a href="Greensleeves.au">Greensleeves </a></li>
+</ul>
+	
+	<h1><a name="Discussion">Discussion</a></h1>
+	
+	<h2><a name="What_is_sound">What is sound</a>?</h2>
+<p>An old physics question goes something like this. If the earth were populated 
+solely by humans and a tree fell in the forest with no humans present, would it 
+make a sound?</p>
+<p>The answer is "No, it would not make a sound." The explanation  
+follows.</p>
+<h3><a name="Vibration">Vibration</a></h3>
+<p>Assume that someone strikes the top of a car with their hand. This would 
+cause the metal roof of the car to start 
+vibrating. That vibration would cause the adjacent air molecules to also vibrate 
+causing them to collide with their neighbors. Those molecules would collide with 
+their neighbors, and on and on. We can think of this as a wave of vibrating molecules 
+propagating outward from the car.</p>
+<p>This wave of vibrating molecules propagates outward at a speed of 
+approximately one mile every five seconds and decreases in intensity as it 
+propagates out from the source. At some distance from the source, the intensity 
+of the vibrations has decreased to an insignificant level.</p>
+<h3><a name="Sensing_the_vibrations">Sensing vibration</a></h3>
+<p>If you are standing somewhere between the car and the point at which the 
+vibrations are no longer significant, the air molecules in your ear canals will 
+begin to vibrate. This will stimulate nerves that lead from your ear to your 
+brain. Your brain will interpret the stimulation as something that we refer to
+<em>sound</em>.</p>
+<p>Therefore, when the tree falls, it causes the air molecules to vibrate. However, if 
+there are no ear canals around, no nerves to be stimulated, and no brain to interpret 
+that stimulation, there is no sound.</p>
+<h2><a name="Creating_sound_with_a_hammer">Creating sound with a hammer</a></h2>
+<p>All we need to do to cause a person to experience <em>sound</em> 
+is to cause the air molecules in that person's ear canals to vibrate at a 
+frequency somewhere between 20 Hz <em>(cycles per second)</em> and 20,000 Hz, 
+depending on the person's age. Usually as a person ages, the range defined by 
+those upper and lower limits decreases. Thus, a young person may "hear" the 
+high-pitched whine of a power saw while an older person may not experience sound 
+in that situation.</p>
+<p>There are many ways that we can cause most humans to experience sound. One 
+way for example, is to strike a bell with a hammer. Another way is to write a 
+program to cause the diaphragm of a computer <em>speaker</em> to vibrate. That will be the topic of 
+the next few modules in this course.</p>
+<h2><a name="Creating_sound_with_a_computer">Creating sound with a 
+computer</a></h2>
+<p>One way to create sound with a computer would be to hold it out and drop it 
+on the floor. However, that is not what we intend to do. Instead, we intend to 
+write computer program that will cause the computer to create sound.</p>
+<h3><a name="An_object_of_a_class">An object of a class</a></h3>
+<p>As you will learn in a future module, we can define a class and instantiate 
+an object of that class for use in producing sound with a computer. When used 
+properly in a program, that object will cause signed numeric values stored in an array to 
+be converted to electrical current in the speakers attached to the computer. 
+Positive values will cause the current to flow in one direction and negative 
+values will cause the current to flow in the opposite direction.</p>
+<h3><a name="Alternating_positive_and_negative_values">Alternating positive and 
+negative values</a></h3>
+<p>If we populate that array with alternating groups of positive and negative 
+values, that will cause the current being delivered to the speakers to 
+alternate, switching from one direction to the other. The level of the 
+alternating currents will be roughly proportional to the magnitudes of the 
+alternating positive and negative values. Given sufficient magnitude within a 
+frequency range supported by the speakers, the alternating currents will cause 
+the diaphragms of the speakers to vibrate or move back and forth. This, in turn, 
+will cause the adjacent air molecules to vibrate, which may be sensed as sound 
+by a person within hearing distance of the speakers.</p>
+<h2><a name="Sine_and_cosine_functions">Sine and cosine functions</a></h2>
+<h3><a name="Populating_the_array">Populating the array</a></h3>
+<p>There are many ways that we can write a program to populate the array with 
+alternating groups of positive and negative numbers. One of the simplest ways is to 
+populate the array with scaled versions of the values produced by the static
+<strong>sin</strong> function or the static <strong>cos</strong> function of the <strong>Math</strong> 
+class. The <strong>Math</strong> class is contained in the Java Standard Edition class library. A common 
+name for a series of such values is <em>sinusoid</em>.</p>
+<p>In addition to being one of the easiest ways to populate the array, this is also a 
+way to produce a sound that is very close to being a<em> pure tone</em>. By pure 
+tone, I mean a sound that results from something vibrating at a single frequency 
+such as Middle-C <em>((261.63 Hz)</em>.</p>
+<h3><a name="The_shape_of_a_sinusoid">The shape of a sinusoid</a></h3>
+<p>If you have taken a math course in trigonometry, you probably know the shape 
+produced by graphing the output from either the <strong>sin</strong> function or 
+the <strong>cos</strong> function. If not, it would be good if you can ask a 
+sighted friend to Google for "sinusoidal function image", download and print one 
+or more of the images and emboss them for you using whatever embossing method 
+you prefer. This will provide you with a tactile representation of a sinusoid.</p>
+<h3><a name="An_audio_graph_of_a_sinusoid">An audio graph of a sinusoid</a></h3>
+<p>In any event, I am going to provide you with a sound file named
+<a href="SinusoidalAudioGraph.au">SinusoidalAudioGraph</a> that provides an 
+audio representation of the graph of a sinusoid.</p>
+<p>This audio file contains an 8-second melody consisting of 32 uniformly spaced pulses at 
+different frequencies. The frequencies <em>(pitches)</em> of the pulses are centered on middle-C
+<em>(261.63 Hz)</em>. The frequency deviation from middle-C versus time 
+is based on a sinusoidal function with a frequency of 0.5 Hz. </p>
+<h3><a name="Points_on__graph">Points on graph</a></h3>
+<p>Each pulse 
+represents one point on a graph of the sinusoid. Pulses with frequencies at or 
+above middle-C are delivered to the left speaker. Pulses with frequencies below 
+middle-C are delivered to the right speaker. </p>
+<p>The audio output can be thought of as an 
+audio representation of a graph of a sinusoid. Pulses with frequencies above 
+middle-C represent points on the positive lobe of the sinusoid. Increasing pitch 
+represents increasing amplitude on the graph of the sinusoid. </p>
+<p>Pulses with 
+frequencies below middle-C can be thought of as representing points on the 
+negative lobe of the sinusoid. In this case, decreasing pitch represents points 
+on the sinusoid that are further from the horizontal axis in the negative 
+direction. </p>
+<p>Pulses with a frequency of middle-C can be thought of as representing 
+points on the horizontal axis with a value of zero. </p>
+<p>Four complete cycles 
+of the 0.5 Hz sinusoid are represented by the 32 pulses in the 8-second melody.</p>
+<p>Hopefully, by listening to this audio file, you can get an idea of the shape 
+of a sinusoid.</p>
+<h3><a name="A_dual_purpose">A dual purpose</a></h3>
+<p>In addition to providing the audio file to help you discern the shape of a 
+sinusoid, I am also providing it as an example of the type of audio files that 
+you will be able to create once you understand the programs in upcoming modules.</p>
+	<h1 class="style1"><a name="Miscellaneous">Miscellaneous</a></h1>
+	<p>This section contains a variety of miscellaneous information.</p>
+
+<!--Set border to 15 to create a note. Paragraph elements inside the note are allowed but not required.-->
+	<table border="15" width="477" >
+		<tbody>
+			<tr>
+				<td><strong>Housekeeping material</strong>
+				<ul>
+					<li>Module name: Jbs2000-What is Sound?</li>
+					<li>File: Jbs2000.htm
+</li>
+					<li>Published: 08/25/14</li>
+				</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+<!--Set border to 15 to create a note. Paragraph elements inside the note are allowed but not required.-->
+	<table border="15" width="477" >
+		<tbody>
+			<tr>
+				<td><strong>Disclaimers:</strong><p><strong>Financial</strong>: 
+				Although the <strong>OpenStax CNX</strong> site makes it 
+				possible for you to download a PDF file for the collection that 
+				contains this module at no charge, and also makes it possible 
+				for you to purchase a pre-printed version of the PDF file, you 
+				should be aware that some of the HTML elements in this module 
+				may not translate well into PDF.</p>
+				<p>You also need to know that Prof. Baldwin receives no 
+				financial compensation from <strong>OpenStax CNX </strong>even 
+				if you purchase the PDF version of the collection.</p>
+				<p>In the past, unknown individuals have copied Prof. Baldwin's 
+				modules from cnx.org, converted them to Kindle books, and placed 
+				them for sale on Amazon.com showing Prof. Baldwin as the author. 
+				Prof. Baldwin neither receives compensation for those sales nor 
+				does he know who does receive compensation. If you purchase such 
+				a book, please be aware that it is a copy of a collection that 
+				is freely available on <strong>OpenStax CNX</strong> and that it 
+				was made and published without the prior knowledge of Prof. 
+				Baldwin.</p>
+				<p><strong>Affiliation</strong>: Prof. Baldwin is a professor of 
+				Computer Information Technology at Austin Community College in 
+				Austin, TX. </p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>-end- </p>
+
+
+</body>
+</html>
